@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1698388725
+::res://::1698414994
 icon.svg::CompressedTexture2D::3277260073642304561::1698378917::1698378917::1::::<><>::
 ::res://addons/::1698378917
 ::res://addons/godot_gpt/::1698378917
@@ -25,9 +25,9 @@ prompt_input_text.gd::GDScript::-1::1698378917::0::1::::<>TextEdit<>::
 ::res://addons/godot_gpt/examples/image/::1698378917
 image_example.gd::GDScript::-1::1698378917::0::1::::<>Control<>::
 image_example.tscn::PackedScene::8297109785530053854::1698378917::0::1::::<><>::res://addons/godot_gpt/examples/image/image_example.gd<>uid://ckmpdqurkchco
-::res://scenes/::1698388584
-level1-1.tscn::PackedScene::7278170613851924671::1698388584::0::1::::<><>::uid://njbm3nj8wbn1::::res://sprites/level_1.png<>uid://tw16ohwuibg5::::res://sprites/run_idle_jump_pequeño.png<>res://scenes/Mario.gd
-Mario.gd::GDScript::-1::1698388298::0::1::::<>CharacterBody2D<>::
+::res://scenes/::1698414323
+level1-1.tscn::PackedScene::7278170613851924671::1698414283::0::1::::<><>::uid://njbm3nj8wbn1::::res://sprites/level_1.png<>uid://tw16ohwuibg5::::res://sprites/run_idle_jump_pequeño.png<>res://scenes/Mario.gd
+Mario.gd::GDScript::-1::1698414323::0::1::::<>CharacterBody2D<>::
 ::res://sprites/::1698378917
 bloque_premios_desacivado.png::CompressedTexture2D::2462795710552693825::1698378917::1698378917::1::::<><>::
 dead.png::CompressedTexture2D::6210182859547011742::1698378917::1698378917::1::::<><>::

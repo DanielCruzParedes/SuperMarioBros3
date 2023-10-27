@@ -41,4 +41,4 @@ func detectar():
 			if colision.is_in_group("suelos"):
 				salto_valido=true
 				
-	#saltar_valido=ha tocado el suelo
+	#saltar_valido=ha tocado el piso
