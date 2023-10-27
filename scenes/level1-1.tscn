@@ -255,7 +255,7 @@ libraries = {
 "": SubResource("AnimationLibrary_6107w")
 }
 
-[node name="RayCast2D" type="RayCast2D" parent="level-1/Mario"]
+[node name="abajo" type="RayCast2D" parent="level-1/Mario"]
 position = Vector2(0, 15)
 target_position = Vector2(0, 5)
 
