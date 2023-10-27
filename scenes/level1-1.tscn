@@ -247,13 +247,17 @@ texture = ExtResource("2_73vdj")
 hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level-1/Mario"]
-position = Vector2(-0.5, 8)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_2hh2j")
 
 [node name="Animacion" type="AnimationPlayer" parent="level-1/Mario"]
 libraries = {
 "": SubResource("AnimationLibrary_6107w")
 }
+
+[node name="RayCast2D" type="RayCast2D" parent="level-1/Mario"]
+position = Vector2(0, 15)
+target_position = Vector2(0, 5)
 
 [node name="suelo" type="StaticBody2D" parent="level-1" groups=["suelos"]]
 
