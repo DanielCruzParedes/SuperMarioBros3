@@ -1,0 +1,20 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1698366102
+icon.svg::CompressedTexture2D::3277260073642304561::1698292841::1698292856::1::::<><>::
+::res://scenes/::1698365595
+level1-1.tscn::PackedScene::7278170613851924671::1698365595::0::1::::<><>::uid://njbm3nj8wbn1::::res://sprites/level_1.png<>uid://tw16ohwuibg5::::res://sprites/run_idle_jump_pequeño.png<>res://scenes/Mario.gd
+Mario.gd::GDScript::-1::1698365508::0::1::::<>CharacterBody2D<>::
+::res://scripts/::1698365503
+::res://sprites/::1698339640
+bloque_premios_desacivado.png::CompressedTexture2D::2462795710552693825::1698337968::1698339640::1::::<><>::
+dead.png::CompressedTexture2D::6210182859547011742::1698338025::1698339640::1::::<><>::
+destruccion bloque.png::CompressedTexture2D::743780751869130733::1698338034::1698339640::1::::<><>::
+down_grande.png::CompressedTexture2D::3323081570714328172::1698338036::1698339640::1::::<><>::
+goomba.png::CompressedTexture2D::2320391148574330149::1698338041::1698339640::1::::<><>::
+goomba_dead.png::CompressedTexture2D::3262371006208666015::1698338046::1698339640::1::::<><>::
+level_1.png::CompressedTexture2D::931118004790729848::1698338054::1698339640::1::::<><>::
+nivel.png::CompressedTexture2D::2564449479140144561::1698338060::1698339640::1::::<><>::
+poderes y tiles.png::CompressedTexture2D::6746346172383804946::1698338066::1698339640::1::::<><>::
+run_idle_jump_flor de fuego.png::CompressedTexture2D::6250780478884905341::1698338074::1698339640::1::::<><>::
+run_idle_jump_grande.png::CompressedTexture2D::2002799165952124273::1698338085::1698339640::1::::<><>::
+run_idle_jump_pequeño.png::CompressedTexture2D::1380639088302065006::1698338082::1698339640::1::::<><>::
