@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://tn2ujag8nb2c"]
+
+[ext_resource type="Script" path="res://scenes/bloque cafe.gd" id="1_df6ov"]
+[ext_resource type="Texture2D" uid="uid://c3d8logrgdcso" path="res://sprites/poderes y tiles.png" id="2_d8fmi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3wms"]
+size = Vector2(17, 17)
+
+[node name="bloque cafe" type="StaticBody2D" groups=["bloques", "suelos"]]
+script = ExtResource("1_df6ov")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_d8fmi")
+hframes = 10
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.95)
+shape = SubResource("RectangleShape2D_c3wms")

@@ -1,2 +1,4 @@
 res://scenes/level1-1.tscn
-res://scenes/Mario.gd
+res://scenes/bloques/bloque_monedas.tscn
+res://scenes/bloques/bloque_Power.tscn
+res://scenes/Power_Ups/hongo.tscn

@@ -68,5 +68,10 @@ func detectar():
 			colision=$abajo.get_collider()
 			if colision.is_in_group("suelos"):
 				salto_valido=true
+		if $arriba.is_colliding():
+			var colision2=$arriba.get_collider()
+			if colision2.is_in_group("bloques"):
+				colision2.muevete()
+			
 				
 	#saltar_valido=ha tocado el piso

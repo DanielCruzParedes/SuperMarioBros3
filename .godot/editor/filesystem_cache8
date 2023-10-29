@@ -1,45 +1,55 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1698534665
-export_presets.cfg::TextFile::-1::1698369791::0::1::::<><>::
-icon.svg::CompressedTexture2D::3277260073642304561::1698292841::1698292856::1::::<><>::
-::res://addons/::1698369789
-::res://addons/godot_gpt/::1698369792
-gpt_chat_request.gd::GDScript::-1::1698369790::0::1::::GPTChatRequest<>GPTRequest<>::
-gpt_request.gd::GDScript::-1::1698369790::0::1::::GPTRequest<>HTTPRequest<>::
-icon.png::CompressedTexture2D::4968090397781171919::1698369791::1698369792::1::::<><>::
-open_ai_image_request.gd::GDScript::-1::1698369791::0::1::::OpenAIImageRequest<>HTTPRequest<>::
-plugin.cfg::TextFile::-1::1698369791::0::1::::<><>::
-::res://addons/godot_gpt/examples/::1698369790
-example.gd::GDScript::-1::1698369790::0::1::::<>Control<>::
-example.tscn::PackedScene::6055311454055297614::1698369790::0::1::::<><>::res://addons/godot_gpt/examples/example.gd<>uid://d4jcuwb3v5hfi
-::res://addons/godot_gpt/examples/chat/::1698369789
-chat_example.gd::GDScript::-1::1698369789::0::1::::<>Control<>::
-chat_example.tscn::PackedScene::9213476224592361038::1698369789::0::1::::<><>::res://addons/godot_gpt/examples/chat/chat_example.gd<>uid://di8cv15276ai6
-::res://addons/godot_gpt/examples/chat/chat_entry/::1698369789
-chat_entry.gd::GDScript::-1::1698369789::0::1::::<>PanelContainer<>::
-chat_entry.tscn::PackedScene::7789057614947044743::1698369789::0::1::::<><>::res://addons/godot_gpt/examples/chat/chat_entry/chat_entry.gd
-::res://addons/godot_gpt/examples/common/::1698369789
-::res://addons/godot_gpt/examples/common/prompt_input/::1698369790
-prompt_input.gd::GDScript::-1::1698369789::0::1::::<>HBoxContainer<>::
-prompt_input.tscn::PackedScene::5500419321143997886::1698369790::0::1::::<><>::res://addons/godot_gpt/examples/common/prompt_input/prompt_input_text.gd<>res://addons/godot_gpt/examples/common/prompt_input/prompt_input.gd
-prompt_input_text.gd::GDScript::-1::1698369790::0::1::::<>TextEdit<>::
-::res://addons/godot_gpt/examples/image/::1698369790
-image_example.gd::GDScript::-1::1698369790::0::1::::<>Control<>::
-image_example.tscn::PackedScene::8297109785530053854::1698369790::0::1::::<><>::res://addons/godot_gpt/examples/image/image_example.gd<>uid://ckmpdqurkchco
-::res://scenes/::1698468672
-level1-1.tscn::PackedScene::7278170613851924671::1698468672::0::1::::<><>::uid://njbm3nj8wbn1::::res://sprites/level_1.png<>uid://tw16ohwuibg5::::res://sprites/run_idle_jump_pequeño.png<>res://scenes/Mario.gd
-Mario.gd::GDScript::-1::1698443566::0::1::::<>CharacterBody2D<>::
-::res://scripts/::1698365503
-::res://sprites/::1698339640
-bloque_premios_desacivado.png::CompressedTexture2D::2462795710552693825::1698337968::1698339640::1::::<><>::
-dead.png::CompressedTexture2D::6210182859547011742::1698338025::1698339640::1::::<><>::
-destruccion bloque.png::CompressedTexture2D::743780751869130733::1698338034::1698339640::1::::<><>::
-down_grande.png::CompressedTexture2D::3323081570714328172::1698338036::1698339640::1::::<><>::
-goomba.png::CompressedTexture2D::2320391148574330149::1698338041::1698339640::1::::<><>::
-goomba_dead.png::CompressedTexture2D::3262371006208666015::1698338046::1698339640::1::::<><>::
-level_1.png::CompressedTexture2D::931118004790729848::1698338054::1698339640::1::::<><>::
-nivel.png::CompressedTexture2D::2564449479140144561::1698338060::1698339640::1::::<><>::
-poderes y tiles.png::CompressedTexture2D::6746346172383804946::1698338066::1698339640::1::::<><>::
-run_idle_jump_flor de fuego.png::CompressedTexture2D::6250780478884905341::1698338074::1698339640::1::::<><>::
-run_idle_jump_grande.png::CompressedTexture2D::2002799165952124273::1698338085::1698339640::1::::<><>::
-run_idle_jump_pequeño.png::CompressedTexture2D::1380639088302065006::1698338082::1698339640::1::::<><>::
+::res://::1698604836
+icon.svg::CompressedTexture2D::3277260073642304561::1698378917::1698378917::1::::<><>::
+::res://addons/::1698378917
+::res://addons/godot_gpt/::1698378917
+gpt_chat_request.gd::GDScript::-1::1698378917::0::1::::GPTChatRequest<>GPTRequest<>::
+gpt_request.gd::GDScript::-1::1698378917::0::1::::GPTRequest<>HTTPRequest<>::
+icon.png::CompressedTexture2D::4968090397781171919::1698378917::1698378917::1::::<><>::
+open_ai_image_request.gd::GDScript::-1::1698378917::0::1::::OpenAIImageRequest<>HTTPRequest<>::
+plugin.cfg::TextFile::-1::1698378917::0::1::::<><>::
+::res://addons/godot_gpt/examples/::1698378917
+example.gd::GDScript::-1::1698378917::0::1::::<>Control<>::
+example.tscn::PackedScene::6055311454055297614::1698378917::0::1::::<><>::res://addons/godot_gpt/examples/example.gd<>uid://d4jcuwb3v5hfi
+::res://addons/godot_gpt/examples/chat/::1698378917
+chat_example.gd::GDScript::-1::1698378917::0::1::::<>Control<>::
+chat_example.tscn::PackedScene::9213476224592361038::1698378917::0::1::::<><>::res://addons/godot_gpt/examples/chat/chat_example.gd<>uid://di8cv15276ai6
+::res://addons/godot_gpt/examples/chat/chat_entry/::1698378917
+chat_entry.gd::GDScript::-1::1698378917::0::1::::<>PanelContainer<>::
+chat_entry.tscn::PackedScene::7789057614947044743::1698378917::0::1::::<><>::res://addons/godot_gpt/examples/chat/chat_entry/chat_entry.gd
+::res://addons/godot_gpt/examples/common/::1698378917
+::res://addons/godot_gpt/examples/common/prompt_input/::1698378917
+prompt_input.gd::GDScript::-1::1698378917::0::1::::<>HBoxContainer<>::
+prompt_input.tscn::PackedScene::5500419321143997886::1698378917::0::1::::<><>::res://addons/godot_gpt/examples/common/prompt_input/prompt_input_text.gd<>res://addons/godot_gpt/examples/common/prompt_input/prompt_input.gd
+prompt_input_text.gd::GDScript::-1::1698378917::0::1::::<>TextEdit<>::
+::res://addons/godot_gpt/examples/image/::1698378917
+image_example.gd::GDScript::-1::1698378917::0::1::::<>Control<>::
+image_example.tscn::PackedScene::8297109785530053854::1698378917::0::1::::<><>::res://addons/godot_gpt/examples/image/image_example.gd<>uid://ckmpdqurkchco
+::res://scenes/::1698577223
+bloque cafe.gd::GDScript::-1::1698566269::0::1::::<>StaticBody2D<>::
+bloque_Monedas.gd::GDScript::-1::1698572364::0::1::::<>StaticBody2D<>::
+level1-1.tscn::PackedScene::7278170613851924671::1698577223::0::1::::<><>::uid://njbm3nj8wbn1::::res://sprites/level_1.png<>uid://tw16ohwuibg5::::res://sprites/run_idle_jump_pequeño.png<>res://scenes/Mario.gd<>uid://bcsidxexjs6jd::::res://sprites/nivel.png<>uid://tn2ujag8nb2c::::res://scenes/bloques/bloque_cafe.tscn<>uid://cb4wanr0fsbfj::::res://scenes/bloques/bloque_monedas.tscn<>uid://c0ed7ivxk2u3n::::res://scenes/bloques/bloque_Power.tscn
+Mario.gd::GDScript::-1::1698563996::0::1::::<>CharacterBody2D<>::
+::res://scenes/bloques/::1698577223
+bloque_cafe.tscn::PackedScene::1362100487635560788::1698570459::0::1::::<><>::res://scenes/bloque cafe.gd<>uid://c3d8logrgdcso
+bloque_monedas.tscn::PackedScene::4904233649941333239::1698577223::0::1::::<><>::res://scenes/bloque_Monedas.gd<>uid://bbc85dxa01p4l::::res://sprites/bloque_premios_desacivado.png<>uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png
+bloque_monedas_power.tscn::PackedScene::5223682518279695667::1698570460::0::1::::<><>::uid://bbc85dxa01p4l
+bloque_Power.gd::GDScript::-1::1698574850::0::1::::<>StaticBody2D<>::
+bloque_Power.tscn::PackedScene::6536059719423664173::1698577223::0::1::::<><>::res://scenes/bloques/bloque_Power.gd<>uid://bbc85dxa01p4l::::res://sprites/bloque_premios_desacivado.png<>uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png
+bloque_powerUp.tscn::PackedScene::5971601034950980355::1698570039::0::1::::<><>::uid://bbc85dxa01p4l
+bloque_PowerUpM.tscn::PackedScene::3426969343429960572::1698570827::0::1::::<><>::uid://bbc85dxa01p4l
+::res://scenes/Power_Ups/::1698577224
+hongo.tscn::PackedScene::8313705126990383045::1698577224::0::1::::<><>::uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png
+::res://sprites/::1698378917
+bloque_premios_desacivado.png::CompressedTexture2D::2462795710552693825::1698378917::1698378917::1::::<><>::
+dead.png::CompressedTexture2D::6210182859547011742::1698378917::1698378917::1::::<><>::
+destruccion bloque.png::CompressedTexture2D::743780751869130733::1698378917::1698378917::1::::<><>::
+down_grande.png::CompressedTexture2D::3323081570714328172::1698378917::1698378917::1::::<><>::
+goomba.png::CompressedTexture2D::2320391148574330149::1698378917::1698378917::1::::<><>::
+goomba_dead.png::CompressedTexture2D::3262371006208666015::1698378917::1698378917::1::::<><>::
+level_1.png::CompressedTexture2D::931118004790729848::1698378917::1698378917::1::::<><>::
+nivel.png::CompressedTexture2D::2564449479140144561::1698378917::1698378917::1::::<><>::
+poderes y tiles.png::CompressedTexture2D::6746346172383804946::1698378917::1698378917::1::::<><>::
+run_idle_jump_flor de fuego.png::CompressedTexture2D::6250780478884905341::1698378917::1698378917::1::::<><>::
+run_idle_jump_grande.png::CompressedTexture2D::2002799165952124273::1698378917::1698378917::1::::<><>::
+run_idle_jump_pequeño.png::CompressedTexture2D::1380639088302065006::1698378917::1698378917::1::::<><>::

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb4wanr0fsbfj"]
+
+[ext_resource type="Script" path="res://scenes/bloque_Monedas.gd" id="1_tc5qx"]
+[ext_resource type="Texture2D" uid="uid://bbc85dxa01p4l" path="res://sprites/bloque_premios_desacivado.png" id="2_ipoja"]
+[ext_resource type="Texture2D" uid="uid://c3d8logrgdcso" path="res://sprites/poderes y tiles.png" id="2_ycwkf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3wms"]
+size = Vector2(17, 17)
+
+[node name="bloque_Monedas" type="StaticBody2D" groups=["bloques", "suelos"]]
+position = Vector2(281, 167)
+script = ExtResource("1_tc5qx")
+
+[node name="desactivado" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ipoja")
+
+[node name="activado" type="Sprite2D" parent="."]
+texture = ExtResource("2_ycwkf")
+hframes = 10
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.95)
+shape = SubResource("RectangleShape2D_c3wms")
