@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbxun3dhgvk8n"]
+[gd_scene load_steps=45 format=3 uid="uid://dbxun3dhgvk8n"]
 
 [ext_resource type="Texture2D" uid="uid://njbm3nj8wbn1" path="res://sprites/level_1.png" id="1_6ik2n"]
 [ext_resource type="Texture2D" uid="uid://tw16ohwuibg5" path="res://sprites/run_idle_jump_pequeño.png" id="2_73vdj"]
@@ -12,7 +12,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/path = NodePath("SpriteMario:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +24,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/path = NodePath("SpriteMario:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -36,7 +36,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/path = NodePath("SpriteMario:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -48,7 +48,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:position")
+tracks/3/path = NodePath("SpriteMario:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -67,7 +67,7 @@ length = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/path = NodePath("SpriteMario:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -79,7 +79,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/path = NodePath("SpriteMario:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -91,7 +91,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/path = NodePath("SpriteMario:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -103,7 +103,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:position")
+tracks/3/path = NodePath("SpriteMario:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -119,7 +119,7 @@ length = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/path = NodePath("SpriteMario:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -131,7 +131,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/path = NodePath("SpriteMario:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -143,7 +143,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/path = NodePath("SpriteMario:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -155,7 +155,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:position")
+tracks/3/path = NodePath("SpriteMario:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -171,7 +171,7 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/path = NodePath("SpriteMario:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -183,7 +183,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/path = NodePath("SpriteMario:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -195,7 +195,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/path = NodePath("SpriteMario:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -207,7 +207,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:position")
+tracks/3/path = NodePath("SpriteMario:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -229,24 +229,125 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wofq8"]
 size = Vector2(1103, 30)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7ro2"]
+size = Vector2(30, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg1uy"]
+size = Vector2(30, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gl806"]
+size = Vector2(30, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47euv"]
+size = Vector2(30, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxmxv"]
+size = Vector2(239, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2akb"]
+size = Vector2(1039, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikgya"]
+size = Vector2(896, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6augx"]
+size = Vector2(30, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wf1cx"]
+size = Vector2(30, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnnre"]
+size = Vector2(16, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ye2f"]
+size = Vector2(16, 17.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k68h3"]
+size = Vector2(17, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kfkj"]
+size = Vector2(18, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4ybq"]
+size = Vector2(16, 18.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smcx8"]
+size = Vector2(16, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kl55r"]
+size = Vector2(16, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8ibi"]
+size = Vector2(15, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4o3of"]
+size = Vector2(16, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsiyw"]
+size = Vector2(17, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mui3f"]
+size = Vector2(17, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7y2s2"]
+size = Vector2(17, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_or3ld"]
+size = Vector2(17, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2udqk"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qa8f"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh6b5"]
+size = Vector2(17, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3ncy"]
+size = Vector2(32, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ik2au"]
+size = Vector2(17, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrjtw"]
+size = Vector2(17, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qhqn"]
+size = Vector2(17, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mijj"]
+size = Vector2(16, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ded1"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywv64"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_scpig"]
+size = Vector2(16, 16)
+
 [node name="main" type="Node"]
 
 [node name="level-1" type="Node" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="level-1"]
+[node name="level template" type="Sprite2D" parent="level-1"]
 texture = ExtResource("1_6ik2n")
 centered = false
+metadata/_edit_lock_ = true
 
 [node name="Mario" type="CharacterBody2D" parent="level-1"]
-position = Vector2(161, 177)
+position = Vector2(162, 180)
 script = ExtResource("2_hjrwx")
+metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="level-1/Mario"]
+[node name="SpriteMario" type="Sprite2D" parent="level-1/Mario"]
 z_index = 1
 texture = ExtResource("2_73vdj")
 hframes = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="level-1/Mario"]
+[node name="ColisionMario" type="CollisionShape2D" parent="level-1/Mario"]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_2hh2j")
 
@@ -259,14 +360,156 @@ libraries = {
 position = Vector2(0, 15)
 target_position = Vector2(0, 5)
 
+[node name="Camera2D" type="Camera2D" parent="level-1/Mario"]
+z_index = 1
+position = Vector2(69, -42)
+ignore_rotation = false
+zoom = Vector2(2.7, 2.7)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
 [node name="suelo" type="StaticBody2D" parent="level-1" groups=["suelos"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="level-1/suelo"]
+[node name="suelo1" type="CollisionShape2D" parent="level-1/suelo"]
 position = Vector2(567.5, 239)
 shape = SubResource("RectangleShape2D_wofq8")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-z_index = 1
-position = Vector2(230, 135)
-ignore_rotation = false
-zoom = Vector2(2.7, 2.7)
+[node name="tubo1" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(480, 208)
+shape = SubResource("RectangleShape2D_l7ro2")
+
+[node name="tubo2" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(640, 200)
+shape = SubResource("RectangleShape2D_hg1uy")
+
+[node name="tubo3" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(768, 192)
+shape = SubResource("RectangleShape2D_gl806")
+
+[node name="tubo4" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(944, 192)
+shape = SubResource("RectangleShape2D_47euv")
+
+[node name="suelo2" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(1272.5, 237.5)
+shape = SubResource("RectangleShape2D_xxmxv")
+
+[node name="suelo3" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(1960.5, 238)
+shape = SubResource("RectangleShape2D_f2akb")
+
+[node name="suelo4" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2960, 238)
+shape = SubResource("RectangleShape2D_ikgya")
+
+[node name="tubo5" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2656, 208)
+shape = SubResource("RectangleShape2D_6augx")
+
+[node name="tubo6" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2912, 208)
+shape = SubResource("RectangleShape2D_wf1cx")
+
+[node name="bloque" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2232, 192)
+shape = SubResource("RectangleShape2D_hnnre")
+
+[node name="bloque2" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2216, 184.625)
+shape = SubResource("RectangleShape2D_2ye2f")
+
+[node name="bloque3" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2200.5, 200)
+shape = SubResource("RectangleShape2D_k68h3")
+
+[node name="bloque4" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2185, 216)
+shape = SubResource("RectangleShape2D_2kfkj")
+
+[node name="bloque5" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2280, 192)
+shape = SubResource("RectangleShape2D_hnnre")
+
+[node name="bloque6" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2296, 185.375)
+shape = SubResource("RectangleShape2D_t4ybq")
+
+[node name="bloque7" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2312, 200.5)
+shape = SubResource("RectangleShape2D_smcx8")
+
+[node name="bloque8" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2328, 217)
+shape = SubResource("RectangleShape2D_kl55r")
+
+[node name="bloque9" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2472.5, 192)
+shape = SubResource("RectangleShape2D_x8ibi")
+
+[node name="bloque10" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2520, 192)
+shape = SubResource("RectangleShape2D_4o3of")
+
+[node name="bloque11" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2456.5, 168)
+shape = SubResource("RectangleShape2D_qsiyw")
+
+[node name="bloque12" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2440.5, 184)
+shape = SubResource("RectangleShape2D_mui3f")
+
+[node name="bloque13" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2424.5, 200.5)
+shape = SubResource("RectangleShape2D_7y2s2")
+
+[node name="bloque14" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2408.5, 216)
+shape = SubResource("RectangleShape2D_or3ld")
+
+[node name="bloque15" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2536, 184)
+shape = SubResource("RectangleShape2D_2udqk")
+
+[node name="bloque16" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2552, 200)
+shape = SubResource("RectangleShape2D_0qa8f")
+
+[node name="bloque17" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2567.5, 216)
+shape = SubResource("RectangleShape2D_sh6b5")
+
+[node name="bloque18" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(3056, 160)
+shape = SubResource("RectangleShape2D_q3ncy")
+
+[node name="bloque19" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2936.5, 216)
+shape = SubResource("RectangleShape2D_ik2au")
+
+[node name="bloque20" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2952.5, 200)
+shape = SubResource("RectangleShape2D_mrjtw")
+
+[node name="bloque21" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2968.5, 184)
+shape = SubResource("RectangleShape2D_2qhqn")
+
+[node name="bloque22" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(2984, 167.5)
+shape = SubResource("RectangleShape2D_0mijj")
+
+[node name="bloque23" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(3000, 152)
+shape = SubResource("RectangleShape2D_2ded1")
+
+[node name="bloque24" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(3016, 136)
+shape = SubResource("RectangleShape2D_ywv64")
+
+[node name="bloque25" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(3032, 120)
+shape = SubResource("RectangleShape2D_ywv64")
+
+[node name="bloque26" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(3208, 216)
+shape = SubResource("RectangleShape2D_scpig")

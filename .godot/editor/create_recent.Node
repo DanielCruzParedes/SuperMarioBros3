@@ -1,5 +1,5 @@
-RayCast2D
 CollisionShape2D
+RayCast2D
 StaticBody2D
 Camera2D
 Sprite2D
