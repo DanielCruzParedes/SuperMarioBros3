@@ -6,9 +6,9 @@ func _ready():
 	pass
 	
 func muevete():
-	position.y-=5
+	position.y-=3
 	await(get_tree().create_timer(0.12).timeout)
-	position.y+=5
+	position.y+=3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

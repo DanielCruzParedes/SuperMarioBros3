@@ -5,10 +5,10 @@ extends StaticBody2D
 func _ready():
 	pass # Replace with function body.
 func muevete():
-	position.y-=5
+	position.y-=3
 	$activado.visible=false
 	await(get_tree().create_timer(0.12).timeout)
-	position.y+=5
+	position.y+=3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -1,9 +1,10 @@
-[gd_scene load_steps=49 format=3 uid="uid://dbxun3dhgvk8n"]
+[gd_scene load_steps=51 format=3 uid="uid://dbxun3dhgvk8n"]
 
 [ext_resource type="Texture2D" uid="uid://njbm3nj8wbn1" path="res://sprites/level_1.png" id="1_6ik2n"]
 [ext_resource type="Texture2D" uid="uid://tw16ohwuibg5" path="res://sprites/run_idle_jump_pequeño.png" id="2_73vdj"]
 [ext_resource type="Script" path="res://scenes/Mario.gd" id="2_hjrwx"]
 [ext_resource type="Texture2D" uid="uid://bcsidxexjs6jd" path="res://sprites/nivel.png" id="4_cr56i"]
+[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="5_2ux4x"]
 [ext_resource type="PackedScene" uid="uid://tn2ujag8nb2c" path="res://scenes/bloques/bloque_cafe.tscn" id="5_c7n8w"]
 [ext_resource type="PackedScene" uid="uid://cb4wanr0fsbfj" path="res://scenes/bloques/bloque_monedas.tscn" id="5_s6lbr"]
 [ext_resource type="PackedScene" uid="uid://c0ed7ivxk2u3n" path="res://scenes/bloques/bloque_Power.tscn" id="7_sp4qf"]
@@ -332,7 +333,20 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_scpig"]
 size = Vector2(16, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_idra0"]
+size = Vector2(16, 227)
+
 [node name="main" type="Node" groups=["main"]]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 1
+position = Vector2(229, 137)
+ignore_rotation = false
+zoom = Vector2(2.7, 2.7)
+position_smoothing_speed = 100.0
+rotation_smoothing_enabled = true
+drag_horizontal_offset = 0.11
+script = ExtResource("5_2ux4x")
 
 [node name="level-1" type="Node" parent="." groups=["main"]]
 
@@ -346,10 +360,9 @@ visible = false
 position = Vector2(1713, 297)
 texture = ExtResource("4_cr56i")
 
-[node name="Mario" type="CharacterBody2D" parent="level-1"]
-position = Vector2(162, 180)
+[node name="Mario" type="CharacterBody2D" parent="level-1" groups=["mario"]]
+position = Vector2(121, 198)
 script = ExtResource("2_hjrwx")
-metadata/_edit_group_ = true
 
 [node name="SpriteMario" type="Sprite2D" parent="level-1/Mario"]
 z_index = 1
@@ -370,15 +383,8 @@ target_position = Vector2(0, -5)
 
 [node name="abajo" type="RayCast2D" parent="level-1/Mario"]
 position = Vector2(0, 15)
-target_position = Vector2(0, 5)
-
-[node name="Camera2D" type="Camera2D" parent="level-1/Mario"]
-z_index = 1
-position = Vector2(69, -42)
-ignore_rotation = false
-zoom = Vector2(2.7, 2.7)
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
+scale = Vector2(2, 2)
+target_position = Vector2(0, 3.5)
 
 [node name="suelo" type="StaticBody2D" parent="level-1" groups=["suelos"]]
 
@@ -526,6 +532,10 @@ shape = SubResource("RectangleShape2D_ywv64")
 position = Vector2(3208, 216)
 shape = SubResource("RectangleShape2D_scpig")
 
+[node name="barrera del inicio" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(8, 128.5)
+shape = SubResource("RectangleShape2D_idra0")
+
 [node name="bloques" type="Node2D" parent="level-1"]
 
 [node name="bloque cafe" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
@@ -535,10 +545,10 @@ position = Vector2(345, 167)
 position = Vector2(1257, 167)
 
 [node name="bloque cafe2" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(376, 167)
+position = Vector2(377, 167)
 
 [node name="bloque cafe3" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(408, 167)
+position = Vector2(409, 167)
 
 [node name="bloque cafe5" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
 position = Vector2(1289, 167)
@@ -547,22 +557,22 @@ position = Vector2(1289, 167)
 position = Vector2(1305, 103)
 
 [node name="bloque cafe7" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(1320, 103)
+position = Vector2(1321, 103)
 
 [node name="bloque cafe8" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(1335, 103)
+position = Vector2(1337, 103)
 
 [node name="bloque cafe9" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(1351, 103)
+position = Vector2(1353, 103)
 
 [node name="bloque cafe10" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(1367, 103)
+position = Vector2(1369, 103)
 
 [node name="bloque cafe11" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(1383, 103)
+position = Vector2(1385, 103)
 
 [node name="bloque cafe12" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(1399, 103)
+position = Vector2(1401, 103)
 
 [node name="bloque cafe13" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
 position = Vector2(1481, 103)
@@ -586,7 +596,7 @@ position = Vector2(1641, 167)
 position = Vector2(1657, 167)
 
 [node name="bloque cafe21" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(1414, 103)
+position = Vector2(1417, 103)
 
 [node name="bloque cafe20" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
 position = Vector2(1930, 168)
@@ -627,9 +637,9 @@ position = Vector2(2777, 167)
 position = Vector2(329, 167)
 
 [node name="bloque_Monedas2" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
-position = Vector2(392, 167)
+position = Vector2(393, 167)
 
 [node name="bloques_powerUp" type="Node" parent="."]
 
 [node name="bloque_Power" parent="bloques_powerUp" instance=ExtResource("7_sp4qf")]
-position = Vector2(360, 167)
+position = Vector2(361, 167)

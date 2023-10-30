@@ -6,7 +6,9 @@
 size = Vector2(17, 17)
 
 [node name="hongo" type="CharacterBody2D"]
-position = Vector2(14, 3)
+z_index = 1
+position = Vector2(143, 157)
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-130, 489)
@@ -14,5 +16,6 @@ texture = ExtResource("1_skemi")
 hframes = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
 position = Vector2(-130, 491)
 shape = SubResource("RectangleShape2D_swk1d")

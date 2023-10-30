@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c3d8logrgdcso" path="res://sprites/poderes y tiles.png" id="2_d8fmi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3wms"]
-size = Vector2(17, 17)
+size = Vector2(16, 16)
 
 [node name="bloque cafe" type="StaticBody2D" groups=["bloques", "suelos"]]
 script = ExtResource("1_df6ov")
@@ -15,5 +15,5 @@ hframes = 10
 frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.95)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_c3wms")

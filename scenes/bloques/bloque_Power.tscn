@@ -5,9 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://c3d8logrgdcso" path="res://sprites/poderes y tiles.png" id="3_maciy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3wms"]
-size = Vector2(17, 17)
+size = Vector2(16, 16)
 
 [node name="bloque_Power" type="StaticBody2D" groups=["bloques", "suelos"]]
+z_index = 1
 script = ExtResource("1_f1h2w")
 
 [node name="desactivado" type="Sprite2D" parent="."]
@@ -21,8 +22,9 @@ hframes = 10
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.95)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_c3wms")
 
 [node name="spawn_hongo" type="Marker2D" parent="."]
-position = Vector2(0, -30)
+z_index = 1
+position = Vector2(0, -20)
