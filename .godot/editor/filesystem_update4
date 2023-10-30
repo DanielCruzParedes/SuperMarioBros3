@@ -3,3 +3,5 @@ res://scenes/bloques/bloque_monedas.tscn
 res://scenes/bloques/bloque_Power.tscn
 res://scenes/Power_Ups/hongo.tscn
 res://scenes/bloques/bloque_cafe.tscn
+res://scenes/bloques/bloque_Power.gd
+res://scenes/bloque_Monedas.gd
