@@ -17,11 +17,11 @@ func muevete():
 func instanciar():
 	if not hongo_instanciado:
 		var hongo= preload("res://scenes/Power_Ups/hongo.tscn")
-		print("Hongo cargado")
 		var hongo_instance=hongo.instantiate()
 		hongo_instance.global_position= $spawn_hongo.global_position
 		get_tree().root.add_child(hongo_instance)
 		hongo_instanciado = true
+		print("Hongo spawneado")
 	
 	
 

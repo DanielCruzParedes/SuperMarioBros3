@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqphrkfv0vnld"]
+[gd_scene load_steps=4 format=3 uid="uid://dqphrkfv0vnld"]
 
 [ext_resource type="Texture2D" uid="uid://c3d8logrgdcso" path="res://sprites/poderes y tiles.png" id="1_skemi"]
+[ext_resource type="Script" path="res://scripts/hongo.gd" id="1_vj7pf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ru6tj"]
 size = Vector2(16, 16)
@@ -8,7 +9,7 @@ size = Vector2(16, 16)
 [node name="hongo" type="CharacterBody2D"]
 z_index = 1
 position = Vector2(0, -1)
-metadata/_edit_group_ = true
+script = ExtResource("1_vj7pf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_skemi")
@@ -17,3 +18,11 @@ hframes = 10
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_ru6tj")
+
+[node name="derecha" type="RayCast2D" parent="."]
+position = Vector2(8, 2)
+target_position = Vector2(3, 0)
+
+[node name="izquierda" type="RayCast2D" parent="."]
+position = Vector2(-8, 2)
+target_position = Vector2(-3, 0)

@@ -357,7 +357,7 @@ metadata/_edit_lock_ = true
 
 [node name="guia" type="Sprite2D" parent="level-1/level template"]
 visible = false
-position = Vector2(1713, 297)
+position = Vector2(1713, 302)
 texture = ExtResource("4_cr56i")
 
 [node name="Mario" type="CharacterBody2D" parent="level-1" groups=["mario"]]
@@ -536,6 +536,10 @@ shape = SubResource("RectangleShape2D_scpig")
 position = Vector2(8, 128.5)
 shape = SubResource("RectangleShape2D_idra0")
 
+[node name="barrera del final" type="CollisionShape2D" parent="level-1/suelo"]
+position = Vector2(3416, 126)
+shape = SubResource("RectangleShape2D_idra0")
+
 [node name="bloques" type="Node2D" parent="level-1"]
 
 [node name="bloque cafe" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
@@ -599,16 +603,16 @@ position = Vector2(1657, 167)
 position = Vector2(1417, 103)
 
 [node name="bloque cafe20" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(1930, 168)
+position = Vector2(1929, 167)
 
 [node name="bloque cafe22" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(1978, 103)
+position = Vector2(1977, 103)
 
 [node name="bloque cafe23" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
 position = Vector2(1993, 103)
 
 [node name="bloque cafe24" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(2008, 103)
+position = Vector2(2009, 103)
 
 [node name="bloque cafe25" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
 position = Vector2(2089, 103)
@@ -617,24 +621,47 @@ position = Vector2(2089, 103)
 position = Vector2(2137, 103)
 
 [node name="bloque cafe27" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(2106, 167)
+position = Vector2(2105, 167)
 
 [node name="bloque cafe28" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(2122, 167)
+position = Vector2(2121, 167)
 
 [node name="bloque cafe29" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(2730, 167)
+position = Vector2(2729, 167)
 
 [node name="bloque cafe30" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(2746, 167)
+position = Vector2(2745, 167)
 
 [node name="bloque cafe31" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
 position = Vector2(2777, 167)
 
 [node name="bloques moneda" type="Node2D" parent="."]
 
-[node name="bloque_Monedas" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
-position = Vector2(329, 167)
+[node name="bloque_Monedas3" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
+
+[node name="bloque_Monedas4" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
+position = Vector2(377, 103)
+
+[node name="bloque_Monedas5" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
+position = Vector2(1529, 103)
+
+[node name="bloque_Monedas6" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
+position = Vector2(1737, 167)
+
+[node name="bloque_Monedas7" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
+position = Vector2(1785, 167)
+
+[node name="bloque_Monedas8" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
+position = Vector2(1833, 167)
+
+[node name="bloque_Monedas9" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
+position = Vector2(2105, 103)
+
+[node name="bloque_Monedas10" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
+position = Vector2(2121, 103)
+
+[node name="bloque_Monedas11" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
+position = Vector2(2761, 167)
 
 [node name="bloque_Monedas2" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
 position = Vector2(393, 167)
