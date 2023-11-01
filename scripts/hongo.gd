@@ -15,7 +15,11 @@ func muevete():
 func _physics_process(delta):
 	if puedoMoverme == true:
 		detectar()
-		
+		for i in get_slide_collision_count():
+			var obj_colisionado=get_slide_collision(i).get_collider()
+			if(obj_colisionado.is_in_group("mario")):
+				queue_free()
+			
 		if not is_on_floor():
 			velocity.y += gravity * delta
 			move_and_slide()
@@ -28,6 +32,11 @@ func _physics_process(delta):
 		elif pegoIzquierda==true:
 			velocity.x = SPEED
 			move_and_slide()
+		if $izquierda.is_colliding() and $izquierda.get_collider().is_in_group("mario"):
+			queue_free()
+		if $derecha.is_colliding() and $derecha.get_collider().is_in_group("mario"):
+			queue_free()
+		
 	else:
 		position.y -= 1
 		move_and_slide()

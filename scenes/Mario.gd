@@ -61,15 +61,18 @@ func _physics_process(delta):
 		velocity.y +=175
 		salto_valido=false
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
-	
-	
+	for i in get_slide_collision_count():
+		var obj_colisionado=get_slide_collision(i).get_collider()
+		if(obj_colisionado.is_in_group("power_Up")):
+			obj_colisionado.queue_free()
 	
 func detectar():
 		if $abajo.is_colliding():
 			colision=$abajo.get_collider()
 			if colision.is_in_group("suelos"):
 				salto_valido=true
+			elif colision.is_in_group("hongo"):
+				colision.queue_free()  
 			else:
 				salto_valido=false
 		if $arriba.is_colliding():

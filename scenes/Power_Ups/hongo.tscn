@@ -14,7 +14,7 @@ script = ExtResource("1_vj7pf")
 texture = ExtResource("1_skemi")
 hframes = 10
 
-[node name="colisionHongo" type="CollisionShape2D" parent="."]
+[node name="colisionHongo" type="CollisionShape2D" parent="." groups=["power_Up"]]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_ru6tj")
 disabled = true
@@ -26,3 +26,7 @@ target_position = Vector2(3, 0)
 [node name="izquierda" type="RayCast2D" parent="."]
 position = Vector2(-8, 2)
 target_position = Vector2(-3, 0)
+
+[node name="arriba" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+target_position = Vector2(0, -3)
