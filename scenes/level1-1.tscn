@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dbxun3dhgvk8n"]
+[gd_scene load_steps=52 format=3 uid="uid://dbxun3dhgvk8n"]
 
 [ext_resource type="Texture2D" uid="uid://njbm3nj8wbn1" path="res://sprites/level_1.png" id="1_6ik2n"]
 [ext_resource type="Texture2D" uid="uid://tw16ohwuibg5" path="res://sprites/run_idle_jump_pequeño.png" id="2_73vdj"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://tn2ujag8nb2c" path="res://scenes/bloques/bloque_cafe.tscn" id="5_c7n8w"]
 [ext_resource type="PackedScene" uid="uid://cb4wanr0fsbfj" path="res://scenes/bloques/bloque_monedas.tscn" id="5_s6lbr"]
 [ext_resource type="PackedScene" uid="uid://c0ed7ivxk2u3n" path="res://scenes/bloques/bloque_Power.tscn" id="7_sp4qf"]
+[ext_resource type="PackedScene" uid="uid://detgsxucp32nk" path="res://scenes/enemigos/goomba.tscn" id="9_dvt07"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hh2j"]
 size = Vector2(11, 14)
@@ -338,7 +339,7 @@ size = Vector2(16, 227)
 
 [node name="main" type="Node" groups=["main"]]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." groups=["camara"]]
 z_index = 1
 position = Vector2(229, 137)
 ignore_rotation = false
@@ -670,3 +671,11 @@ position = Vector2(393, 167)
 
 [node name="bloque_Power" parent="bloques_powerUp" instance=ExtResource("7_sp4qf")]
 position = Vector2(361, 167)
+
+[node name="enemigos" type="Node" parent="."]
+
+[node name="goomba" parent="enemigos" instance=ExtResource("9_dvt07")]
+position = Vector2(606, 216)
+
+[node name="goomba2" parent="enemigos" instance=ExtResource("9_dvt07")]
+position = Vector2(445, 216)

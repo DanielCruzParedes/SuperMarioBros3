@@ -65,6 +65,10 @@ func _physics_process(delta):
 		var obj_colisionado=get_slide_collision(i).get_collider()
 		if(obj_colisionado.is_in_group("power_Up")):
 			obj_colisionado.queue_free()
+		if obj_colisionado.is_in_group("enemigos"):
+			print("go0ombaaaa")
+			Muerte()
+	
 	
 func detectar():
 		if $abajo.is_colliding():
@@ -81,4 +85,8 @@ func detectar():
 				colision2.muevete()
 			
 			
+func Muerte():
+	get_tree().get_nodes_in_group("camara")[0].puedo_seguir=false
+	queue_free()
+	
 	#saltar_valido=ha tocado el piso

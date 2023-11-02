@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1698830082
+::res://::1698908347
 icon.svg::CompressedTexture2D::3277260073642304561::1698810068::1698810068::1::::<><>::
 ::res://addons/::1698810068
 ::res://addons/godot_gpt/::1698810068
@@ -25,22 +25,22 @@ prompt_input_text.gd::GDScript::-1::1698810068::0::1::::<>TextEdit<>::
 ::res://addons/godot_gpt/examples/image/::1698810068
 image_example.gd::GDScript::-1::1698810068::0::1::::<>Control<>::
 image_example.tscn::PackedScene::8297109785530053854::1698810068::0::1::::<><>::res://addons/godot_gpt/examples/image/image_example.gd<>uid://ckmpdqurkchco
-::res://scenes/::1698830043
+::res://scenes/::1698830277
 bloque cafe.gd::GDScript::-1::1698810068::0::1::::<>StaticBody2D<>::
 bloque_Monedas.gd::GDScript::-1::1698810068::0::1::::<>StaticBody2D<>::
-level1-1.tscn::PackedScene::7278170613851924671::1698830043::0::1::::<><>::uid://njbm3nj8wbn1::::res://sprites/level_1.png<>uid://tw16ohwuibg5::::res://sprites/run_idle_jump_pequeño.png<>res://scenes/Mario.gd<>uid://bcsidxexjs6jd::::res://sprites/nivel.png<>res://scripts/Camera2D.gd<>uid://tn2ujag8nb2c::::res://scenes/bloques/bloque_cafe.tscn<>uid://cb4wanr0fsbfj::::res://scenes/bloques/bloque_monedas.tscn<>uid://c0ed7ivxk2u3n::::res://scenes/bloques/bloque_Power.tscn
+level1-1.tscn::PackedScene::7278170613851924671::1698830277::0::1::::<><>::uid://njbm3nj8wbn1::::res://sprites/level_1.png<>uid://tw16ohwuibg5::::res://sprites/run_idle_jump_pequeño.png<>res://scenes/Mario.gd<>uid://bcsidxexjs6jd::::res://sprites/nivel.png<>res://scripts/Camera2D.gd<>uid://tn2ujag8nb2c::::res://scenes/bloques/bloque_cafe.tscn<>uid://cb4wanr0fsbfj::::res://scenes/bloques/bloque_monedas.tscn<>uid://c0ed7ivxk2u3n::::res://scenes/bloques/bloque_Power.tscn
 Mario.gd::GDScript::-1::1698829616::0::1::::<>CharacterBody2D<>::
-::res://scenes/bloques/::1698830043
+::res://scenes/bloques/::1698830277
 bloque_cafe.tscn::PackedScene::1362100487635560788::1698810069::0::1::::<><>::res://scenes/bloque cafe.gd<>uid://c3d8logrgdcso
 bloque_monedas.tscn::PackedScene::4904233649941333239::1698810069::0::1::::<><>::res://scenes/bloque_Monedas.gd<>uid://bbc85dxa01p4l
 bloque_monedas_power.tscn::PackedScene::5223682518279695667::1698810069::0::1::::<><>::uid://bbc85dxa01p4l
 bloque_Power.gd::GDScript::-1::1698810068::0::1::::<>StaticBody2D<>::
-bloque_Power.tscn::PackedScene::6536059719423664173::1698830043::0::1::::<><>::res://scenes/bloques/bloque_Power.gd<>uid://bbc85dxa01p4l::::res://sprites/bloque_premios_desacivado.png<>uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png
+bloque_Power.tscn::PackedScene::6536059719423664173::1698830277::0::1::::<><>::res://scenes/bloques/bloque_Power.gd<>uid://bbc85dxa01p4l::::res://sprites/bloque_premios_desacivado.png<>uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png
 bloque_powerUp.tscn::PackedScene::5971601034950980355::1698810069::0::1::::<><>::uid://bbc85dxa01p4l
 bloque_PowerUpM.tscn::PackedScene::3426969343429960572::1698810069::0::1::::<><>::uid://bbc85dxa01p4l
-::res://scenes/Power_Ups/::1698830043
+::res://scenes/Power_Ups/::1698830277
 hongo.gd::GDScript::-1::1698810068::0::1::::<>CharacterBody2D<>::
-hongo.tscn::PackedScene::8313705126990383045::1698830043::0::1::::<><>::uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png<>res://scripts/hongo.gd
+hongo.tscn::PackedScene::8313705126990383045::1698830277::0::1::::<><>::uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png<>res://scripts/hongo.gd
 ::res://scripts/::1698829949
 Camera2D.gd::GDScript::-1::1698810069::0::1::::<>Camera2D<>::
 hongo.gd::GDScript::-1::1698829949::0::1::::<>CharacterBody2D<>::
