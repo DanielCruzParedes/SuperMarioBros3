@@ -10,10 +10,11 @@ func _physics_process(delta):
 	if puedoMoverme == true:
 		detectar()
 		##Cuando el goomba me toca no desaparezco pero si mario lo toca si 
-		for i in get_slide_collision_count():
-			var obj_colisionado=get_slide_collision(i).get_collider()
-			if(obj_colisionado.is_in_group("mario")):
-				obj_colisionado.Muerte()
+		#for i in get_slide_collision_count():
+		#	var obj_colisionado=get_slide_collision(i).get_collider()
+		#	if(obj_colisionado.is_in_group("mario")):
+		#		print("Mario pego en el goomba entonces muere")
+		#		obj_colisionado.Muerte()
 			
 
 		if not is_on_floor():
@@ -42,9 +43,11 @@ func _physics_process(delta):
 	
 	
 func detectar():
+	#para que rebote cuando pegue a los costados
 		if $derecha.is_colliding():
 			pegoDerecha=true
 			pegoIzquierda=false
 		elif $izquierda.is_colliding():
 			pegoIzquierda=true
 			pegoDerecha=false
+			

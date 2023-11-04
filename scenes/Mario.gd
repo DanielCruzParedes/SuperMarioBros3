@@ -9,13 +9,14 @@ var salto_valido=false;
 var tiempo_salto=0.0
 var colision
 
+
+
 func _physics_process(delta):
 	detectar()
 	
 	velocity.y += gravity * delta
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("izquierda", "derecha")
 	#if Input.is_action_pressed("derecha") or Input.is_action_pressed("izquierda"): 
 	velocity.x = direction * SPEED
@@ -36,11 +37,11 @@ func _physics_process(delta):
 			$Animacion.play("idle")
 	
 	if Input.is_action_pressed("speed") and Input.is_action_pressed("derecha") and salto_valido:
-			velocity.x = SPEED+75
-			$Animacion.speed_scale = 2
+		velocity.x = SPEED+75
+		$Animacion.speed_scale = 2
 	elif Input.is_action_pressed("speed") and Input.is_action_pressed("izquierda") and salto_valido:
-			velocity.x = (SPEED*-1)-75
-			$Animacion.speed_scale = 2
+		velocity.x = (SPEED*-1)-75
+		$Animacion.speed_scale = 2
 	else:
 		$Animacion.speed_scale = 1
 	move_and_slide()
@@ -61,28 +62,50 @@ func _physics_process(delta):
 		velocity.y +=175
 		salto_valido=false
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	for i in get_slide_collision_count():
-		var obj_colisionado=get_slide_collision(i).get_collider()
-		if(obj_colisionado.is_in_group("power_Up")):
-			obj_colisionado.queue_free()
-		if obj_colisionado.is_in_group("enemigos"):
-			print("go0ombaaaa")
-			Muerte()
+	#for i in get_slide_collision_count():
+	#	var obj_colisionado=get_slide_collision(i).get_collider()
+		#if(obj_colisionado.is_in_group("power_Up")):
+		#	obj_colisionado.queue_free()
+	#	if obj_colisionado.is_in_group("enemigos"):
+	#		print("go0ombaaaa")
+	#		Muerte()
 	
 	
 func detectar():
+		
 		if $abajo.is_colliding():
 			colision=$abajo.get_collider()
-			if colision.is_in_group("suelos"):
-				salto_valido=true
-			elif colision.is_in_group("hongo"):
-				colision.queue_free()  
-			else:
-				salto_valido=false
+			
+			if colision!=null:	
+				if colision.is_in_group("suelos"):
+					salto_valido=true
+				else:
+					salto_valido=false
+				
+			
+				
 		if $arriba.is_colliding():
 			var colision2=$arriba.get_collider()
-			if colision2.is_in_group("bloques"):
-				colision2.muevete()
+			if colision2!=null:
+				if colision2.is_in_group("bloques"):
+					colision2.muevete()
+				else:
+					pass
+		
+		if $derecha.is_colliding():
+			var colision2=$derecha.get_collider()
+			if colision2!=null:
+				if colision2.is_in_group("enemigos"):
+					Muerte()
+				else:
+					pass
+		if $izquierda.is_colliding():
+			var colision2=$izquierda.get_collider()
+			if colision2!=null:
+				if colision2.is_in_group("enemigos"):
+					Muerte()
+				else:
+					pass
 			
 			
 func Muerte():
@@ -90,3 +113,4 @@ func Muerte():
 	queue_free()
 	
 	#saltar_valido=ha tocado el piso
+	

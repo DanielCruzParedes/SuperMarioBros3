@@ -16,11 +16,11 @@ func _physics_process(delta):
 	if puedoMoverme == true:
 		detectar()
 		##Cuando me tiro encima del hongo no desaparece de todas las otas formas si el mario 
-		for i in get_slide_collision_count():
-			var obj_colisionado=get_slide_collision(i).get_collider()
-			if(obj_colisionado.is_in_group("mario")):
-				print("salto mario en mi")
-				desaparece()
+		#for i in get_slide_collision_count():
+		#	var obj_colisionado=get_slide_collision(i).get_collider()
+		#	if(obj_colisionado.is_in_group("mario")):
+		#		print("salto mario en mi")
+		#		desaparece()
 			
 		if not is_on_floor():
 			velocity.y += gravity * delta
@@ -38,6 +38,10 @@ func _physics_process(delta):
 			queue_free()
 		if $derecha.is_colliding() and $derecha.get_collider().is_in_group("mario"):
 			queue_free()
+		if $arriba.is_colliding() and $arriba.get_collider().is_in_group("mario"):
+			queue_free()
+		if $abajo.is_colliding() and $abajo.get_collider().is_in_group("mario"):
+			queue_free()
 		
 	else:
 		position.y -= 1
@@ -47,7 +51,10 @@ func _physics_process(delta):
 		$colisionHongo.disabled=false
 		
 
+
 func detectar():
+	
+	#para que rebote cuando pegue a los costados
 		if $derecha.is_colliding():
 			pegoDerecha=true
 			pegoIzquierda=false

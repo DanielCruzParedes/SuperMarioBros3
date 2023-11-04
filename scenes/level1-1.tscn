@@ -382,6 +382,16 @@ libraries = {
 [node name="arriba" type="RayCast2D" parent="level-1/Mario"]
 target_position = Vector2(0, -5)
 
+[node name="derecha" type="RayCast2D" parent="level-1/Mario"]
+position = Vector2(5, 8)
+scale = Vector2(1, 8)
+target_position = Vector2(2, 0)
+
+[node name="izquierda" type="RayCast2D" parent="level-1/Mario"]
+position = Vector2(-5, 8)
+scale = Vector2(1, 8)
+target_position = Vector2(-2, 0)
+
 [node name="abajo" type="RayCast2D" parent="level-1/Mario"]
 position = Vector2(0, 15)
 scale = Vector2(2, 2)
@@ -678,4 +688,4 @@ position = Vector2(361, 167)
 position = Vector2(606, 216)
 
 [node name="goomba2" parent="enemigos" instance=ExtResource("9_dvt07")]
-position = Vector2(445, 216)
+position = Vector2(274, 217)
