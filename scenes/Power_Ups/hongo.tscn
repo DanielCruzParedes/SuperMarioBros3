@@ -20,19 +20,21 @@ shape = SubResource("RectangleShape2D_ru6tj")
 disabled = true
 
 [node name="abajo" type="RayCast2D" parent="."]
-position = Vector2(0, 11)
-scale = Vector2(10, 1)
-target_position = Vector2(0, 3)
+position = Vector2(0, 10)
+scale = Vector2(12, 1)
+target_position = Vector2(0, 2)
 
 [node name="derecha" type="RayCast2D" parent="."]
 position = Vector2(8, 2)
-target_position = Vector2(3, 0)
+scale = Vector2(1, 12)
+target_position = Vector2(2, 0)
 
 [node name="izquierda" type="RayCast2D" parent="."]
 position = Vector2(-8, 2)
-target_position = Vector2(-3, 0)
+scale = Vector2(1, 12)
+target_position = Vector2(-2, 0)
 
 [node name="arriba" type="RayCast2D" parent="."]
 position = Vector2(0, -6)
-scale = Vector2(10, 1)
-target_position = Vector2(0, -3)
+scale = Vector2(12, 1)
+target_position = Vector2(0, -2)

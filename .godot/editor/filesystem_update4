@@ -1,11 +1,4 @@
-res://scenes/level1-1.tscn
-res://scripts/hongo.gd
-res://scenes/bloques/bloque_Power.tscn
-res://scenes/Power_Ups/hongo.tscn
 res://scenes/enemigos/goomba.tscn
-res://scenes/Mario.gd
-res://scenes/bloque cafe.gd
-res://scenes/bloque_Monedas.gd
-res://scenes/bloques/bloque_Power.gd
-res://scripts/Camera2D.gd
 res://scenes/enemigos/goomba.gd
+res://scenes/Mario.gd
+res://scenes/level1-1.tscn

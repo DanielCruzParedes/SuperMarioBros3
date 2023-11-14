@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://detgsxucp32nk"]
+[gd_scene load_steps=9 format=3 uid="uid://detgsxucp32nk"]
 
 [ext_resource type="Script" path="res://scenes/enemigos/goomba.gd" id="1_4rkmt"]
 [ext_resource type="Texture2D" uid="uid://8cardx6ejigr" path="res://sprites/goomba.png" id="1_q1gb7"]
+[ext_resource type="Texture2D" uid="uid://bmqk1ks1c12hv" path="res://sprites/goomba_dead.png" id="3_736b4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d714m"]
-size = Vector2(14, 14.8125)
+size = Vector2(14, 13.8125)
 
 [sub_resource type="Animation" id="Animation_sfmhv"]
 length = 0.001
@@ -110,9 +111,50 @@ tracks/3/keys = {
 "values": [Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_ro1ri"]
+resource_name = "dead"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_736b4")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vbnik"]
 _data = {
 "RESET": SubResource("Animation_sfmhv"),
+"dead": SubResource("Animation_ro1ri"),
 "run": SubResource("Animation_g4edd")
 }
 
@@ -125,9 +167,8 @@ texture = ExtResource("1_q1gb7")
 hframes = 2
 
 [node name="colisionGoomba" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.40625)
+position = Vector2(0, 0.90625)
 shape = SubResource("RectangleShape2D_d714m")
-disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

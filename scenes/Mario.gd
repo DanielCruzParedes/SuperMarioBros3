@@ -6,7 +6,6 @@ const JUMP_VELOCITY = -300.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 650
 var salto_valido=false;
-var tiempo_salto=0.0
 var colision
 
 
@@ -62,19 +61,15 @@ func _physics_process(delta):
 		velocity.y +=175
 		salto_valido=false
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	#for i in get_slide_collision_count():
-	#	var obj_colisionado=get_slide_collision(i).get_collider()
-		#if(obj_colisionado.is_in_group("power_Up")):
-		#	obj_colisionado.queue_free()
-	#	if obj_colisionado.is_in_group("enemigos"):
-	#		print("go0ombaaaa")
-	#		Muerte()
 	
 	
 func detectar():
 		
-		if $abajo.is_colliding():
-			colision=$abajo.get_collider()
+		if $abajo.is_colliding() or $abajo2.is_colliding():
+			if $abajo.is_colliding():
+				colision=$abajo.get_collider()
+			elif $abajo2.is_colliding():
+				colision=$abajo2.get_collider()
 			
 			if colision!=null:	
 				if colision.is_in_group("suelos"):
@@ -82,10 +77,20 @@ func detectar():
 				else:
 					salto_valido=false
 				
+				if colision.is_in_group("enemigos"):
+					position.y -= 20
+
+					colision.desaparecer()
+					
 			
 				
-		if $arriba.is_colliding():
-			var colision2=$arriba.get_collider()
+		if $arriba.is_colliding() or $arriba2.is_colliding():
+			var colision2
+			if $arriba.is_colliding():
+				colision2=$arriba.get_collider()
+			elif $arriba.is_colliding():
+				colision2=$arriba2.get_collider()
+				
 			if colision2!=null:
 				if colision2.is_in_group("bloques"):
 					colision2.muevete()
