@@ -115,12 +115,12 @@ func detectar():
 			
 			
 	#saltar_valido=ha tocado el piso
-func InstanceMarioPequeno():
-	if not MarioPequenoInstanciado: 
-		var MarioPequeno = preload("res://scenes/Marios/mario_pequeno.tscn")
-		var MarioPequeno_Instance=MarioPequeno.instantiate()
-		MarioPequeno_Instance.global_position= global_position
-		get_tree().root.add_child(MarioPequeno_Instance)
-		MarioPequenoInstanciado=true
-		queue_free()
+#func InstanceMarioPequeno():
+	#if not MarioPequenoInstanciado: 
+		#var MarioPequeno = preload("res://scenes/Marios/mario_pequeno.tscn")
+		#var MarioPequeno_Instance=MarioPequeno.instantiate()
+		#MarioPequeno_Instance.global_position= global_position
+		#get_tree().root.add_child(MarioPequeno_Instance)
+		#MarioPequenoInstanciado=true
+		#queue_free()
 	
