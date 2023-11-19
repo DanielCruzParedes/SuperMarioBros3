@@ -573,8 +573,10 @@ _data = {
 "run": SubResource("Animation_rxjt2")
 }
 
-[node name="MarioPequeno" type="CharacterBody2D" groups=["mario"]]
+[node name="MarioPequeno" type="CharacterBody2D" groups=["mario", "mario_peque"]]
+position = Vector2(-6, 0)
 script = ExtResource("1_wavbs")
+metadata/_edit_group_ = true
 
 [node name="SpriteMario" type="Sprite2D" parent="."]
 z_index = 1
@@ -608,12 +610,12 @@ position = Vector2(-5, 8)
 scale = Vector2(1, 8)
 target_position = Vector2(-1, 0)
 
-[node name="abajo" type="RayCast2D" parent="."]
+[node name="abajo" type="RayCast2D" parent="." groups=["debajoDeMario"]]
 position = Vector2(-4, 15)
 scale = Vector2(2, 2)
 target_position = Vector2(0, 2.5)
 
-[node name="abajo2" type="RayCast2D" parent="."]
+[node name="abajo2" type="RayCast2D" parent="." groups=["debajoDeMario"]]
 position = Vector2(4, 15)
 scale = Vector2(2, 2)
 target_position = Vector2(0, 2.5)

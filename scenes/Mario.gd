@@ -14,7 +14,6 @@ var MarioGrandeInstanciado=false
 
 func _physics_process(delta):
 	detectar()
-	
 	velocity.y += gravity * delta
 	if Morir==false:
 		# Get the input direction and handle the movement/deceleration.
@@ -147,7 +146,7 @@ func Muerte():
 	#saltar_valido=ha tocado el piso
 func InstanceGrande():
 	if not MarioGrandeInstanciado: 
-		var MarioGrande= preload("res://scenes/Marios/mario_grande.tscn")
+		var MarioGrande= load("res://scenes/Marios/mario_grande.tscn")
 		var Mario_instance= MarioGrande.instantiate()
 		Mario_instance.global_position= global_position
 		get_tree().root.add_child(Mario_instance)

@@ -8,9 +8,9 @@ var gravity = 650
 var salto_valido=false;
 var colision
 var Morir=false
-
 var MarioPequenoInstanciado=false
 
+@export var MarioPeque = load("res://scenes/Marios/mario_pequeno.tscn")
 func _ready():
 	print("soy mario grande")
 	
@@ -71,56 +71,60 @@ func _physics_process(delta):
 	
 func detectar():
 		
-		if $abajo.is_colliding() or $abajo2.is_colliding():
-			if $abajo.is_colliding():
-				colision=$abajo.get_collider()
-			elif $abajo2.is_colliding():
-				colision=$abajo2.get_collider()
+	if $abajo.is_colliding() or $abajo2.is_colliding():
+		if $abajo.is_colliding():
+			colision=$abajo.get_collider()
+		elif $abajo2.is_colliding():
+			colision=$abajo2.get_collider()
 			
-			if colision!=null:	
-				if colision.is_in_group("suelos"):
-					salto_valido=true
-				else:
-					salto_valido=false
+		if colision!=null:
+			if colision.is_in_group("suelos"):
+				salto_valido=true
+			else:
+				salto_valido=false
 				
-				if colision.is_in_group("enemigos"):
-					position.y -= 20
+			if colision.is_in_group("enemigos"):
+				position.y -= 20
 
-					colision.desaparecer()
+				colision.desaparecer()
 		##else:
 			##salto_valido=false
 					
 				
-		if $arriba.is_colliding() or $arriba2.is_colliding():
-			var colision2
-			if $arriba.is_colliding():
-				colision2=$arriba.get_collider()
-			elif $arriba.is_colliding():
-				colision2=$arriba2.get_collider()
+	if $arriba.is_colliding() or $arriba2.is_colliding():
+		var colision2
+		if $arriba.is_colliding():
+			colision2=$arriba.get_collider()
+		elif $arriba.is_colliding():
+			colision2=$arriba2.get_collider()
 				
-			if colision2!=null:
-				if colision2.is_in_group("bloques"):
-					colision2.muevete()
-				else:
-					pass
+		if colision2!=null:
+			if colision2.is_in_group("bloques"):
+				colision2.muevete()
+			else:
+				pass
 		
-		if $derecha.is_colliding():
-			var colision2=$derecha.get_collider()
-			if colision2!=null:
-				pass
-		if $izquierda.is_colliding():
-			var colision2=$izquierda.get_collider()
-			if colision2!=null:
-				pass
+	if $derecha.is_colliding():
+		var colision2=$derecha.get_collider()
+		if colision2!=null:
+			if colision2.is_in_group("enemigos"):
+				InstanceMarioPeque()
+			pass
+	if $izquierda.is_colliding():
+		var colision2=$izquierda.get_collider()
+		if colision2!=null:
+			if colision2.is_in_group("enemigos"):
+				InstanceMarioPeque()
+			pass
 			
-			
+				
 	#saltar_valido=ha tocado el piso
-#func InstanceMarioPequeno():
-	#if not MarioPequenoInstanciado: 
-		#var MarioPequeno = preload("res://scenes/Marios/mario_pequeno.tscn")
-		#var MarioPequeno_Instance=MarioPequeno.instantiate()
-		#MarioPequeno_Instance.global_position= global_position
-		#get_tree().root.add_child(MarioPequeno_Instance)
-		#MarioPequenoInstanciado=true
-		#queue_free()
+	
+func InstanceMarioPeque():
+	var InstanceMario  = MarioPeque.instantiate()
+	InstanceMario.global_position = global_position
+	get_tree().get_nodes_in_group("main")[0].add_child(InstanceMario)
+	Singleton.Inmunidad()
+	queue_free()
+	
 	

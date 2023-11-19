@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://cnm8j01cu7vd7"]
+[gd_scene load_steps=13 format=3 uid="uid://cnm8j01cu7vd7"]
 
 [ext_resource type="Script" path="res://scripts/mario_grande.gd" id="1_5r6d0"]
+[ext_resource type="PackedScene" uid="uid://rkrn2df1s8i8" path="res://scenes/Marios/mario_pequeno.tscn" id="2_rl0xb"]
 [ext_resource type="Texture2D" uid="uid://3sf2r7ri20if" path="res://sprites/run_idle_jump_grande.png" id="4_6kudy"]
 [ext_resource type="Texture2D" uid="uid://bnlywyfs3eg41" path="res://sprites/down_grande.png" id="5_a2jfe"]
 
@@ -759,6 +760,7 @@ _data = {
 [node name="MarioGrande" type="CharacterBody2D" groups=["mario"]]
 position = Vector2(134, 200)
 script = ExtResource("1_5r6d0")
+MarioPeque = ExtResource("2_rl0xb")
 
 [node name="SpriteMario" type="Sprite2D" parent="." groups=["mario"]]
 z_index = 1
@@ -783,12 +785,12 @@ position = Vector2(2, -14)
 target_position = Vector2(0, -4)
 
 [node name="derecha" type="RayCast2D" parent="."]
-position = Vector2(7, 5)
+position = Vector2(4, 5)
 scale = Vector2(1, 8)
 target_position = Vector2(2, 0)
 
 [node name="izquierda" type="RayCast2D" parent="."]
-position = Vector2(-7, 5)
+position = Vector2(-6, 5)
 scale = Vector2(1, 8)
 target_position = Vector2(-1, -0.125)
 
