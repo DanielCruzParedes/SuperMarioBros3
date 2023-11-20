@@ -1,11 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://cb4wanr0fsbfj"]
+[gd_scene load_steps=9 format=3 uid="uid://cb4wanr0fsbfj"]
 
 [ext_resource type="Script" path="res://scenes/bloque_Monedas.gd" id="1_tc5qx"]
 [ext_resource type="Texture2D" uid="uid://bbc85dxa01p4l" path="res://sprites/bloque_premios_desacivado.png" id="2_ipoja"]
 [ext_resource type="Texture2D" uid="uid://c3d8logrgdcso" path="res://sprites/poderes y tiles.png" id="2_ycwkf"]
+[ext_resource type="FontFile" uid="uid://h2lo0venyog8" path="res://fonts/All Star Resort.ttf" id="4_ugmda"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3wms"]
 size = Vector2(16, 16)
+
+[sub_resource type="Animation" id="Animation_pt6t6"]
+resource_name = "moneda"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-3, -28), Vector2(-3, -45)]
+}
+
+[sub_resource type="Animation" id="Animation_5loyq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3, -28)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jmbig"]
+_data = {
+"RESET": SubResource("Animation_5loyq"),
+"moneda": SubResource("Animation_pt6t6")
+}
 
 [node name="bloque_Monedas" type="StaticBody2D" groups=["bloques", "suelos"]]
 position = Vector2(281, 167)
@@ -24,3 +62,19 @@ frame = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_c3wms")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jmbig")
+}
+
+[node name="Label" type="Label" parent="."]
+offset_left = -3.0
+offset_top = -28.0
+offset_right = 165.0
+offset_bottom = 92.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ugmda")
+theme_override_font_sizes/font_size = 100
+text = "200"

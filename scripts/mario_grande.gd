@@ -101,6 +101,8 @@ func detectar():
 		if colision2!=null:
 			if colision2.is_in_group("bloques"):
 				colision2.Destruir()
+			if colision2.is_in_group("aqum_coins"):
+				colision2.muevete()
 			else:
 				pass
 		

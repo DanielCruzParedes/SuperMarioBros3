@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dbxun3dhgvk8n"]
+[gd_scene load_steps=46 format=3 uid="uid://dbxun3dhgvk8n"]
 
 [ext_resource type="Texture2D" uid="uid://njbm3nj8wbn1" path="res://sprites/level_1.png" id="1_6ik2n"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_jfq7o"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cb4wanr0fsbfj" path="res://scenes/bloques/bloque_monedas.tscn" id="5_s6lbr"]
 [ext_resource type="PackedScene" uid="uid://c0ed7ivxk2u3n" path="res://scenes/bloques/bloque_Power.tscn" id="7_sp4qf"]
 [ext_resource type="PackedScene" uid="uid://detgsxucp32nk" path="res://scenes/enemigos/goomba.tscn" id="9_dvt07"]
+[ext_resource type="PackedScene" uid="uid://sehnkbhvxmfr" path="res://scenes/bloque_coin.tscn" id="10_guj8b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wofq8"]
 size = Vector2(1103, 30)
@@ -143,16 +144,6 @@ theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_jfh05")
 theme_override_font_sizes/font_size = 35
 text = "Vidas:"
-
-[node name="Camera2D" type="Camera2D" parent="." groups=["camara"]]
-z_index = 1
-position = Vector2(173, 136)
-ignore_rotation = false
-zoom = Vector2(2.7, 2.7)
-position_smoothing_speed = 100.0
-rotation_smoothing_enabled = true
-drag_horizontal_offset = 0.11
-script = ExtResource("5_2ux4x")
 
 [node name="level-1" type="Node" parent="." groups=["main"]]
 
@@ -367,9 +358,6 @@ position = Vector2(1497, 103)
 [node name="bloque cafe15" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
 position = Vector2(1513, 103)
 
-[node name="bloque cafe16" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(1529, 167)
-
 [node name="bloque cafe17" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
 position = Vector2(1625, 167)
 
@@ -418,6 +406,16 @@ position = Vector2(2777, 167)
 [node name="spawn" type="Marker2D" parent="level-1" groups=["spawnmario"]]
 position = Vector2(77, 191)
 
+[node name="Camera2D" type="Camera2D" parent="level-1" groups=["camara"]]
+z_index = 1
+position = Vector2(173, 136)
+ignore_rotation = false
+zoom = Vector2(2.7, 2.7)
+position_smoothing_speed = 100.0
+rotation_smoothing_enabled = true
+drag_horizontal_offset = 0.11
+script = ExtResource("5_2ux4x")
+
 [node name="bloques moneda" type="Node2D" parent="."]
 
 [node name="bloque_Monedas3" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
@@ -461,3 +459,8 @@ position = Vector2(452, 216)
 
 [node name="goomba2" parent="enemigos" instance=ExtResource("9_dvt07")]
 position = Vector2(572, 216)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="bloque_coin" parent="Node" instance=ExtResource("10_guj8b")]
+position = Vector2(1529, 169)
