@@ -1,8 +1,9 @@
-[gd_scene load_steps=44 format=3 uid="uid://dbxun3dhgvk8n"]
+[gd_scene load_steps=45 format=3 uid="uid://dbxun3dhgvk8n"]
 
 [ext_resource type="Texture2D" uid="uid://njbm3nj8wbn1" path="res://sprites/level_1.png" id="1_6ik2n"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_jfq7o"]
+[ext_resource type="FontFile" uid="uid://h2lo0venyog8" path="res://fonts/All Star Resort.ttf" id="2_jfh05"]
 [ext_resource type="Texture2D" uid="uid://bcsidxexjs6jd" path="res://sprites/nivel.png" id="4_cr56i"]
-[ext_resource type="PackedScene" uid="uid://rkrn2df1s8i8" path="res://scenes/Marios/mario_pequeno.tscn" id="4_qwyg3"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="5_2ux4x"]
 [ext_resource type="PackedScene" uid="uid://tn2ujag8nb2c" path="res://scenes/bloques/bloque_cafe.tscn" id="5_c7n8w"]
 [ext_resource type="PackedScene" uid="uid://cb4wanr0fsbfj" path="res://scenes/bloques/bloque_monedas.tscn" id="5_s6lbr"]
@@ -115,10 +116,37 @@ size = Vector2(16, 16)
 size = Vector2(16, 227)
 
 [node name="main" type="Node" groups=["main"]]
+script = ExtResource("1_jfq7o")
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="vidas" type="Label" parent="GUI"]
+offset_left = 858.0
+offset_top = 11.0
+offset_right = 886.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0.196078, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jfh05")
+theme_override_font_sizes/font_size = 35
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="texto vidas" type="Label" parent="GUI"]
+offset_left = 750.0
+offset_top = 11.0
+offset_right = 858.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0.196078, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jfh05")
+theme_override_font_sizes/font_size = 35
+text = "Vidas:"
 
 [node name="Camera2D" type="Camera2D" parent="." groups=["camara"]]
 z_index = 1
-position = Vector2(229, 137)
+position = Vector2(173, 136)
 ignore_rotation = false
 zoom = Vector2(2.7, 2.7)
 position_smoothing_speed = 100.0
@@ -137,9 +165,6 @@ metadata/_edit_lock_ = true
 visible = false
 position = Vector2(1713, 302)
 texture = ExtResource("4_cr56i")
-
-[node name="MarioPequeno" parent="level-1" instance=ExtResource("4_qwyg3")]
-position = Vector2(102, 198)
 
 [node name="suelo" type="StaticBody2D" parent="level-1" groups=["suelos"]]
 
@@ -390,6 +415,9 @@ position = Vector2(2745, 167)
 [node name="bloque cafe31" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
 position = Vector2(2777, 167)
 
+[node name="spawn" type="Marker2D" parent="level-1" groups=["spawnmario"]]
+position = Vector2(77, 191)
+
 [node name="bloques moneda" type="Node2D" parent="."]
 
 [node name="bloque_Monedas3" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
@@ -429,7 +457,7 @@ position = Vector2(361, 167)
 [node name="enemigos" type="Node" parent="."]
 
 [node name="goomba" parent="enemigos" instance=ExtResource("9_dvt07")]
-position = Vector2(364, 215)
+position = Vector2(452, 216)
 
 [node name="goomba2" parent="enemigos" instance=ExtResource("9_dvt07")]
 position = Vector2(572, 216)

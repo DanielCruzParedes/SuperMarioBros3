@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://df42k56dmpvgk"]
+
+[ext_resource type="Texture2D" uid="uid://kuj7weiiq3lh" path="res://sprites/destruccion bloque.png" id="1_jkj1m"]
+
+[node name="destruccion_bloque" type="Node2D"]
+metadata/_edit_group_ = true
+
+[node name="izq_arriba" type="RigidBody2D" parent="."]
+linear_velocity = Vector2(-75, -150)
+
+[node name="Sprite2D" type="Sprite2D" parent="izq_arriba"]
+position = Vector2(-5, -3)
+scale = Vector2(-0.5, -0.5)
+texture = ExtResource("1_jkj1m")
+
+[node name="der_arriba" type="RigidBody2D" parent="."]
+linear_velocity = Vector2(75, -150)
+
+[node name="Sprite2D" type="Sprite2D" parent="der_arriba"]
+position = Vector2(5, -3)
+scale = Vector2(-0.5, 0.5)
+texture = ExtResource("1_jkj1m")
+
+[node name="izq_abajo" type="RigidBody2D" parent="."]
+gravity_scale = 1.5
+linear_velocity = Vector2(-75, -150)
+
+[node name="Sprite2D" type="Sprite2D" parent="izq_abajo"]
+position = Vector2(-5, 7)
+scale = Vector2(-0.5, 0.5)
+texture = ExtResource("1_jkj1m")
+
+[node name="der_abajo" type="RigidBody2D" parent="."]
+gravity_scale = 1.5
+linear_velocity = Vector2(75, -150)
+
+[node name="Sprite2D" type="Sprite2D" parent="der_abajo"]
+position = Vector2(5, 7)
+scale = Vector2(-0.5, 0.5)
+texture = ExtResource("1_jkj1m")

@@ -1,7 +1,7 @@
 extends StaticBody2D
 
+var bloque_destruir = load("res://scenes/bloques/destruccion_bloque.tscn")
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 	
@@ -13,3 +13,9 @@ func muevete():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
+	
+func Destruir():
+	var bloque_instance = bloque_destruir.instantiate()
+	bloque_instance.position = global_position
+	get_tree().get_nodes_in_group("main")[0].add_child(bloque_instance)
+	queue_free()

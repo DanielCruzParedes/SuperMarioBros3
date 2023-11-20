@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1700350715
+::res://::1700439136
 icon.svg::CompressedTexture2D::3277260073642304561::1700334400::1700334400::1::::<><>::
 ::res://addons/::1700334400
 ::res://addons/godot_gpt/::1700334400
@@ -25,32 +25,37 @@ prompt_input_text.gd::GDScript::-1::1700334400::0::1::::<>TextEdit<>::
 ::res://addons/godot_gpt/examples/image/::1700334400
 image_example.gd::GDScript::-1::1700334400::0::1::::<>Control<>::
 image_example.tscn::PackedScene::8297109785530053854::1700334400::0::1::::<><>::res://addons/godot_gpt/examples/image/image_example.gd<>uid://ckmpdqurkchco
-::res://scenes/::1700335655
-bloque cafe.gd::GDScript::-1::1700334400::0::1::::<>StaticBody2D<>::
-bloque_Monedas.gd::GDScript::-1::1700334400::0::1::::<>StaticBody2D<>::
-level1-1.tscn::PackedScene::7278170613851924671::1700335655::0::1::::<><>::uid://njbm3nj8wbn1::::res://sprites/level_1.png<>uid://bcsidxexjs6jd::::res://sprites/nivel.png<>uid://rkrn2df1s8i8::::res://scenes/Marios/mario_pequeno.tscn<>res://scripts/Camera2D.gd<>uid://tn2ujag8nb2c::::res://scenes/bloques/bloque_cafe.tscn<>uid://cb4wanr0fsbfj::::res://scenes/bloques/bloque_monedas.tscn<>uid://c0ed7ivxk2u3n::::res://scenes/bloques/bloque_Power.tscn<>uid://detgsxucp32nk::::res://scenes/enemigos/goomba.tscn
-Mario.gd::GDScript::-1::1700334400::0::1::::<>CharacterBody2D<>::
-::res://scenes/bloques/::1700334603
-bloque_cafe.tscn::PackedScene::1362100487635560788::1700334400::0::1::::<><>::res://scenes/bloque cafe.gd<>uid://c3d8logrgdcso
+::res://fonts/::1700439153
+All Star Resort.ttf::FontFile::547754338585660405::1700439153::1700439153::1::::<><>::
+::res://scenes/::1700437968
+bloque cafe.gd::GDScript::-1::1700433174::0::1::::<>StaticBody2D<>::
+bloque_Monedas.gd::GDScript::-1::1700433399::0::1::::<>StaticBody2D<>::
+level1-1.tscn::PackedScene::7278170613851924671::1700437968::0::1::::<><>::uid://njbm3nj8wbn1::::res://sprites/level_1.png<>res://scripts/main.gd<>uid://bcsidxexjs6jd::::res://sprites/nivel.png<>res://scripts/Camera2D.gd<>uid://tn2ujag8nb2c::::res://scenes/bloques/bloque_cafe.tscn<>uid://cb4wanr0fsbfj::::res://scenes/bloques/bloque_monedas.tscn<>uid://c0ed7ivxk2u3n::::res://scenes/bloques/bloque_Power.tscn<>uid://detgsxucp32nk::::res://scenes/enemigos/goomba.tscn
+Mario.gd::GDScript::-1::1700437334::0::1::::<>CharacterBody2D<>::
+::res://scenes/bloques/::1700436718
+bloque_cafe.tscn::PackedScene::1362100487635560788::1700436718::0::1::::<><>::res://scenes/bloque cafe.gd<>uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png
 bloque_monedas.tscn::PackedScene::4904233649941333239::1700334400::0::1::::<><>::res://scenes/bloque_Monedas.gd<>uid://bbc85dxa01p4l
 bloque_monedas_power.tscn::PackedScene::5223682518279695667::1700334400::0::1::::<><>::uid://bbc85dxa01p4l
-bloque_Power.gd::GDScript::-1::1700334400::0::1::::<>StaticBody2D<>::
-bloque_Power.tscn::PackedScene::6536059719423664173::1700334603::0::1::::<><>::res://scenes/bloques/bloque_Power.gd<>uid://bbc85dxa01p4l::::res://sprites/bloque_premios_desacivado.png<>uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png
+bloque_Power.gd::GDScript::-1::1700433421::0::1::::<>StaticBody2D<>::
+bloque_Power.tscn::PackedScene::6536059719423664173::1700334603::0::1::::<><>::res://scenes/bloques/bloque_Power.gd<>uid://bbc85dxa01p4l
 bloque_powerUp.tscn::PackedScene::5971601034950980355::1700334400::0::1::::<><>::uid://bbc85dxa01p4l
 bloque_PowerUpM.tscn::PackedScene::3426969343429960572::1700334400::0::1::::<><>::uid://bbc85dxa01p4l
-::res://scenes/enemigos/::1700334603
-goomba.gd::GDScript::-1::1700334400::0::1::::<>CharacterBody2D<>::
-goomba.tscn::PackedScene::7479638288250645056::1700334603::0::1::::<><>::res://scenes/enemigos/goomba.gd<>uid://8cardx6ejigr::::res://sprites/goomba.png<>uid://bmqk1ks1c12hv::::res://sprites/goomba_dead.png
-::res://scenes/Marios/::1700335935
-mario_grande.tscn::PackedScene::5712089954003325914::1700335935::0::1::::<><>::res://scripts/mario_grande.gd<>uid://rkrn2df1s8i8::::res://scenes/Marios/mario_pequeno.tscn<>uid://3sf2r7ri20if::::res://sprites/run_idle_jump_grande.png<>uid://bnlywyfs3eg41::::res://sprites/down_grande.png
-mario_pequeno.tscn::PackedScene::1214910946612476741::1700335655::0::1::::<><>::res://scenes/Mario.gd<>uid://tw16ohwuibg5::::res://sprites/run_idle_jump_pequeño.png<>uid://cuqi2l4i3ojpm::::res://sprites/dead.png
+destruccion_bloque.tscn::PackedScene::7571732064623339650::1700436718::0::1::::<><>::uid://kuj7weiiq3lh::::res://sprites/destruccion bloque.png
+::res://scenes/enemigos/::1700432809
+goomba.gd::GDScript::-1::1700429089::0::1::::<>CharacterBody2D<>::
+goomba.tscn::PackedScene::7479638288250645056::1700432809::0::1::::<><>::res://scenes/enemigos/goomba.gd<>uid://8cardx6ejigr::::res://sprites/goomba.png<>uid://bmqk1ks1c12hv::::res://sprites/goomba_dead.png
+::res://scenes/Marios/::1700437968
+mario_grande.tscn::PackedScene::5712089954003325914::1700437968::0::1::::<><>::res://scripts/mario_grande.gd<>uid://rkrn2df1s8i8::::res://scenes/Marios/mario_pequeno.tscn<>uid://3sf2r7ri20if::::res://sprites/run_idle_jump_grande.png<>uid://bnlywyfs3eg41::::res://sprites/down_grande.png
+mario_pequeno.tscn::PackedScene::1214910946612476741::1700437968::0::1::::<><>::res://scenes/Mario.gd<>uid://tw16ohwuibg5::::res://sprites/run_idle_jump_pequeño.png<>uid://cuqi2l4i3ojpm::::res://sprites/dead.png
 ::res://scenes/Power_Ups/::1700334603
 hongo.gd::GDScript::-1::1700334400::0::1::::<>CharacterBody2D<>::
-hongo.tscn::PackedScene::8313705126990383045::1700334603::0::1::::<><>::uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png<>res://scripts/hongo.gd
-::res://scripts/::1700335616
-Camera2D.gd::GDScript::-1::1700334400::0::1::::<>Camera2D<>::
+hongo.tscn::PackedScene::8313705126990383045::1700334603::0::1::::<><>::uid://c3d8logrgdcso
+::res://scripts/::1700437388
+Camera2D.gd::GDScript::-1::1700430051::0::1::::<>Camera2D<>::
 hongo.gd::GDScript::-1::1700334400::0::1::::<>CharacterBody2D<>::
-mario_grande.gd::GDScript::-1::1700335616::0::1::::<>CharacterBody2D<>::
+main.gd::GDScript::-1::1700437388::0::1::::<>Node<>::
+mario_grande.gd::GDScript::-1::1700433199::0::1::::<>CharacterBody2D<>::
+Singleton.gd::GDScript::-1::1700434559::0::1::::<>Node<>::
 ::res://sprites/::1700334400
 bloque_premios_desacivado.png::CompressedTexture2D::2462795710552693825::1700334400::1700334400::1::::<><>::
 dead.png::CompressedTexture2D::6210182859547011742::1700334400::1700334400::1::::<><>::

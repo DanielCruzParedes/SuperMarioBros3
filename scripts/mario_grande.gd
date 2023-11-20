@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 100.0
+const SPEED = 70.0
 const JUMP_VELOCITY = -300.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -100,7 +100,7 @@ func detectar():
 				
 		if colision2!=null:
 			if colision2.is_in_group("bloques"):
-				colision2.muevete()
+				colision2.Destruir()
 			else:
 				pass
 		

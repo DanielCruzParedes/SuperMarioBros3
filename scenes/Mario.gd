@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 100.0
+const SPEED = 70.0
 const JUMP_VELOCITY = -300.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -11,6 +11,10 @@ var Morir=false
 
 
 var MarioGrandeInstanciado=false
+
+func _ready():
+	get_tree().get_nodes_in_group("camara")[0].puedo_seguir=true
+
 
 func _physics_process(delta):
 	detectar()
@@ -142,6 +146,7 @@ func Muerte():
 	$Animacion.play("dead")
 	await(get_tree().create_timer(5).timeout)
 	queue_free()
+	get_tree().get_nodes_in_group("main")[0].Respawn()
 	
 	#saltar_valido=ha tocado el piso
 func InstanceGrande():

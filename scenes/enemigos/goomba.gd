@@ -6,7 +6,8 @@ var pegoIzquierda=false
 var puedoMoverme = true
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-	
+func _ready():
+	set_physics_process(false)
 	
 func _physics_process(delta):
 	detectar()
@@ -48,3 +49,7 @@ func desaparecer():
 	await(get_tree().create_timer(0.4).timeout)
 	queue_free()
 	
+
+
+func _on_visible_on_screen_notifier_2d_screen_entered():
+	set_physics_process(true)

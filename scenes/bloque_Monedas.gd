@@ -12,6 +12,8 @@ func muevete():
 		await(get_tree().create_timer(0.12).timeout)
 		position.y+=3
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func Destruir():
+	muevete()
+
 func _process(_delta):
 	pass

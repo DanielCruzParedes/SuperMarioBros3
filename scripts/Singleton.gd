@@ -2,6 +2,7 @@ extends Node
 
 var mario
 var goombas
+var spr
 
 func _ready():
 	pass
@@ -61,13 +62,74 @@ func activarRaycasts(cosa):
 func Inmunidad():
 	mario = get_tree().get_nodes_in_group("mario_peque")[0]
 	goombas = get_tree().get_nodes_in_group("enemigos")
-	
+	spr = get_tree().get_nodes_in_group("spr")[0]
 	#agrega la collision exception a todos los goombas
 	for goomba in goombas:
 		mario.add_collision_exception_with(goomba)
-		
 	desactivarRaycasts(mario) 
+	EfectoInmunidad()
 	await get_tree().create_timer(3).timeout 
 	activarRaycasts(mario)
 	
-	
+func EfectoInmunidad():
+	spr.modulate = Color(1,1,1,1)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,0.5)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,1)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,0.5)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,1)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,0.5)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,1)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,0.5)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,1)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,0.5)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,1)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,0.5)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,1)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,0.5)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,1)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,0.5)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,1)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,0.5)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,1)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,0.5)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,1)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,0.5)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,1)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,0.5)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,1)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,0.5)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,1)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,0.5)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,1)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,0.5)
+	await get_tree().create_timer(0.1).timeout 
+	spr.modulate = Color(1,1,1,1)

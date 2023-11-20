@@ -21,6 +21,7 @@ Singleton="*res://scripts/Singleton.gd"
 
 [display]
 
+window/size/viewport_width=900
 window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
