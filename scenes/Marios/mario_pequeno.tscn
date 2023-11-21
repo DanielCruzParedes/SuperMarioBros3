@@ -574,6 +574,7 @@ _data = {
 }
 
 [node name="MarioPequeno" type="CharacterBody2D" groups=["mario", "mario_peque"]]
+z_index = 2
 position = Vector2(-6, 0)
 script = ExtResource("1_wavbs")
 metadata/_edit_group_ = true

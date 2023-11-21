@@ -1,77 +1,100 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1700445359
-icon.svg::CompressedTexture2D::3277260073642304561::1700445304::1700445304::1::::<><>::
-::res://addons/::1700445304
-::res://addons/godot_gpt/::1700445304
-gpt_chat_request.gd::GDScript::-1::1700445304::0::1::::GPTChatRequest<>GPTRequest<>::
-gpt_request.gd::GDScript::-1::1700445304::0::1::::GPTRequest<>HTTPRequest<>::
-icon.png::CompressedTexture2D::4968090397781171919::1700445304::1700445304::1::::<><>::
-open_ai_image_request.gd::GDScript::-1::1700445304::0::1::::OpenAIImageRequest<>HTTPRequest<>::
-plugin.cfg::TextFile::-1::1700445304::0::1::::<><>::
-::res://addons/godot_gpt/examples/::1700445304
-example.gd::GDScript::-1::1700445304::0::1::::<>Control<>::
-example.tscn::PackedScene::6055311454055297614::1700445304::0::1::::<><>::res://addons/godot_gpt/examples/example.gd<>uid://d4jcuwb3v5hfi::::res://addons/godot_gpt/examples/chat/chat_example.tscn<>uid://dqhggk7mxo215::::res://addons/godot_gpt/examples/image/image_example.tscn
-::res://addons/godot_gpt/examples/chat/::1700445304
-chat_example.gd::GDScript::-1::1700445304::0::1::::<>Control<>::
-chat_example.tscn::PackedScene::9213476224592361038::1700445304::0::1::::<><>::res://addons/godot_gpt/examples/chat/chat_example.gd<>uid://di8cv15276ai6::::res://addons/godot_gpt/examples/chat/chat_entry/chat_entry.tscn<>res://addons/godot_gpt/gpt_chat_request.gd<>uid://db4dkaa7rodme::::res://addons/godot_gpt/examples/common/prompt_input/prompt_input.tscn
-::res://addons/godot_gpt/examples/chat/chat_entry/::1700445304
-chat_entry.gd::GDScript::-1::1700445304::0::1::::<>PanelContainer<>::
-chat_entry.tscn::PackedScene::7789057614947044743::1700445304::0::1::::<><>::res://addons/godot_gpt/examples/chat/chat_entry/chat_entry.gd
-::res://addons/godot_gpt/examples/common/::1700445304
-::res://addons/godot_gpt/examples/common/prompt_input/::1700445304
-prompt_input.gd::GDScript::-1::1700445304::0::1::::<>HBoxContainer<>::
-prompt_input.tscn::PackedScene::5500419321143997886::1700445304::0::1::::<><>::res://addons/godot_gpt/examples/common/prompt_input/prompt_input_text.gd<>res://addons/godot_gpt/examples/common/prompt_input/prompt_input.gd
-prompt_input_text.gd::GDScript::-1::1700445304::0::1::::<>TextEdit<>::
-::res://addons/godot_gpt/examples/image/::1700445304
-image_example.gd::GDScript::-1::1700445304::0::1::::<>Control<>::
-image_example.tscn::PackedScene::8297109785530053854::1700445304::0::1::::<><>::res://addons/godot_gpt/examples/image/image_example.gd<>uid://ckmpdqurkchco::::res://addons/godot_gpt/examples/common/prompt_input/prompt_input.tscn<>res://addons/godot_gpt/open_ai_image_request.gd
-::res://fonts/::1700445304
-All Star Resort.ttf::FontFile::547754338585660405::1700445304::1700445304::1::::<><>::
-::res://scenes/::1700460592
-bloque cafe.gd::GDScript::-1::1700445304::0::1::::<>StaticBody2D<>::
-bloque_Monedas.gd::GDScript::-1::1700456310::0::1::::<>StaticBody2D<>::
-level1-1.tscn::PackedScene::7278170613851924671::1700460592::0::1::::<><>::uid://njbm3nj8wbn1::::res://sprites/level_1.png<>res://scripts/main.gd<>uid://h2lo0venyog8::::res://fonts/All Star Resort.ttf<>uid://bcsidxexjs6jd::::res://sprites/nivel.png<>res://scripts/Camera2D.gd<>uid://tn2ujag8nb2c::::res://scenes/bloques/bloque_cafe.tscn<>uid://cb4wanr0fsbfj::::res://scenes/bloques/bloque_monedas.tscn<>uid://c0ed7ivxk2u3n::::res://scenes/bloques/bloque_Power.tscn<>uid://detgsxucp32nk::::res://scenes/enemigos/goomba.tscn<>uid://sehnkbhvxmfr::::res://scenes/bloque_coin.tscn
-Mario.gd::GDScript::-1::1700452002::0::1::::<>CharacterBody2D<>::
-bloque_coin.tscn::PackedScene::1272105457896285843::1700460592::0::1::::<><>::res://scripts/bloque_coin.gd<>uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png<>uid://h2lo0venyog8::::res://fonts/All Star Resort.ttf<>uid://bbc85dxa01p4l::::res://sprites/bloque_premios_desacivado.png
-menu.tscn::PackedScene::3664946261515690865::1700460592::0::1::::<><>::uid://h2lo0venyog8::::res://fonts/All Star Resort.ttf<>res://scripts/menu.gd<>uid://dc2nb4mvbcrdl::::res://sprites/mario menu.png
-::res://scenes/bloques/::1700460592
-bloque_cafe.tscn::PackedScene::1362100487635560788::1700460592::0::1::::<><>::res://scenes/bloque cafe.gd<>uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png
-bloque_monedas.tscn::PackedScene::4904233649941333239::1700460592::0::1::::<><>::res://scenes/bloque_Monedas.gd<>uid://bbc85dxa01p4l::::res://sprites/bloque_premios_desacivado.png<>uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png<>uid://h2lo0venyog8::::res://fonts/All Star Resort.ttf
-bloque_monedas_power.tscn::PackedScene::5223682518279695667::1700445304::0::1::::<><>::uid://bbc85dxa01p4l::::res://sprites/bloque_premios_desacivado.png<>uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png
-bloque_Power.gd::GDScript::-1::1700445304::0::1::::<>StaticBody2D<>::
-bloque_Power.tscn::PackedScene::6536059719423664173::1700445304::0::1::::<><>::res://scenes/bloques/bloque_Power.gd<>uid://bbc85dxa01p4l::::res://sprites/bloque_premios_desacivado.png<>uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png
-bloque_powerUp.tscn::PackedScene::5971601034950980355::1700445304::0::1::::<><>::uid://bbc85dxa01p4l::::res://sprites/bloque_premios_desacivado.png<>uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png
-bloque_PowerUpM.tscn::PackedScene::3426969343429960572::1700445304::0::1::::<><>::uid://bbc85dxa01p4l::::res://sprites/bloque_premios_desacivado.png<>uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png
-destruccion_bloque.tscn::PackedScene::7571732064623339650::1700445304::0::1::::<><>::uid://kuj7weiiq3lh::::res://sprites/destruccion bloque.png
-::res://scenes/enemigos/::1700460592
-goomba.gd::GDScript::-1::1700445304::0::1::::<>CharacterBody2D<>::
-goomba.tscn::PackedScene::7479638288250645056::1700460592::0::1::::<><>::res://scenes/enemigos/goomba.gd<>uid://8cardx6ejigr::::res://sprites/goomba.png<>uid://bmqk1ks1c12hv::::res://sprites/goomba_dead.png<>uid://h2lo0venyog8::::res://fonts/All Star Resort.ttf
-::res://scenes/Marios/::1700460592
-mario_grande.tscn::PackedScene::5712089954003325914::1700460592::0::1::::<><>::res://scripts/mario_grande.gd<>uid://rkrn2df1s8i8::::res://scenes/Marios/mario_pequeno.tscn<>uid://3sf2r7ri20if::::res://sprites/run_idle_jump_grande.png<>uid://bnlywyfs3eg41::::res://sprites/down_grande.png
-mario_pequeno.tscn::PackedScene::1214910946612476741::1700460592::0::1::::<><>::res://scenes/Mario.gd<>uid://tw16ohwuibg5::::res://sprites/run_idle_jump_pequeño.png<>uid://cuqi2l4i3ojpm::::res://sprites/dead.png
-::res://scenes/Power_Ups/::1700445304
-hongo.gd::GDScript::-1::1700445304::0::1::::<>CharacterBody2D<>::
-hongo.tscn::PackedScene::8313705126990383045::1700445304::0::1::::<><>::uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png<>res://scripts/hongo.gd
-::res://scripts/::1700459238
-Camera2D.gd::GDScript::-1::1700445304::0::1::::<>Camera2D<>::
-hongo.gd::GDScript::-1::1700445304::0::1::::<>CharacterBody2D<>::
-main.gd::GDScript::-1::1700445304::0::1::::<>Node<>::
-mario_grande.gd::GDScript::-1::1700452002::0::1::::<>CharacterBody2D<>::
-bloque_coin.gd::GDScript::-1::1700458973::0::1::::<>StaticBody2D<>::
-menu.gd::GDScript::-1::1700459238::0::1::::<>Control<>::
-Singleton.gd::GDScript::-1::1700445304::0::1::::<>Node<>::
-::res://sprites/::1700460682
-bloque_premios_desacivado.png::CompressedTexture2D::2462795710552693825::1700445304::1700445304::1::::<><>::
-dead.png::CompressedTexture2D::6210182859547011742::1700445304::1700445304::1::::<><>::
-destruccion bloque.png::CompressedTexture2D::743780751869130733::1700445304::1700445304::1::::<><>::
-down_grande.png::CompressedTexture2D::3323081570714328172::1700445304::1700445304::1::::<><>::
-fondo2.png::CompressedTexture2D::8361214467528392606::1700460663::1700460683::1::::<><>::
-goomba.png::CompressedTexture2D::2320391148574330149::1700445304::1700445304::1::::<><>::
-goomba_dead.png::CompressedTexture2D::3262371006208666015::1700445304::1700445304::1::::<><>::
-level_1.png::CompressedTexture2D::931118004790729848::1700445304::1700445304::1::::<><>::
-mario menu.png::CompressedTexture2D::7356170587085236597::1700460297::1700460317::1::::<><>::
-nivel.png::CompressedTexture2D::2564449479140144561::1700445304::1700445304::1::::<><>::
-poderes y tiles.png::CompressedTexture2D::6746346172383804946::1700445304::1700445304::1::::<><>::
-run_idle_jump_flor de fuego.png::CompressedTexture2D::6250780478884905341::1700445304::1700445304::1::::<><>::
-run_idle_jump_grande.png::CompressedTexture2D::2002799165952124273::1700445304::1700445304::1::::<><>::
-run_idle_jump_pequeño.png::CompressedTexture2D::1380639088302065006::1700445304::1700445304::1::::<><>::
+::res://::1700524767
+icon.svg::CompressedTexture2D::3277260073642304561::1700334400::1700334400::1::::<><>::
+::res://addons/::1700334400
+::res://addons/godot_gpt/::1700334400
+gpt_chat_request.gd::GDScript::-1::1700334400::0::1::::GPTChatRequest<>GPTRequest<>::
+gpt_request.gd::GDScript::-1::1700334400::0::1::::GPTRequest<>HTTPRequest<>::
+icon.png::CompressedTexture2D::4968090397781171919::1700334400::1700334400::1::::<><>::
+open_ai_image_request.gd::GDScript::-1::1700334400::0::1::::OpenAIImageRequest<>HTTPRequest<>::
+plugin.cfg::TextFile::-1::1700334400::0::1::::<><>::
+::res://addons/godot_gpt/examples/::1700334400
+example.gd::GDScript::-1::1700334400::0::1::::<>Control<>::
+example.tscn::PackedScene::6055311454055297614::1700334400::0::1::::<><>::res://addons/godot_gpt/examples/example.gd<>uid://d4jcuwb3v5hfi
+::res://addons/godot_gpt/examples/chat/::1700334400
+chat_example.gd::GDScript::-1::1700334400::0::1::::<>Control<>::
+chat_example.tscn::PackedScene::9213476224592361038::1700334400::0::1::::<><>::res://addons/godot_gpt/examples/chat/chat_example.gd<>uid://di8cv15276ai6
+::res://addons/godot_gpt/examples/chat/chat_entry/::1700334400
+chat_entry.gd::GDScript::-1::1700334400::0::1::::<>PanelContainer<>::
+chat_entry.tscn::PackedScene::7789057614947044743::1700334400::0::1::::<><>::res://addons/godot_gpt/examples/chat/chat_entry/chat_entry.gd
+::res://addons/godot_gpt/examples/common/::1700334400
+::res://addons/godot_gpt/examples/common/prompt_input/::1700334400
+prompt_input.gd::GDScript::-1::1700334400::0::1::::<>HBoxContainer<>::
+prompt_input.tscn::PackedScene::5500419321143997886::1700334400::0::1::::<><>::res://addons/godot_gpt/examples/common/prompt_input/prompt_input_text.gd<>res://addons/godot_gpt/examples/common/prompt_input/prompt_input.gd
+prompt_input_text.gd::GDScript::-1::1700334400::0::1::::<>TextEdit<>::
+::res://addons/godot_gpt/examples/image/::1700334400
+image_example.gd::GDScript::-1::1700334400::0::1::::<>Control<>::
+image_example.tscn::PackedScene::8297109785530053854::1700334400::0::1::::<><>::res://addons/godot_gpt/examples/image/image_example.gd<>uid://ckmpdqurkchco
+::res://fonts/::1700439153
+All Star Resort.ttf::FontFile::547754338585660405::1700439153::1700439153::1::::<><>::
+::res://scenes/::1700524392
+bloque cafe.gd::GDScript::-1::1700433174::0::1::::<>StaticBody2D<>::
+bloque_coin.tscn::PackedScene::1272105457896285843::1700524392::0::1::::<><>::res://scripts/bloque_coin.gd<>uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png<>uid://h2lo0venyog8::::res://fonts/All Star Resort.ttf<>uid://bbc85dxa01p4l::::res://sprites/bloque_premios_desacivado.png
+bloque_Monedas.gd::GDScript::-1::1700491298::0::1::::<>StaticBody2D<>::
+level1-1.tscn::PackedScene::7278170613851924671::1700524278::0::1::::<><>::uid://njbm3nj8wbn1::::res://sprites/level_1.png<>res://scripts/main.gd<>uid://h2lo0venyog8::::res://fonts/All Star Resort.ttf<>uid://bcsidxexjs6jd::::res://sprites/nivel.png<>res://scripts/Camera2D.gd<>uid://tn2ujag8nb2c::::res://scenes/bloques/bloque_cafe.tscn<>uid://cb4wanr0fsbfj::::res://scenes/bloques/bloque_monedas.tscn<>uid://c0ed7ivxk2u3n::::res://scenes/bloques/bloque_Power.tscn<>uid://detgsxucp32nk::::res://scenes/enemigos/goomba.tscn<>uid://sehnkbhvxmfr::::res://scenes/bloque_coin.tscn
+Mario.gd::GDScript::-1::1700523126::0::1::::<>CharacterBody2D<>::
+menu.tscn::PackedScene::3664946261515690865::1700524278::0::1::::<><>::uid://h2lo0venyog8::::res://fonts/All Star Resort.ttf<>res://scripts/menu.gd<>uid://dreh8lxdk1yqo::::res://sprites/fondo2.png
+::res://scenes/bloques/::1700524278
+bloque_cafe.tscn::PackedScene::1362100487635560788::1700491352::0::1::::<><>::res://scenes/bloque cafe.gd<>uid://c3d8logrgdcso
+bloque_monedas.tscn::PackedScene::4904233649941333239::1700491352::0::1::::<><>::res://scenes/bloque_Monedas.gd<>uid://bbc85dxa01p4l
+bloque_monedas_power.tscn::PackedScene::5223682518279695667::1700334400::0::1::::<><>::uid://bbc85dxa01p4l
+bloque_Power.gd::GDScript::-1::1700523664::0::1::::<>StaticBody2D<>::
+bloque_Power.tscn::PackedScene::6536059719423664173::1700524278::0::1::::<><>::res://scenes/bloques/bloque_Power.gd<>uid://bbc85dxa01p4l::::res://sprites/bloque_premios_desacivado.png<>uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png<>uid://dqphrkfv0vnld::::res://scenes/Power_Ups/hongo.tscn
+bloque_powerUp.tscn::PackedScene::5971601034950980355::1700334400::0::1::::<><>::uid://bbc85dxa01p4l
+bloque_PowerUpM.tscn::PackedScene::3426969343429960572::1700334400::0::1::::<><>::uid://bbc85dxa01p4l
+destruccion_bloque.tscn::PackedScene::7571732064623339650::1700436718::0::1::::<><>::uid://kuj7weiiq3lh
+::res://scenes/enemigos/::1700491352
+goomba.gd::GDScript::-1::1700429089::0::1::::<>CharacterBody2D<>::
+goomba.tscn::PackedScene::7479638288250645056::1700491352::0::1::::<><>::res://scenes/enemigos/goomba.gd<>uid://8cardx6ejigr
+::res://scenes/Marios/::1700524278
+mario_grande.tscn::PackedScene::5712089954003325914::1700524278::0::1::::<><>::res://scripts/mario_grande.gd<>uid://rkrn2df1s8i8::::res://scenes/Marios/mario_pequeno.tscn<>uid://3sf2r7ri20if::::res://sprites/run_idle_jump_grande.png<>uid://bnlywyfs3eg41::::res://sprites/down_grande.png
+mario_pequeno.tscn::PackedScene::1214910946612476741::1700524278::0::1::::<><>::res://scenes/Mario.gd<>uid://tw16ohwuibg5::::res://sprites/run_idle_jump_pequeño.png<>uid://cuqi2l4i3ojpm::::res://sprites/dead.png
+::res://scenes/Power_Ups/::1700524278
+hongo.gd::GDScript::-1::1700334400::0::1::::<>CharacterBody2D<>::
+hongo.tscn::PackedScene::8313705126990383045::1700524278::0::1::::<><>::uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png<>res://scripts/hongo.gd
+::res://scripts/::1700524278
+bloque_coin.gd::GDScript::-1::1700524278::0::1::::<>StaticBody2D<>::
+Camera2D.gd::GDScript::-1::1700430051::0::1::::<>Camera2D<>::
+hongo.gd::GDScript::-1::1700523126::0::1::::<>CharacterBody2D<>::
+main.gd::GDScript::-1::1700493453::0::1::::<>Node<>::
+mario_grande.gd::GDScript::-1::1700522845::0::1::::<>CharacterBody2D<>::
+menu.gd::GDScript::-1::1700491298::0::1::::<>Control<>::
+Singleton.gd::GDScript::-1::1700523126::0::1::::<>Node<>::
+::res://sound_effects/::1700491474
+smb_1-up.wav::AudioStreamWAV::5095027024248340912::1700491474::1700491474::1::::<><>::
+smb_bowserfalls.wav::AudioStreamWAV::2741473847487243434::1700491474::1700491474::1::::<><>::
+smb_bowserfire.wav::AudioStreamWAV::4597165022844941251::1700491474::1700491474::1::::<><>::
+smb_breakblock.wav::AudioStreamWAV::8292379351083085039::1700491474::1700491474::1::::<><>::
+smb_bump.wav::AudioStreamWAV::8976777471303310::1700491474::1700491474::1::::<><>::
+smb_coin.wav::AudioStreamWAV::5797450968461474561::1700491474::1700491474::1::::<><>::
+smb_fireball.wav::AudioStreamWAV::6444527527685761634::1700491474::1700491474::1::::<><>::
+smb_flagpole.wav::AudioStreamWAV::1291010296173757281::1700491474::1700491474::1::::<><>::
+smb_gameover.wav::AudioStreamWAV::734474658171291892::1700491474::1700491474::1::::<><>::
+smb_jump-small.wav::AudioStreamWAV::8728052965465963651::1700491474::1700491474::1::::<><>::
+smb_jump-super.wav::AudioStreamWAV::3217457557437550034::1700491474::1700491474::1::::<><>::
+smb_kick.wav::AudioStreamWAV::372456329511336822::1700491474::1700491474::1::::<><>::
+smb_mariodie.wav::AudioStreamWAV::8803314758107755834::1700491474::1700491474::1::::<><>::
+smb_pause.wav::AudioStreamWAV::7490761424657110561::1700491474::1700491474::1::::<><>::
+smb_pipe.wav::AudioStreamWAV::6521450929677449144::1700491474::1700491474::1::::<><>::
+smb_powerup.wav::AudioStreamWAV::3854151574081641305::1700491474::1700491474::1::::<><>::
+smb_powerup_appears.wav::AudioStreamWAV::7516984763090351207::1700491474::1700491474::1::::<><>::
+smb_stage_clear.wav::AudioStreamWAV::5018826076000188474::1700491474::1700491474::1::::<><>::
+smb_stomp.wav::AudioStreamWAV::8775982759632464260::1700491474::1700491474::1::::<><>::
+smb_warning.wav::AudioStreamWAV::6346692789410962967::1700491474::1700491474::1::::<><>::
+smb_world_clear.wav::AudioStreamWAV::8059666646113734895::1700491474::1700491474::1::::<><>::
+::res://sprites/::1700524789
+bloque_premios_desacivado.png::CompressedTexture2D::2462795710552693825::1700334400::1700334400::1::::<><>::
+coin.png::CompressedTexture2D::4587439143792498050::1700524789::1700524789::1::::<><>::
+dead.png::CompressedTexture2D::6210182859547011742::1700334400::1700334400::1::::<><>::
+destruccion bloque.png::CompressedTexture2D::743780751869130733::1700334400::1700334400::1::::<><>::
+down_grande.png::CompressedTexture2D::3323081570714328172::1700334400::1700334400::1::::<><>::
+fondo2.png::CompressedTexture2D::8361214467528392606::1700491298::1700491298::1::::<><>::
+goomba.png::CompressedTexture2D::2320391148574330149::1700334400::1700334400::1::::<><>::
+goomba_dead.png::CompressedTexture2D::3262371006208666015::1700334400::1700334400::1::::<><>::
+level_1.png::CompressedTexture2D::931118004790729848::1700334400::1700334400::1::::<><>::
+mario menu.png::CompressedTexture2D::7356170587085236597::1700491298::1700491298::1::::<><>::
+nivel.png::CompressedTexture2D::2564449479140144561::1700334400::1700334400::1::::<><>::
+poderes y tiles.png::CompressedTexture2D::6746346172383804946::1700334400::1700334400::1::::<><>::
+run_idle_jump_flor de fuego.png::CompressedTexture2D::6250780478884905341::1700334400::1700334400::1::::<><>::
+run_idle_jump_grande.png::CompressedTexture2D::2002799165952124273::1700334400::1700334400::1::::<><>::
+run_idle_jump_pequeño.png::CompressedTexture2D::1380639088302065006::1700334400::1700334400::1::::<><>::

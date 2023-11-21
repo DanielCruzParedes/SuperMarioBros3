@@ -140,15 +140,29 @@ func detectar():
 				else:
 					pass
 			
-			
+func desactivarPhysicsProcesses():
+	var goombas = get_tree().get_nodes_in_group("enemigos")
+	for goomba in goombas:
+		goomba.set_physics_process(false)
+	var hongos = get_tree().get_nodes_in_group("power_Up")
+	for hongo in hongos:
+		hongo.set_physics_process(false)
+
 func Muerte():
 	Morir=true
 	get_tree().get_nodes_in_group("camara")[0].puedo_seguir=false
-	
 	$Animacion.play("dead")
+	$arriba.enabled=false
+	$arriba2.enabled=false
+	$derecha.enabled=false
+	$izquierda.enabled=false
+	$abajo.enabled=false
+	$abajo2.enabled=false
+	desactivarPhysicsProcesses() #para dejar todo quieto
 	await(get_tree().create_timer(5).timeout)
 	queue_free()
-	get_tree().get_nodes_in_group("main")[0].Respawn()
+	
+	Singleton.Respawn()
 	
 	#saltar_valido=ha tocado el piso
 func InstanceGrande():

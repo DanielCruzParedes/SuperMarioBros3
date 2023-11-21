@@ -128,5 +128,6 @@ func InstanceMarioPeque():
 	get_tree().get_nodes_in_group("main")[0].add_child(InstanceMario)
 	Singleton.Inmunidad()
 	queue_free()
-	
-	
+
+func InstangeGrande():
+	pass

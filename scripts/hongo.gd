@@ -9,6 +9,7 @@ var puedoMoverme = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+
 func muevete():
 	pass
 
@@ -63,7 +64,9 @@ func detectar():
 			pegoDerecha=false
 			
 func desaparece():
+	$colisionHongo.queue_free()
 	queue_free()
+	
 	
 func colision_con_mario(colision_mario):
 	if not colision_mario.is_queued_for_deletion() and colision_mario.is_in_group("mario"):

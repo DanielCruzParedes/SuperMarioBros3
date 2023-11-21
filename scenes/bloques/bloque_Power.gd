@@ -4,6 +4,8 @@ var puede_moverse=true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$hongo.set_physics_process(false)
+	$hongo.visible = false
 	pass # Replace with function body.
 func muevete():
 	if puede_moverse:
@@ -12,7 +14,10 @@ func muevete():
 		$activado.visible=false
 		await(get_tree().create_timer(0.12).timeout)
 		position.y+=3
-		instanciar()
+		$hongo.set_physics_process(true)
+		$hongo.visible = true
+		
+		#instanciar()
 
 func instanciar():
 	if not hongo_instanciado:

@@ -121,7 +121,7 @@ script = ExtResource("1_jfq7o")
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
-[node name="vidas" type="Label" parent="GUI"]
+[node name="vidas" type="Label" parent="GUI" groups=["vidas"]]
 offset_left = 858.0
 offset_top = 11.0
 offset_right = 886.0
@@ -404,7 +404,7 @@ position = Vector2(2745, 167)
 position = Vector2(2777, 167)
 
 [node name="spawn" type="Marker2D" parent="level-1" groups=["spawnmario"]]
-position = Vector2(77, 191)
+position = Vector2(155, 191)
 
 [node name="Camera2D" type="Camera2D" parent="level-1" groups=["camara"]]
 z_index = 1

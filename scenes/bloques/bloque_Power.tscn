@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0ed7ivxk2u3n"]
+[gd_scene load_steps=6 format=3 uid="uid://c0ed7ivxk2u3n"]
 
 [ext_resource type="Script" path="res://scenes/bloques/bloque_Power.gd" id="1_f1h2w"]
 [ext_resource type="Texture2D" uid="uid://bbc85dxa01p4l" path="res://sprites/bloque_premios_desacivado.png" id="2_rxonq"]
 [ext_resource type="Texture2D" uid="uid://c3d8logrgdcso" path="res://sprites/poderes y tiles.png" id="3_maciy"]
+[ext_resource type="PackedScene" uid="uid://dqphrkfv0vnld" path="res://scenes/Power_Ups/hongo.tscn" id="4_qq2nv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3wms"]
 size = Vector2(16, 16)
@@ -27,3 +28,6 @@ shape = SubResource("RectangleShape2D_c3wms")
 
 [node name="spawn_hongo" type="Marker2D" parent="."]
 z_index = 1
+
+[node name="hongo" parent="." instance=ExtResource("4_qq2nv")]
+z_index = -1

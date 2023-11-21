@@ -1,13 +1,2 @@
-res://scenes/level1-1.tscn
-res://scripts/mario_grande.gd
-res://scenes/Marios/mario_grande.tscn
-res://scenes/Marios/mario_pequeno.tscn
-res://scenes/enemigos/goomba.tscn
-res://scenes/bloques/bloque_monedas.tscn
-res://scenes/bloque_Monedas.gd
 res://scenes/bloque_coin.tscn
-res://scripts/bloque_coin.gd
-res://scenes/Mario.gd
-res://scenes/bloques/bloque_cafe.tscn
-res://scripts/menu.gd
-res://scenes/menu.tscn
+res://scripts/mario_grande.gd
