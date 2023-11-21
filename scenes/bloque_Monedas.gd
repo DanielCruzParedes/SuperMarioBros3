@@ -3,7 +3,8 @@ var puede_moverse=true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Label.visible=false
+	
+	$Coin.visible=false
 
 func muevete():
 	if puede_moverse:
@@ -18,10 +19,10 @@ func Destruir():
 	muevete()
 	
 func monedas():
-	$Label.visible=true
+	$Coin.visible=true
 	$AnimationPlayer.play("moneda")
-	await(get_tree().create_timer(0.5).timeout)
-	$Label.visible=false
+	await(get_tree().create_timer(0.3).timeout)
+	$Coin.visible=false
 
 func _process(_delta):
 	pass

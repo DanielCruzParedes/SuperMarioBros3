@@ -94,7 +94,9 @@ func detectar():
 						InstanceGrande()
 						MarioGrandeInstanciado = true
 						colision.queue_free()
-				
+				elif colision.is_in_group("vida"):
+					Singleton.vidas+=1
+					colision.queue_free()
 		##else:z
 			##salto_valido=false
 					
@@ -124,6 +126,9 @@ func detectar():
 						InstanceGrande()
 						MarioGrandeInstanciado = true
 						colision3.queue_free()
+				elif colision3.is_in_group("vida"):
+					Singleton.vidas+=1
+					colision3.queue_free()
 				else:
 					pass
 				
@@ -137,6 +142,9 @@ func detectar():
 						InstanceGrande()
 						MarioGrandeInstanciado = true
 						colision4.queue_free()
+				elif colision4.is_in_group("vida"):
+					Singleton.vidas+=1
+					colision4.queue_free()
 				else:
 					pass
 			

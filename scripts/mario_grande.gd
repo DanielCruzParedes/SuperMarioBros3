@@ -87,6 +87,9 @@ func detectar():
 				position.y -= 20
 
 				colision.desaparecer()
+			elif colision.is_in_group("vida"):
+					Singleton.vidas+=1
+					colision.queue_free()
 		##else:
 			##salto_valido=false
 					
@@ -103,20 +106,28 @@ func detectar():
 				colision2.Destruir()
 			if colision2.is_in_group("aqum_coins"):
 				colision2.muevete()
+			if colision2.is_in_group("power_Up"):
+				colision2.muevete()
 			else:
 				pass
 		
 	if $derecha.is_colliding():
-		var colision2=$derecha.get_collider()
-		if colision2!=null:
-			if colision2.is_in_group("enemigos"):
+		var colision3=$derecha.get_collider()
+		if colision3!=null:
+			if colision3.is_in_group("enemigos"):
 				InstanceMarioPeque()
+			elif colision3.is_in_group("vida"):
+					Singleton.vidas+=1
+					colision3.queue_free()
 			pass
 	if $izquierda.is_colliding():
-		var colision2=$izquierda.get_collider()
-		if colision2!=null:
-			if colision2.is_in_group("enemigos"):
+		var colision4=$izquierda.get_collider()
+		if colision4!=null:
+			if colision4.is_in_group("enemigos"):
 				InstanceMarioPeque()
+			elif colision4.is_in_group("vida"):
+					Singleton.vidas+=1
+					colision4.queue_free()
 			pass
 			
 				

@@ -6,7 +6,7 @@ var contador=0
 var moneda_mostrada = false
 
 func _ready():
-	$Label.visible=false
+	$coin.visible=false
 	
 func muevete():
 	
