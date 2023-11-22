@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://boij7pgtjotdi"]
+
+[ext_resource type="Script" path="res://scripts/bloque_m.gd" id="1_062k8"]
+[ext_resource type="Texture2D" uid="uid://c3d8logrgdcso" path="res://sprites/poderes y tiles.png" id="2_5ws1e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3wms"]
+size = Vector2(18, 3)
+
+[node name="bloqueM" type="StaticBody2D" groups=["bloqueM"]]
+position = Vector2(324, 185)
+script = ExtResource("1_062k8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.999994, 8.5)
+scale = Vector2(1, 0.15)
+texture = ExtResource("2_5ws1e")
+hframes = 10
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 8.5)
+shape = SubResource("RectangleShape2D_c3wms")

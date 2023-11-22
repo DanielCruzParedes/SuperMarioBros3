@@ -103,6 +103,8 @@ func detectar():
 				elif colision.is_in_group("vida"):
 					Singleton.vidas+=1
 					colision.queue_free()
+				elif colision.is_in_group("bloqueM"):
+					Muerte()
 		##else:z
 			##salto_valido=false
 					

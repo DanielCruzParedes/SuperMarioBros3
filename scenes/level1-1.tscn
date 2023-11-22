@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dbxun3dhgvk8n"]
+[gd_scene load_steps=49 format=3 uid="uid://dbxun3dhgvk8n"]
 
 [ext_resource type="Texture2D" uid="uid://njbm3nj8wbn1" path="res://sprites/level_1.png" id="1_6ik2n"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_jfq7o"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c0ed7ivxk2u3n" path="res://scenes/bloques/bloque_Power.tscn" id="7_sp4qf"]
 [ext_resource type="PackedScene" uid="uid://detgsxucp32nk" path="res://scenes/enemigos/goomba.tscn" id="9_dvt07"]
 [ext_resource type="PackedScene" uid="uid://cxx1o4mn87mat" path="res://scenes/bloques/bloque_vida.tscn" id="9_pwk2f"]
+[ext_resource type="PackedScene" uid="uid://boij7pgtjotdi" path="res://scenes/bloques/bloque_m.tscn" id="10_gsra4"]
 [ext_resource type="PackedScene" uid="uid://sehnkbhvxmfr" path="res://scenes/bloque_coin.tscn" id="10_guj8b"]
 [ext_resource type="AudioStream" uid="uid://ckcrdyd70q4wq" path="res://sound_effects/Super Mario All Stars (Super Mario Bros) - Overworld Theme (HIGH QUALITY).mp3" id="12_85l8w"]
 
@@ -465,6 +466,18 @@ position = Vector2(361, 167)
 
 [node name="bloque_Vida" parent="bloques_powerUp" instance=ExtResource("9_pwk2f")]
 position = Vector2(1048, 156)
+
+[node name="bloqueM" parent="bloques_powerUp" instance=ExtResource("10_gsra4")]
+position = Vector2(1135, 252)
+
+[node name="bloqueM2" parent="bloques_powerUp" instance=ExtResource("10_gsra4")]
+position = Vector2(1401, 252)
+
+[node name="bloqueM3" parent="bloques_powerUp" instance=ExtResource("10_gsra4")]
+position = Vector2(1427, 252)
+
+[node name="bloqueM4" parent="bloques_powerUp" instance=ExtResource("10_gsra4")]
+position = Vector2(2496, 252)
 
 [node name="enemigos" type="Node" parent="."]
 

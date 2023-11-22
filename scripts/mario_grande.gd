@@ -92,6 +92,8 @@ func detectar():
 			elif colision.is_in_group("vida"):
 				Singleton.vidas+=1
 				colision.queue_free()
+			elif colision.is_in_group("bloqueM"):
+				InstanceMarioPeque()
 		##else:
 			##salto_valido=false
 					
