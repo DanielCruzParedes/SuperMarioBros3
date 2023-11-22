@@ -12,15 +12,16 @@ func muevete():
 	
 	if contador <10 :
 		if puedeSacarMoneda==true:
+			$sonidocoin.play()
 			contador += 1
 			puedeSacarMoneda=false
+			Singleton.monedas += 1 
 		
 			position.y-=3
 			await(get_tree().create_timer(0.12).timeout)
 			position.y+=3
 			$AnimationPlayer.play("moneda")
 			moneda_mostrada=true
-			print(contador)
 			await(get_tree().create_timer(0.3).timeout)
 			puedeSacarMoneda = true
 		else: pass

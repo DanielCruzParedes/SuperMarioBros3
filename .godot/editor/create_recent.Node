@@ -1,10 +1,11 @@
+Node
+AudioStreamPlayer
+Label
 Sprite2D
 Button
 VBoxContainer
-Label
 Control
 AnimationPlayer
-Node
 Node2D
 CanvasLayer
 Marker2D

@@ -12,6 +12,7 @@ var MarioPequenoInstanciado=false
 
 @export var MarioPeque = load("res://scenes/Marios/mario_pequeno.tscn")
 func _ready():
+	$mariocreciendo.play()
 	print("soy mario grande")
 	
 func _physics_process(delta):
@@ -59,6 +60,7 @@ func _physics_process(delta):
 		$Animacion.play("jump")
 		velocity.y=+JUMP_VELOCITY
 		salto_valido=false
+		$brincargrande.play()
 		
 		
 			
@@ -88,8 +90,8 @@ func detectar():
 
 				colision.desaparecer()
 			elif colision.is_in_group("vida"):
-					Singleton.vidas+=1
-					colision.queue_free()
+				Singleton.vidas+=1
+				colision.queue_free()
 		##else:
 			##salto_valido=false
 					
@@ -98,15 +100,15 @@ func detectar():
 		var colision2
 		if $arriba.is_colliding():
 			colision2=$arriba.get_collider()
-		elif $arriba.is_colliding():
+		if $arriba2.is_colliding():
 			colision2=$arriba2.get_collider()
 				
 		if colision2!=null:
-			if colision2.is_in_group("bloques"):
-				colision2.Destruir()
-			if colision2.is_in_group("aqum_coins"):
+			if colision2.is_in_group("power_up"):
 				colision2.muevete()
-			if colision2.is_in_group("power_Up"):
+			elif colision2.is_in_group("bloques"):
+				colision2.Destruir()
+			elif colision2.is_in_group("aqum_coins"):
 				colision2.muevete()
 			else:
 				pass
@@ -117,8 +119,8 @@ func detectar():
 			if colision3.is_in_group("enemigos"):
 				InstanceMarioPeque()
 			elif colision3.is_in_group("vida"):
-					Singleton.vidas+=1
-					colision3.queue_free()
+				Singleton.vidas+=1
+				colision3.queue_free()
 			pass
 	if $izquierda.is_colliding():
 		var colision4=$izquierda.get_collider()
@@ -126,14 +128,16 @@ func detectar():
 			if colision4.is_in_group("enemigos"):
 				InstanceMarioPeque()
 			elif colision4.is_in_group("vida"):
-					Singleton.vidas+=1
-					colision4.queue_free()
+				Singleton.vidas+=1
+				colision4.queue_free()
 			pass
 			
 				
 	#saltar_valido=ha tocado el piso
 	
 func InstanceMarioPeque():
+	Singleton.primeraVezApareciendo=false
+	print("se hizo false")
 	var InstanceMario  = MarioPeque.instantiate()
 	InstanceMario.global_position = global_position
 	get_tree().get_nodes_in_group("main")[0].add_child(InstanceMario)

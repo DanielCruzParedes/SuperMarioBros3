@@ -9,8 +9,10 @@ func _ready():
 	$hongoV.visible = false
 	pass # Replace with function body.
 	one_way_collision_shape = $CollisionShape2D
+
 func muevete():
 	if puede_moverse:
+		$aparecevida.play()
 		puede_moverse=false
 		position.y -= 3
 		$activado.visible = false
@@ -30,7 +32,6 @@ func instanciar():
 		hongo_instance.global_position= $spawn_hongo.global_position
 		get_tree().root.add_child(hongo_instance)
 		hongo_instanciado = true
-		print("Hongo eado")
 	
 	
 func Destruir():

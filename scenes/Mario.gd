@@ -8,12 +8,16 @@ var gravity = 650
 var salto_valido=false;
 var colision
 var Morir=false
-
+var puedeSonarBrincar = true
 
 var MarioGrandeInstanciado=false
 
 func _ready():
-	get_tree().get_nodes_in_group("camara")[0].puedo_seguir=true
+	Singleton.puedesonartheme=true
+	if Singleton.primeraVezApareciendo == false:
+		print("deberia de sonar el dano")
+		$deGrandeAPeque.play()
+		get_tree().get_nodes_in_group("camara")[0].puedo_seguir=true
 
 
 func _physics_process(delta):
@@ -54,10 +58,12 @@ func _physics_process(delta):
 			$Animacion.play("jump")
 			
 			
+			
 		if Input.is_action_just_pressed("saltar") and salto_valido:
 			$Animacion.play("jump")
 			velocity.y=+JUMP_VELOCITY
 			salto_valido=false
+			$brincar.play()
 			
 			
 				
@@ -105,7 +111,7 @@ func detectar():
 			var colision2
 			if $arriba.is_colliding():
 				colision2=$arriba.get_collider()
-			elif $arriba.is_colliding():
+			if $arriba2.is_colliding():
 				colision2=$arriba2.get_collider()
 				
 			if colision2!=null:
@@ -157,8 +163,11 @@ func desactivarPhysicsProcesses():
 		hongo.set_physics_process(false)
 
 func Muerte():
+	Singleton.puedesonartheme=false
 	Morir=true
 	get_tree().get_nodes_in_group("camara")[0].puedo_seguir=false
+	Singleton.primeraVezApareciendo=true
+	$morir.play()
 	$Animacion.play("dead")
 	$arriba.enabled=false
 	$arriba2.enabled=false

@@ -6,18 +6,12 @@ var goombas
 var spr
 var sePuedenEliminarVidas = true
 var vidas = 5
-
+var monedas = 0
+var primeraVezApareciendo = true
+var puedesonartheme = false
 func _ready():
-	Spawn()	
+	Spawn()
 
-func ResetHongo():
-	var hongo_instance = hongo.instantiate()
-	# Assuming 'hongo' is the reference to the hongo instance
-	hongo_instance.global_position = Vector2(0, 0)  # Reset its position to a default location
-	hongo_instance.visible = true  # Make sure it's visible
-	hongo_instance.puedoMoverme = false  # Reset any relevant variables or flags used by the hongo script
-	# Other variables and states that need to be reset for the hongo
-	
 
 
 func Spawn():
@@ -26,7 +20,11 @@ func Spawn():
 	add_child(mario_instance)
 	
 	mario_instance.global_position =get_tree().get_nodes_in_group("spawnmario")[0].global_position
-	
+
+
+func sonar1up():
+	get_tree().get_nodes_in_group("audiovida")[0].play()
+	print("sono la vida")
 
 func Respawn():
 	if sePuedenEliminarVidas:
@@ -46,6 +44,10 @@ func Respawn():
 
 func _physics_process(_delta):
 	get_tree().get_nodes_in_group("vidas")[0].text = str(vidas)
+	get_tree().get_nodes_in_group("coins")[0].text = str(monedas)
+	if monedas == 100:
+		vidas += 1
+		monedas = 0
 
 func desactivarRaycasts(cosa):
 	var raycastDerecha = cosa.get_node("derecha") # Replace with the actual path of the raycast derecha node

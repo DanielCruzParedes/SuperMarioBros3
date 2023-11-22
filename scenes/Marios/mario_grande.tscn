@@ -1,9 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cnm8j01cu7vd7"]
+[gd_scene load_steps=15 format=3 uid="uid://cnm8j01cu7vd7"]
 
 [ext_resource type="Script" path="res://scripts/mario_grande.gd" id="1_5r6d0"]
 [ext_resource type="PackedScene" uid="uid://rkrn2df1s8i8" path="res://scenes/Marios/mario_pequeno.tscn" id="2_rl0xb"]
 [ext_resource type="Texture2D" uid="uid://3sf2r7ri20if" path="res://sprites/run_idle_jump_grande.png" id="4_6kudy"]
+[ext_resource type="AudioStream" uid="uid://bl3tb5u46h02q" path="res://sound_effects/smb_jump-super.wav" id="5_7j3mn"]
 [ext_resource type="Texture2D" uid="uid://bnlywyfs3eg41" path="res://sprites/down_grande.png" id="5_a2jfe"]
+[ext_resource type="AudioStream" uid="uid://bu58kwg8r4ayr" path="res://sound_effects/smb_powerup.wav" id="6_70xwg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hh2j"]
 size = Vector2(10, 29)
@@ -803,3 +805,11 @@ target_position = Vector2(0, 2.5)
 position = Vector2(2, 15)
 scale = Vector2(2, 2)
 target_position = Vector2(0, 2.5)
+
+[node name="brincargrande" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7j3mn")
+volume_db = -10.0
+
+[node name="mariocreciendo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_70xwg")
+volume_db = -10.0

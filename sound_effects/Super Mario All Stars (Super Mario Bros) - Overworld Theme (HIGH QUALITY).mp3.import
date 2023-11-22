@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ckcrdyd70q4wq"
+path="res://.godot/imported/Super Mario All Stars (Super Mario Bros) - Overworld Theme (HIGH QUALITY).mp3-bb28489df03078f9e02391cd424dc36b.mp3str"
+
+[deps]
+
+source_file="res://sound_effects/Super Mario All Stars (Super Mario Bros) - Overworld Theme (HIGH QUALITY).mp3"
+dest_files=["res://.godot/imported/Super Mario All Stars (Super Mario Bros) - Overworld Theme (HIGH QUALITY).mp3-bb28489df03078f9e02391cd424dc36b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,8 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://rkrn2df1s8i8"]
+[gd_scene load_steps=14 format=3 uid="uid://rkrn2df1s8i8"]
 
 [ext_resource type="Script" path="res://scenes/Mario.gd" id="1_wavbs"]
 [ext_resource type="Texture2D" uid="uid://tw16ohwuibg5" path="res://sprites/run_idle_jump_pequeño.png" id="2_r48l5"]
 [ext_resource type="Texture2D" uid="uid://cuqi2l4i3ojpm" path="res://sprites/dead.png" id="3_5kauh"]
+[ext_resource type="AudioStream" uid="uid://dwl600jj163a2" path="res://sound_effects/smb_jump-small.wav" id="4_d5ly1"]
+[ext_resource type="AudioStream" uid="uid://dxonkp6exe4wk" path="res://sound_effects/smb_mariodie.wav" id="5_b4bll"]
+[ext_resource type="AudioStream" uid="uid://cy6blxxg2qqrg" path="res://sound_effects/smb_pipe.wav" id="6_bygsq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hh2j"]
 size = Vector2(9, 14)
@@ -577,7 +580,6 @@ _data = {
 z_index = 2
 position = Vector2(-6, 0)
 script = ExtResource("1_wavbs")
-metadata/_edit_group_ = true
 
 [node name="SpriteMario" type="Sprite2D" parent="." groups=["spr"]]
 z_index = 1
@@ -594,11 +596,11 @@ libraries = {
 }
 
 [node name="arriba" type="RayCast2D" parent="."]
-position = Vector2(-3, 1)
+position = Vector2(-4, 1)
 target_position = Vector2(0, -4)
 
 [node name="arriba2" type="RayCast2D" parent="."]
-position = Vector2(3, 1)
+position = Vector2(4, 1)
 target_position = Vector2(0, -4)
 
 [node name="derecha" type="RayCast2D" parent="."]
@@ -620,3 +622,15 @@ target_position = Vector2(0, 2.5)
 position = Vector2(4, 15)
 scale = Vector2(2, 2)
 target_position = Vector2(0, 2.5)
+
+[node name="brincar" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_d5ly1")
+volume_db = -10.0
+
+[node name="morir" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_b4bll")
+volume_db = -10.0
+
+[node name="deGrandeAPeque" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_bygsq")
+volume_db = -10.0

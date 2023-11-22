@@ -9,6 +9,7 @@ func _ready():
 	pass # Replace with function body.
 func muevete():
 	if puede_moverse:
+		$aparecepowerup.play()
 		puede_moverse=false
 		position.y-=3
 		$activado.visible=false
@@ -26,7 +27,6 @@ func instanciar():
 		hongo_instance.global_position= $spawn_hongo.global_position
 		get_tree().root.add_child(hongo_instance)
 		hongo_instanciado = true
-		print("Hongo spawneado")
 	
 	
 func Destruir():

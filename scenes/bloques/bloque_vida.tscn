@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxx1o4mn87mat"]
+[gd_scene load_steps=8 format=3 uid="uid://cxx1o4mn87mat"]
 
 [ext_resource type="Script" path="res://scripts/bloque_vida.gd" id="1_vbm8t"]
 [ext_resource type="Texture2D" uid="uid://bbc85dxa01p4l" path="res://sprites/bloque_premios_desacivado.png" id="2_ujuo6"]
 [ext_resource type="Texture2D" uid="uid://c3d8logrgdcso" path="res://sprites/poderes y tiles.png" id="3_5obwb"]
 [ext_resource type="PackedScene" uid="uid://c3mcd05hpau4r" path="res://scenes/Power_Ups/hongo_v.tscn" id="4_7iag3"]
+[ext_resource type="AudioStream" uid="uid://dfdjv11d7sjj8" path="res://sound_effects/smb_powerup_appears.wav" id="5_8nlmh"]
+[ext_resource type="AudioStream" uid="uid://ceucl6n1q8nsq" path="res://sound_effects/smb_1-up.wav" id="6_51458"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3wms"]
 size = Vector2(16, 16)
@@ -28,8 +30,17 @@ frame = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_c3wms")
+one_way_collision = true
 
 [node name="spawn_hongo" type="Marker2D" parent="."]
 z_index = 1
 
 [node name="hongoV" parent="." instance=ExtResource("4_7iag3")]
+
+[node name="aparecevida" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8nlmh")
+volume_db = -10.0
+
+[node name="audio1up" type="AudioStreamPlayer" parent="." groups=["audiovida"]]
+stream = ExtResource("6_51458")
+volume_db = -10.0

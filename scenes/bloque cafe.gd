@@ -17,5 +17,6 @@ func _process(_delta):
 func Destruir():
 	var bloque_instance = bloque_destruir.instantiate()
 	bloque_instance.position = global_position
+	
 	get_tree().get_nodes_in_group("main")[0].add_child(bloque_instance)
 	queue_free()

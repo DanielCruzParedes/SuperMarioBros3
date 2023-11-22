@@ -19,10 +19,13 @@ func Destruir():
 	muevete()
 	
 func monedas():
+	$sonidocoin.play()
 	$Coin.visible=true
 	$AnimationPlayer.play("moneda")
+	Singleton.monedas += 1
 	await(get_tree().create_timer(0.3).timeout)
 	$Coin.visible=false
+	
 
 func _process(_delta):
 	pass

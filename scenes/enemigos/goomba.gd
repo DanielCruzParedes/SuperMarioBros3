@@ -43,7 +43,7 @@ func detectar():
 func desaparecer():
 	$colisionGoomba.disabled = true
 	$AnimationPlayer.play("dead")
-	
+	$aplastamiento.play()
 	set_physics_process(false)
 	
 	await(get_tree().create_timer(0.4).timeout)
