@@ -9,6 +9,8 @@ var salto_valido=false;
 var colision
 var Morir=false
 var puedeSonarBrincar = true
+var estaSobreTuboEntrable = false
+var estaAladoDeTuboEntrable = false
 
 var MarioGrandeInstanciado=false
 
@@ -29,6 +31,17 @@ func _physics_process(delta):
 		#if Input.is_action_pressed("derecha") or Input.is_action_pressed("izquierda"): 
 		velocity.x = direction * SPEED
 		
+		if Input.is_action_just_pressed("abajo") and estaSobreTuboEntrable==true:
+			print("intento entrar")
+			teletransportarABonus()
+			estaSobreTuboEntrable=false
+			
+		if Input.is_action_just_pressed("derecha") and estaAladoDeTuboEntrable == true:
+			print("intenta salir")
+			salirDelBonus()
+			estaAladoDeTuboEntrable=false
+			
+	
 		if Input.is_action_pressed("derecha"):
 			
 			$SpriteMario.flip_h = false
@@ -78,7 +91,6 @@ func _physics_process(delta):
 		
 	
 func detectar():
-		
 		if $abajo.is_colliding() or $abajo2.is_colliding():
 			if $abajo.is_colliding():
 				colision=$abajo.get_collider()
@@ -105,8 +117,13 @@ func detectar():
 					colision.queue_free()
 				elif colision.is_in_group("bloqueM"):
 					Muerte()
-		##else:z
-			##salto_valido=false
+				
+				if colision.is_in_group("tubosentrables"):
+					estaSobreTuboEntrable=true
+					salto_valido=true
+				else:
+					estaSobreTuboEntrable=false
+					
 					
 				
 		if $arriba.is_colliding() or $arriba2.is_colliding():
@@ -121,6 +138,11 @@ func detectar():
 					colision2.muevete()
 				if colision2.is_in_group("aqum_coins"):
 					colision2.muevete()
+				elif colision2.is_in_group("power_up"):
+					if not MarioGrandeInstanciado:
+						InstanceGrande()
+						MarioGrandeInstanciado = true
+						colision2.queue_free()
 				else:
 					pass
 		
@@ -139,6 +161,11 @@ func detectar():
 					colision3.queue_free()
 				else:
 					pass
+					
+				if colision3.is_in_group("tubossalibles"):
+					estaAladoDeTuboEntrable=true
+				else:
+					estaAladoDeTuboEntrable=false
 				
 		if $izquierda.is_colliding():
 			var colision4=$izquierda.get_collider()
@@ -156,6 +183,18 @@ func detectar():
 				else:
 					pass
 			
+func teletransportarABonus():
+	$entraATubo.play()
+	get_tree().get_nodes_in_group("mario_peque")[0].global_position = get_tree().get_nodes_in_group("entradabonus")[0].global_position
+	get_tree().get_nodes_in_group("camara")[0].enabled = false
+	get_tree().get_nodes_in_group("camarabonus")[0].enabled = true
+
+func salirDelBonus():
+	$entraATubo.play()
+	get_tree().get_nodes_in_group("mario_peque")[0].global_position = get_tree().get_nodes_in_group("salidabonus")[0].global_position
+	get_tree().get_nodes_in_group("camarabonus")[0].enabled = false
+	get_tree().get_nodes_in_group("camara")[0].enabled = true
+
 func desactivarPhysicsProcesses():
 	var goombas = get_tree().get_nodes_in_group("enemigos")
 	for goomba in goombas:

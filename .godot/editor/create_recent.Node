@@ -1,6 +1,10 @@
+AudioStreamPlayer
+CollisionShape2D
+StaticBody2D
+Camera2D
+Marker2D
 Sprite2D
 Node
-AudioStreamPlayer
 Label
 Button
 VBoxContainer
@@ -8,13 +12,9 @@ Control
 AnimationPlayer
 Node2D
 CanvasLayer
-Marker2D
 RigidBody2D
-Camera2D
 VisibleOnScreenNotifier2D
-CollisionShape2D
 RayCast2D
 CharacterBody2D
 AnimatedSprite2D
-StaticBody2D
 TileMap

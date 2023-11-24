@@ -1,5 +1,4 @@
 extends Camera2D
-
 var player
 var puedo_seguir=true
 func _ready():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dbxun3dhgvk8n"]
+[gd_scene load_steps=57 format=3 uid="uid://dbxun3dhgvk8n"]
 
 [ext_resource type="Texture2D" uid="uid://njbm3nj8wbn1" path="res://sprites/level_1.png" id="1_6ik2n"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_jfq7o"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="5_2ux4x"]
 [ext_resource type="PackedScene" uid="uid://tn2ujag8nb2c" path="res://scenes/bloques/bloque_cafe.tscn" id="5_c7n8w"]
 [ext_resource type="PackedScene" uid="uid://cb4wanr0fsbfj" path="res://scenes/bloques/bloque_monedas.tscn" id="5_s6lbr"]
+[ext_resource type="Script" path="res://scripts/camaraBonus.gd" id="7_0mjdo"]
 [ext_resource type="PackedScene" uid="uid://c0ed7ivxk2u3n" path="res://scenes/bloques/bloque_Power.tscn" id="7_sp4qf"]
 [ext_resource type="PackedScene" uid="uid://detgsxucp32nk" path="res://scenes/enemigos/goomba.tscn" id="9_dvt07"]
 [ext_resource type="PackedScene" uid="uid://cxx1o4mn87mat" path="res://scenes/bloques/bloque_vida.tscn" id="9_pwk2f"]
@@ -24,9 +25,6 @@ size = Vector2(30, 32)
 size = Vector2(30, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gl806"]
-size = Vector2(30, 64)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_47euv"]
 size = Vector2(30, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxmxv"]
@@ -119,6 +117,30 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idra0"]
 size = Vector2(16, 227)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jeyy"]
+size = Vector2(30, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjp17"]
+size = Vector2(34, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qxyh"]
+size = Vector2(16.75, 225)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7tsk"]
+size = Vector2(20, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqu30"]
+size = Vector2(20, 289)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7uj4l"]
+size = Vector2(269, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ywdq"]
+size = Vector2(112, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_neii6"]
+size = Vector2(112, 16)
+
 [node name="main" type="Node" groups=["main"]]
 script = ExtResource("1_jfq7o")
 
@@ -186,10 +208,6 @@ shape = SubResource("RectangleShape2D_hg1uy")
 [node name="tubo3" type="CollisionShape2D" parent="level-1/suelo"]
 position = Vector2(768, 192)
 shape = SubResource("RectangleShape2D_gl806")
-
-[node name="tubo4" type="CollisionShape2D" parent="level-1/suelo"]
-position = Vector2(944, 192)
-shape = SubResource("RectangleShape2D_47euv")
 
 [node name="suelo2" type="CollisionShape2D" parent="level-1/suelo"]
 position = Vector2(1272.5, 237.5)
@@ -428,6 +446,24 @@ rotation_smoothing_enabled = true
 drag_horizontal_offset = 0.11
 script = ExtResource("5_2ux4x")
 
+[node name="tubosentrables" type="StaticBody2D" parent="level-1" groups=["suelo", "tubosentrables"]]
+
+[node name="tubo1" type="CollisionShape2D" parent="level-1/tubosentrables"]
+position = Vector2(944, 192)
+shape = SubResource("RectangleShape2D_4jeyy")
+
+[node name="camaraBonus" type="Camera2D" parent="level-1" groups=["camarabonus"]]
+position = Vector2(2536, 444)
+enabled = false
+zoom = Vector2(2.7, 2.7)
+script = ExtResource("7_0mjdo")
+
+[node name="tubossalibles" type="StaticBody2D" parent="level-1" groups=["suelos", "tubossalibles"]]
+
+[node name="tubo1" type="CollisionShape2D" parent="level-1/tubossalibles"]
+position = Vector2(2625, 528.5)
+shape = SubResource("RectangleShape2D_qjp17")
+
 [node name="bloques moneda" type="Node2D" parent="."]
 
 [node name="bloque_Monedas3" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
@@ -477,7 +513,7 @@ position = Vector2(1401, 252)
 position = Vector2(1427, 252)
 
 [node name="bloqueM4" parent="bloques_powerUp" instance=ExtResource("10_gsra4")]
-position = Vector2(2496, 252)
+position = Vector2(2495, 252)
 
 [node name="enemigos" type="Node" parent="."]
 
@@ -496,4 +532,36 @@ position = Vector2(1529, 169)
 stream = ExtResource("12_85l8w")
 volume_db = -10.0
 
-[node name="Node2" type="Node" parent="."]
+[node name="bonus" type="Node" parent="."]
+
+[node name="SueloBonus" type="StaticBody2D" parent="bonus" groups=["suelos"]]
+
+[node name="pared1" type="CollisionShape2D" parent="bonus/SueloBonus"]
+position = Vector2(2407.63, 431.5)
+shape = SubResource("RectangleShape2D_7qxyh")
+
+[node name="pared3" type="CollisionShape2D" parent="bonus/SueloBonus"]
+position = Vector2(2457, 343)
+shape = SubResource("RectangleShape2D_d7tsk")
+
+[node name="pared2" type="CollisionShape2D" parent="bonus/SueloBonus"]
+position = Vector2(2652, 399.5)
+shape = SubResource("RectangleShape2D_xqu30")
+
+[node name="suelobase" type="CollisionShape2D" parent="bonus/SueloBonus"]
+position = Vector2(2533.5, 554)
+shape = SubResource("RectangleShape2D_7uj4l")
+
+[node name="suelobloques" type="CollisionShape2D" parent="bonus/SueloBonus"]
+position = Vector2(2520, 519.5)
+shape = SubResource("RectangleShape2D_7ywdq")
+
+[node name="colisionTubo2" type="CollisionShape2D" parent="bonus/SueloBonus"]
+position = Vector2(2520, 376)
+shape = SubResource("RectangleShape2D_neii6")
+
+[node name="EntradaDelBonus" type="Marker2D" parent="bonus/SueloBonus" groups=["entradabonus"]]
+position = Vector2(2432, 333)
+
+[node name="SalidaDelBonus" type="Marker2D" parent="bonus/SueloBonus" groups=["salidabonus"]]
+position = Vector2(2656, 171)

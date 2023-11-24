@@ -634,3 +634,7 @@ volume_db = -10.0
 [node name="deGrandeAPeque" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_bygsq")
 volume_db = -10.0
+
+[node name="entraATubo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_bygsq")
+volume_db = -10.0

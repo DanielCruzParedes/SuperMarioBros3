@@ -9,6 +9,8 @@ var salto_valido=false;
 var colision
 var Morir=false
 var MarioPequenoInstanciado=false
+var estaSobreTuboEntrable = false
+var estaAladoDeTuboEntrable = false
 
 @export var MarioPeque = load("res://scenes/Marios/mario_pequeno.tscn")
 func _ready():
@@ -25,6 +27,17 @@ func _physics_process(delta):
 	#if Input.is_action_pressed("derecha") or Input.is_action_pressed("izquierda"): 
 	velocity.x = direction * SPEED
 	
+	if Input.is_action_just_pressed("abajo") and estaSobreTuboEntrable==true:
+		print("intento entrar")
+		teletransportarABonus()
+		estaSobreTuboEntrable=false
+			
+	if Input.is_action_just_pressed("derecha") and estaAladoDeTuboEntrable == true:
+		print("intenta salir")
+		salirDelBonus()
+		estaAladoDeTuboEntrable=false
+		
+		
 	if Input.is_action_pressed("derecha"):
 		
 		$SpriteMario.flip_h = false
@@ -94,6 +107,12 @@ func detectar():
 				colision.queue_free()
 			elif colision.is_in_group("bloqueM"):
 				InstanceMarioPeque()
+				
+			if colision.is_in_group("tubosentrables"):
+				estaSobreTuboEntrable=true
+				salto_valido=true
+			else:
+				estaSobreTuboEntrable=false
 		##else:
 			##salto_valido=false
 					
@@ -124,6 +143,13 @@ func detectar():
 				Singleton.vidas+=1
 				colision3.queue_free()
 			pass
+			
+			if colision3.is_in_group("tubossalibles"):
+				estaAladoDeTuboEntrable=true
+			else:
+				estaAladoDeTuboEntrable=false
+				
+
 	if $izquierda.is_colliding():
 		var colision4=$izquierda.get_collider()
 		if colision4!=null:
@@ -145,6 +171,19 @@ func InstanceMarioPeque():
 	get_tree().get_nodes_in_group("main")[0].add_child(InstanceMario)
 	Singleton.Inmunidad()
 	queue_free()
+
+func teletransportarABonus():
+	$entraATubo.play()
+	get_tree().get_nodes_in_group("mario")[0].global_position = get_tree().get_nodes_in_group("entradabonus")[0].global_position
+	get_tree().get_nodes_in_group("camara")[0].enabled = false
+	get_tree().get_nodes_in_group("camarabonus")[0].enabled = true
+
+func salirDelBonus():
+	$entraATubo.play()
+	get_tree().get_nodes_in_group("mario")[0].global_position = get_tree().get_nodes_in_group("salidabonus")[0].global_position
+	get_tree().get_nodes_in_group("camarabonus")[0].enabled = false
+	get_tree().get_nodes_in_group("camara")[0].enabled = true
+
 
 func InstangeGrande():
 	pass
