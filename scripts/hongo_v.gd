@@ -43,6 +43,9 @@ func _physics_process(delta):
 			colision_con_mario($arriba.get_collider())
 		if $abajo.is_colliding() and $abajo.get_collider().is_in_group("mario"):
 			colision_con_mario($abajo.get_collider())
+		elif $abajo.is_colliding() and $abajo.get_collider().is_in_group("bloqueM"):
+			$colisionHongo.disabled=true
+			
 		
 	else:
 		position.y -= 1

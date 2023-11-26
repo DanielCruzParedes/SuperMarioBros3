@@ -2,7 +2,10 @@ res://scenes/level1-1.tscn
 res://scripts/mario_grande.gd
 res://scenes/Marios/mario_pequeno.tscn
 res://scenes/Marios/mario_grande.tscn
-res://scenes/bloques/bloque_Power.tscn
-res://scenes/Power_Ups/hongo.tscn
-res://scenes/bloques/bloque_vida.tscn
+res://scenes/bloques/bloque_m.tscn
+res://scenes/Power_Ups/hongo_v.tscn
+res://scenes/enemigos/goomba.tscn
 res://scenes/bloques/bloque_monedas.tscn
+res://scenes/bloque_coin.tscn
+res://scenes/bandera_f.tscn
+res://scenes/bloques/bloque_vida.tscn

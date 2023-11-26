@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7k4wp4v0doc"]
+
+[ext_resource type="Script" path="res://StaticBody2D.gd" id="1_ufqb4"]
+[ext_resource type="Texture2D" uid="uid://c3d8logrgdcso" path="res://sprites/poderes y tiles.png" id="2_4d1gg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5w6a"]
+size = Vector2(7, 148)
+
+[sub_resource type="Animation" id="Animation_51dor"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("banderaF/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(32, -51)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("banderaF/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_n0f75"]
+resource_name = "bandera"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("banderaF/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(32, -51), Vector2(32, 75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("banderaF/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t4jx4"]
+_data = {
+"RESET": SubResource("Animation_51dor"),
+"bandera": SubResource("Animation_n0f75")
+}
+
+[node name="banderaF" type="StaticBody2D" groups=["bandera"]]
+script = ExtResource("1_ufqb4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(32, -51)
+texture = ExtResource("2_4d1gg")
+hframes = 10
+frame = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(23, 15)
+shape = SubResource("RectangleShape2D_u5w6a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_t4jx4")
+}
+
+[node name="izquierda" type="RayCast2D" parent="."]
+position = Vector2(29, 18)
+scale = Vector2(1, 27)
+target_position = Vector2(-9, 5.96046e-08)

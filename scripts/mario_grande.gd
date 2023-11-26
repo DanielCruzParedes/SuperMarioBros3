@@ -139,6 +139,8 @@ func detectar():
 		if colision3!=null:
 			if colision3.is_in_group("enemigos"):
 				InstanceMarioPeque()
+			elif colision3.is_in_group("bandera"):
+					colision3.muevete()
 			elif colision3.is_in_group("vida"):
 				Singleton.vidas+=1
 				colision3.queue_free()

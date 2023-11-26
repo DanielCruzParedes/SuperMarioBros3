@@ -138,7 +138,7 @@ func detectar():
 					colision2.muevete()
 				if colision2.is_in_group("aqum_coins"):
 					colision2.muevete()
-				elif colision2.is_in_group("power_up"):
+				elif colision2.is_in_group("power_Up"):
 					if not MarioGrandeInstanciado:
 						InstanceGrande()
 						MarioGrandeInstanciado = true
@@ -159,6 +159,8 @@ func detectar():
 				elif colision3.is_in_group("vida"):
 					Singleton.vidas+=1
 					colision3.queue_free()
+				elif colision3.is_in_group("bandera"):
+					colision3.muevete()
 				else:
 					pass
 					
