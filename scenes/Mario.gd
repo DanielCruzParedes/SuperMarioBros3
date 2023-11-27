@@ -117,7 +117,9 @@ func detectar():
 					colision.queue_free()
 				elif colision.is_in_group("bloqueM"):
 					Muerte()
-				
+				elif colision.is_in_group("moneda"):
+					colision.queue_free()
+					Singleton.monedas+=1
 				if colision.is_in_group("tubosentrables"):
 					estaSobreTuboEntrable=true
 					salto_valido=true
@@ -138,6 +140,9 @@ func detectar():
 					colision2.muevete()
 				if colision2.is_in_group("aqum_coins"):
 					colision2.muevete()
+				elif colision2.is_in_group("moneda"):
+					colision2.queue_free()
+					Singleton.monedas+=1
 				elif colision2.is_in_group("power_Up"):
 					if not MarioGrandeInstanciado:
 						InstanceGrande()
@@ -161,6 +166,9 @@ func detectar():
 					colision3.queue_free()
 				elif colision3.is_in_group("bandera"):
 					colision3.muevete()
+				elif colision3.is_in_group("moneda"):
+					colision3.queue_free()
+					Singleton.monedas+=1
 				else:
 					pass
 					
@@ -182,6 +190,9 @@ func detectar():
 				elif colision4.is_in_group("vida"):
 					Singleton.vidas+=1
 					colision4.queue_free()
+				elif colision4.is_in_group("moneda"):
+					colision4.queue_free()
+					Singleton.monedas+=1
 				else:
 					pass
 			

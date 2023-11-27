@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://dbxun3dhgvk8n"]
+[gd_scene load_steps=59 format=3 uid="uid://dbxun3dhgvk8n"]
 
 [ext_resource type="Texture2D" uid="uid://njbm3nj8wbn1" path="res://sprites/level_1.png" id="1_6ik2n"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_jfq7o"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://sehnkbhvxmfr" path="res://scenes/bloque_coin.tscn" id="10_guj8b"]
 [ext_resource type="AudioStream" uid="uid://ckcrdyd70q4wq" path="res://sound_effects/Super Mario All Stars (Super Mario Bros) - Overworld Theme (HIGH QUALITY).mp3" id="12_85l8w"]
 [ext_resource type="PackedScene" uid="uid://c7k4wp4v0doc" path="res://scenes/bandera_f.tscn" id="15_v6iob"]
+[ext_resource type="PackedScene" uid="uid://dcll6iy6nbn3q" path="res://scenes/moneda.tscn" id="16_un1px"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wofq8"]
 size = Vector2(1103, 30)
@@ -511,6 +512,7 @@ position = Vector2(1135, 252)
 position = Vector2(1401, 252)
 
 [node name="bloqueM3" parent="bloques_powerUp" instance=ExtResource("10_gsra4")]
+visible = false
 position = Vector2(1427, 252)
 
 [node name="bloqueM4" parent="bloques_powerUp" instance=ExtResource("10_gsra4")]
@@ -569,3 +571,62 @@ position = Vector2(2656, 171)
 
 [node name="banderaF" parent="." instance=ExtResource("15_v6iob")]
 position = Vector2(3185, 120)
+
+[node name="Monedas" type="Node2D" parent="."]
+
+[node name="Moneda" parent="Monedas" instance=ExtResource("16_un1px")]
+position = Vector2(2487, 435)
+
+[node name="Moneda2" parent="Monedas" instance=ExtResource("16_un1px")]
+position = Vector2(2505, 435)
+
+[node name="Moneda3" parent="Monedas" instance=ExtResource("16_un1px")]
+position = Vector2(2520, 435)
+
+[node name="Moneda4" parent="Monedas" instance=ExtResource("16_un1px")]
+position = Vector2(2536, 435)
+
+[node name="Moneda5" parent="Monedas" instance=ExtResource("16_un1px")]
+position = Vector2(2552, 435)
+
+[node name="Moneda6" parent="Monedas" instance=ExtResource("16_un1px")]
+position = Vector2(2473, 460)
+
+[node name="Moneda7" parent="Monedas" instance=ExtResource("16_un1px")]
+position = Vector2(2491, 460)
+
+[node name="Moneda8" parent="Monedas" instance=ExtResource("16_un1px")]
+position = Vector2(2505, 460)
+
+[node name="Moneda9" parent="Monedas" instance=ExtResource("16_un1px")]
+position = Vector2(2520, 460)
+
+[node name="Moneda10" parent="Monedas" instance=ExtResource("16_un1px")]
+position = Vector2(2536, 460)
+
+[node name="Moneda11" parent="Monedas" instance=ExtResource("16_un1px")]
+position = Vector2(2552, 460)
+
+[node name="Moneda12" parent="Monedas" instance=ExtResource("16_un1px")]
+position = Vector2(2568, 460)
+
+[node name="Moneda13" parent="Monedas" instance=ExtResource("16_un1px")]
+position = Vector2(2473, 485)
+
+[node name="Moneda14" parent="Monedas" instance=ExtResource("16_un1px")]
+position = Vector2(2491, 485)
+
+[node name="Moneda15" parent="Monedas" instance=ExtResource("16_un1px")]
+position = Vector2(2505, 485)
+
+[node name="Moneda16" parent="Monedas" instance=ExtResource("16_un1px")]
+position = Vector2(2520, 485)
+
+[node name="Moneda17" parent="Monedas" instance=ExtResource("16_un1px")]
+position = Vector2(2536, 485)
+
+[node name="Moneda18" parent="Monedas" instance=ExtResource("16_un1px")]
+position = Vector2(2552, 485)
+
+[node name="Moneda19" parent="Monedas" instance=ExtResource("16_un1px")]
+position = Vector2(2568, 485)

@@ -105,6 +105,9 @@ func detectar():
 			elif colision.is_in_group("vida"):
 				Singleton.vidas+=1
 				colision.queue_free()
+			elif colision.is_in_group("moneda"):
+					colision.queue_free()
+					Singleton.monedas+=1
 			elif colision.is_in_group("bloqueM"):
 				InstanceMarioPeque()
 				
@@ -131,6 +134,9 @@ func detectar():
 				colision2.Destruir()
 			elif colision2.is_in_group("aqum_coins"):
 				colision2.muevete()
+			elif colision2.is_in_group("moneda"):
+					colision2.queue_free()
+					Singleton.monedas+=1
 			else:
 				pass
 		
@@ -141,6 +147,9 @@ func detectar():
 				InstanceMarioPeque()
 			elif colision3.is_in_group("bandera"):
 					colision3.muevete()
+			elif colision3.is_in_group("moneda"):
+					colision3.queue_free()
+					Singleton.monedas+=1
 			elif colision3.is_in_group("vida"):
 				Singleton.vidas+=1
 				colision3.queue_free()
@@ -157,6 +166,9 @@ func detectar():
 		if colision4!=null:
 			if colision4.is_in_group("enemigos"):
 				InstanceMarioPeque()
+			elif colision4.is_in_group("moneda"):
+					colision4.queue_free()
+					Singleton.monedas+=1
 			elif colision4.is_in_group("vida"):
 				Singleton.vidas+=1
 				colision4.queue_free()
