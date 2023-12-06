@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnh151edcjtxb"]
+
+[ext_resource type="Texture2D" uid="uid://dreh8lxdk1yqo" path="res://sprites/fondo2.png" id="1_757rt"]
+[ext_resource type="FontFile" uid="uid://h2lo0venyog8" path="res://fonts/All Star Resort.ttf" id="2_h8yna"]
+
+[node name="MensajeDead" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(451.5, 323.5)
+scale = Vector2(2.00667, 3.05093)
+texture = ExtResource("1_757rt")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 198.0
+offset_top = 272.0
+offset_right = 728.0
+offset_bottom = 392.0
+theme_override_fonts/font = ExtResource("2_h8yna")
+theme_override_font_sizes/font_size = 100
+text = "Game Over"
+uppercase = true

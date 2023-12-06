@@ -2,6 +2,8 @@ extends Node
 
 var mario = load("res://scenes/Marios/mario_pequeno.tscn")
 var hongo = load("res://scenes/Power_Ups/hongo.tscn")
+
+var mensajeMuerteScene = preload("res://scenes/mensaje_dead.tscn")
 var goombas
 var spr
 var sePuedenEliminarVidas = true
@@ -21,7 +23,13 @@ func Spawn():
 	
 	mario_instance.global_position =get_tree().get_nodes_in_group("spawnmario")[0].global_position
 
-
+func MostrarMensajeMuerte():
+	var mensajeMuerteInstance = mensajeMuerteScene.instantiate()
+	get_tree().root.add_child(mensajeMuerteInstance)
+	await(get_tree().create_timer(2).timeout)  # Ajusta el tiempo según sea necesario
+	mensajeMuerteInstance.queue_free()
+	Respawn()  
+	
 func sonar1up():
 	get_tree().get_nodes_in_group("audiovida")[0].play()
 	print("sono la vida")
@@ -31,14 +39,14 @@ func Respawn():
 		vidas -= 1
 		print("vida eliminada")
 		sePuedenEliminarVidas = false
-		if vidas>=0:
+		if vidas>0:
 			
 			Spawn()
 			get_tree().reload_current_scene()
 			sePuedenEliminarVidas=true
 		
 		else:
-			pass
+			MostrarMensajeMuerte()
 	
 	
 

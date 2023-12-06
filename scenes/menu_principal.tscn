@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://c50loj06r7s6w"]
+
+[ext_resource type="Script" path="res://MenuPrincipal.gd" id="1_4lkpj"]
+[ext_resource type="Texture2D" uid="uid://dreh8lxdk1yqo" path="res://sprites/fondo2.png" id="2_beya3"]
+[ext_resource type="FontFile" uid="uid://h2lo0venyog8" path="res://fonts/All Star Resort.ttf" id="3_0vexb"]
+
+[node name="MenuPrincipal" type="Node2D" groups=["coins", "spawnmario", "vidas"]]
+script = ExtResource("1_4lkpj")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="MenuP" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(454.5, 321.5)
+scale = Vector2(2.00667, 3.00463)
+texture = ExtResource("2_beya3")
+
+[node name="MenuName" type="Label" parent="CanvasGroup"]
+offset_left = 170.0
+offset_top = 179.0
+offset_right = 738.0
+offset_bottom = 299.0
+theme_override_fonts/font = ExtResource("3_0vexb")
+theme_override_font_sizes/font_size = 100
+text = "MARIO BROS"
+
+[node name="Play" type="Button" parent="CanvasGroup"]
+offset_left = 170.0
+offset_top = 347.0
+offset_right = 357.0
+offset_bottom = 424.0
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="quit" type="Button" parent="CanvasGroup"]
+offset_left = 507.0
+offset_top = 347.0
+offset_right = 620.0
+offset_bottom = 424.0
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[connection signal="pressed" from="CanvasGroup/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasGroup/quit" to="." method="_on_quit_pressed"]

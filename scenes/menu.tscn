@@ -50,5 +50,7 @@ position = Vector2(440, 188)
 scale = Vector2(2.06222, 3.09259)
 texture = ExtResource("3_bkytm")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

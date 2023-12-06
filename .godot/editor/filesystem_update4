@@ -3,8 +3,9 @@ res://scripts/mario_grande.gd
 res://scenes/Marios/mario_pequeno.tscn
 res://scenes/Marios/mario_grande.tscn
 res://scenes/Power_Ups/hongo_v.tscn
-res://scenes/bloques/bloque_monedas.tscn
 res://scenes/bloque_coin.tscn
 res://scenes/bandera_f.tscn
-res://scenes/bloques/bloque_vida.tscn
 res://scenes/moneda.tscn
+res://scenes/menu.tscn
+res://scenes/mensaje_dead.tscn
+res://scenes/menu_principal.tscn

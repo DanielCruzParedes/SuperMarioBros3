@@ -1,7 +1,11 @@
+Button
+Sprite2D
+CanvasGroup
+CanvasLayer
+Label
 Node2D
 CharacterBody2D
 CollisionShape2D
-Sprite2D
 StaticBody2D
 RayCast2D
 AnimationPlayer
@@ -9,11 +13,8 @@ AudioStreamPlayer
 Camera2D
 Marker2D
 Node
-Label
-Button
 VBoxContainer
 Control
-CanvasLayer
 RigidBody2D
 VisibleOnScreenNotifier2D
 AnimatedSprite2D
