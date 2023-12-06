@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 30.0
+const SPEED = 50.0
 var pegoDerecha=false
 var pegoIzquierda=false
 var puedoMoverme = true
@@ -8,26 +8,28 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	set_physics_process(false)
+	$Sprite2D.flip_h = true
 	
 func _physics_process(delta):
 	detectar()
-
+	position.y -= 7
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		$AnimationPlayer.play("run")
 		move_and_slide()
 	if pegoDerecha==false and pegoIzquierda==false:
 		velocity.x = -SPEED
-		$AnimationPlayer.play("run")
 		move_and_slide()
 	elif pegoDerecha==true:
+		$Sprite2D.flip_h = true
 		velocity.x = -SPEED
-		$AnimationPlayer.play("run")
 		move_and_slide()
 	elif pegoIzquierda==true:
+		$Sprite2D.flip_h = false
 		velocity.x = SPEED
-		$AnimationPlayer.play("run")
 		move_and_slide()
+	$AnimationPlayer.play("idle")
+	
 	
 	
 func detectar():
@@ -41,9 +43,9 @@ func detectar():
 			
 
 func desaparecer():
-	$colisionGoomba.disabled = true
+	$colisionSlime.disabled = true
 	$AnimationPlayer.play("dead")
-	$aplastamiento.play()
+	#$aplastamiento.play()
 	set_physics_process(false)
 	
 	await(get_tree().create_timer(0.4).timeout)

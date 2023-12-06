@@ -136,6 +136,8 @@ func detectar():
 				colision2=$arriba2.get_collider()
 				
 			if colision2!=null:
+				if colision2.is_in_group("oculto"):
+					colision2.muevete()
 				if colision2.is_in_group("bloques"):
 					colision2.muevete()
 				if colision2.is_in_group("aqum_coins"):
@@ -148,6 +150,8 @@ func detectar():
 						InstanceGrande()
 						MarioGrandeInstanciado = true
 						colision2.queue_free()
+				elif colision2.is_in_group("enemigos"):
+					Muerte()
 				else:
 					pass
 		

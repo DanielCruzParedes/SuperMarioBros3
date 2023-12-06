@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://dbxun3dhgvk8n"]
+[gd_scene load_steps=61 format=3 uid="uid://dbxun3dhgvk8n"]
 
 [ext_resource type="Texture2D" uid="uid://njbm3nj8wbn1" path="res://sprites/level_1.png" id="1_6ik2n"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_jfq7o"]
@@ -16,6 +16,8 @@
 [ext_resource type="AudioStream" uid="uid://ckcrdyd70q4wq" path="res://sound_effects/Super Mario All Stars (Super Mario Bros) - Overworld Theme (HIGH QUALITY).mp3" id="12_85l8w"]
 [ext_resource type="PackedScene" uid="uid://c7k4wp4v0doc" path="res://scenes/bandera_f.tscn" id="15_v6iob"]
 [ext_resource type="PackedScene" uid="uid://dcll6iy6nbn3q" path="res://scenes/moneda.tscn" id="16_un1px"]
+[ext_resource type="PackedScene" uid="uid://bwope3kkfvb02" path="res://scenes/enemigos/slime.tscn" id="17_fbm0m"]
+[ext_resource type="PackedScene" uid="uid://djnnkdyttdv4d" path="res://scenes/bloques/bloque_oculto.tscn" id="18_vqy20"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wofq8"]
 size = Vector2(1103, 30)
@@ -190,7 +192,7 @@ metadata/_edit_lock_ = true
 
 [node name="guia" type="Sprite2D" parent="level-1/level template"]
 visible = false
-position = Vector2(1713, 302)
+position = Vector2(1712, 296)
 texture = ExtResource("4_cr56i")
 
 [node name="suelo" type="StaticBody2D" parent="level-1" groups=["suelos"]]
@@ -526,6 +528,21 @@ position = Vector2(452, 216)
 [node name="goomba2" parent="enemigos" instance=ExtResource("9_dvt07")]
 position = Vector2(572, 216)
 
+[node name="goomba3" parent="enemigos" instance=ExtResource("9_dvt07")]
+position = Vector2(1344, 86)
+
+[node name="goomba4" parent="enemigos" instance=ExtResource("9_dvt07")]
+position = Vector2(1833, 216)
+
+[node name="slime" parent="enemigos" instance=ExtResource("17_fbm0m")]
+position = Vector2(2886, 217)
+
+[node name="slime2" parent="enemigos" instance=ExtResource("17_fbm0m")]
+position = Vector2(905, 216)
+
+[node name="slime3" parent="enemigos" instance=ExtResource("17_fbm0m")]
+position = Vector2(2387, 216)
+
 [node name="Node" type="Node" parent="."]
 
 [node name="bloque_coin" parent="Node" instance=ExtResource("10_guj8b")]
@@ -578,7 +595,7 @@ position = Vector2(3185, 120)
 position = Vector2(2487, 435)
 
 [node name="Moneda2" parent="Monedas" instance=ExtResource("16_un1px")]
-position = Vector2(2505, 435)
+position = Vector2(2504, 435)
 
 [node name="Moneda3" parent="Monedas" instance=ExtResource("16_un1px")]
 position = Vector2(2520, 435)
@@ -590,13 +607,13 @@ position = Vector2(2536, 435)
 position = Vector2(2552, 435)
 
 [node name="Moneda6" parent="Monedas" instance=ExtResource("16_un1px")]
-position = Vector2(2473, 460)
+position = Vector2(2471, 460)
 
 [node name="Moneda7" parent="Monedas" instance=ExtResource("16_un1px")]
-position = Vector2(2491, 460)
+position = Vector2(2487, 460)
 
 [node name="Moneda8" parent="Monedas" instance=ExtResource("16_un1px")]
-position = Vector2(2505, 460)
+position = Vector2(2504, 460)
 
 [node name="Moneda9" parent="Monedas" instance=ExtResource("16_un1px")]
 position = Vector2(2520, 460)
@@ -611,13 +628,13 @@ position = Vector2(2552, 460)
 position = Vector2(2568, 460)
 
 [node name="Moneda13" parent="Monedas" instance=ExtResource("16_un1px")]
-position = Vector2(2473, 485)
+position = Vector2(2471, 485)
 
 [node name="Moneda14" parent="Monedas" instance=ExtResource("16_un1px")]
-position = Vector2(2491, 485)
+position = Vector2(2487, 485)
 
 [node name="Moneda15" parent="Monedas" instance=ExtResource("16_un1px")]
-position = Vector2(2505, 485)
+position = Vector2(2504, 485)
 
 [node name="Moneda16" parent="Monedas" instance=ExtResource("16_un1px")]
 position = Vector2(2520, 485)
@@ -630,3 +647,6 @@ position = Vector2(2552, 485)
 
 [node name="Moneda19" parent="Monedas" instance=ExtResource("16_un1px")]
 position = Vector2(2568, 485)
+
+[node name="bloque_oculto" parent="." instance=ExtResource("18_vqy20")]
+position = Vector2(3080, 164)

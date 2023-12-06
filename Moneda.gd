@@ -10,7 +10,7 @@ var monedaAgarrada=false
 func muevete():
 	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if monedaAgarrada:
 		if $izquierda.is_colliding() and $izquierda.get_collider().is_in_group("mario"):
 			colision_con_mario($izquierda.get_collider())

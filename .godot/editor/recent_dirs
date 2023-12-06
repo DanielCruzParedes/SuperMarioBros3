@@ -1,9 +1,9 @@
-res://scenes
-res://scripts
 res://scenes/bloques
+res://scenes/enemigos
+res://scripts
+res://scenes
 res://scenes/Power_Ups
 res://fonts
 res://
 res://scenes/Marios
 res://sprites
-res://scenes/enemigos

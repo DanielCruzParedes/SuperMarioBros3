@@ -128,6 +128,8 @@ func detectar():
 			colision2=$arriba2.get_collider()
 				
 		if colision2!=null:
+			if colision2.is_in_group("oculto"):
+					colision2.muevete()
 			if colision2.is_in_group("power_up"):
 				colision2.muevete()
 			elif colision2.is_in_group("bloques"):
@@ -137,6 +139,8 @@ func detectar():
 			elif colision2.is_in_group("moneda"):
 					colision2.queue_free()
 					Singleton.monedas+=1
+			elif colision2.is_in_group("enemigos"):
+				InstanceMarioPeque()
 			else:
 				pass
 		

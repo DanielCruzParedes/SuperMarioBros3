@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://djnnkdyttdv4d"]
+
+[ext_resource type="Texture2D" uid="uid://bbc85dxa01p4l" path="res://sprites/bloque_premios_desacivado.png" id="1_dxrmq"]
+[ext_resource type="Texture2D" uid="uid://c3d8logrgdcso" path="res://sprites/poderes y tiles.png" id="2_1oxy4"]
+[ext_resource type="Script" path="res://scenes/bloques/bloque_oculto.gd" id="2_l8e3r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbcub"]
+size = Vector2(16, 16)
+
+[node name="bloque_oculto" type="Node2D"]
+
+[node name="bloque_oculto" type="StaticBody2D" parent="." groups=["oculto", "suelos"]]
+script = ExtResource("2_l8e3r")
+
+[node name="desactivado" type="Sprite2D" parent="bloque_oculto"]
+visible = false
+position = Vector2(0, 2)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_dxrmq")
+
+[node name="activado" type="Sprite2D" parent="bloque_oculto"]
+visible = false
+texture = ExtResource("2_1oxy4")
+hframes = 10
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bloque_oculto"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_qbcub")
+one_way_collision = true
