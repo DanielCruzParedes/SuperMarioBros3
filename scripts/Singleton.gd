@@ -5,18 +5,21 @@ var hongo = load("res://scenes/Power_Ups/hongo.tscn")
 
 var mensajeMuerteScene = preload("res://scenes/mensaje_dead.tscn")
 var goombas
+var slimes
 var spr
 var sePuedenEliminarVidas = true
 var vidas = 5
 var monedas = 0
 var primeraVezApareciendo = true
 var puedesonartheme = false
+var ledioplay = false
 func _ready():
 	Spawn()
 
 
 
 func Spawn():
+	print("spawnea")
 	mario = load("res://scenes/Marios/mario_pequeno.tscn")
 	var mario_instance = mario.instantiate()
 	add_child(mario_instance)
@@ -41,13 +44,13 @@ func Respawn():
 		sePuedenEliminarVidas = false
 		if vidas>0:
 			
-			Spawn()
-			get_tree().reload_current_scene()
+			
 			sePuedenEliminarVidas=true
 		
 		else:
 			MostrarMensajeMuerte()
-	
+	Spawn()
+	get_tree().reload_current_scene()
 	
 
 func _physics_process(_delta):
@@ -74,12 +77,18 @@ func desactivarRaycasts(cosa):
 		for goomba in goombas:
 			if goomba.is_visible_in_tree():
 				raycastAbajo1.add_exception(goomba)
+		for slime in slimes:
+			if slime.is_visible_in_tree():
+				raycastAbajo1.add_exception(slime)
 
 	
 	if raycastAbajo2 and raycastAbajo2.is_visible_in_tree():
 		for goomba in goombas:
 			if goomba.is_visible_in_tree():
 				raycastAbajo2.add_exception(goomba)
+		for slime in slimes:
+			if slime.is_visible_in_tree():
+				raycastAbajo2.add_exception(slime)
 
 func activarRaycasts(cosa):
 	var raycastDerecha = cosa.get_node("derecha") # Replace with the actual path of the raycast derecha node
@@ -98,19 +107,28 @@ func activarRaycasts(cosa):
 		for goomba in goombas:
 			if goomba.is_visible_in_tree():
 				raycastAbajo1.remove_exception(goomba)
+		for slime in slimes:
+			if slime.is_visible_in_tree():
+				raycastAbajo1.remove_exception(slime)
 
 	
 	if raycastAbajo2 and raycastAbajo2.is_visible_in_tree():
 		for goomba in goombas:
 			if goomba.is_visible_in_tree():
 				raycastAbajo2.remove_exception(goomba)
+			for slime in slimes:
+				if slime.is_visible_in_tree():
+					raycastAbajo2.remove_exception(slime)
 
 
 func Inmunidad():
 	mario = get_tree().get_nodes_in_group("mario_peque")[0]
 	goombas = get_tree().get_nodes_in_group("enemigos")
+	slimes = get_tree().get_nodes_in_group("slimes")
 	spr = get_tree().get_nodes_in_group("spr")[0]
 	#agrega la collision exception a todos los goombas
+	for slime in slimes:
+		mario.add_collision_exception_with(slime)
 	for goomba in goombas:
 		mario.add_collision_exception_with(goomba)
 	desactivarRaycasts(mario)

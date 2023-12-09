@@ -1,10 +1,7 @@
-res://scenes/enemigos/slime.tscn
+res://scenes/menu_principal.tscn
 res://scripts/mario_grande.gd
 res://scenes/level1-1.tscn
-res://scenes/bloques/bloque_oculto.tscn
-res://scenes/bloques/bloque_vida.tscn
-res://scenes/enemigos/goomba.tscn
-res://scenes/Marios/mario_grande.tscn
-res://scenes/Mario.gd
+res://scenes/Power_Ups/pistola.tscn
+res://scenes/Power_Ups/hongo.tscn
 res://scenes/Marios/mario_pequeno.tscn
-res://scenes/enemigos/slime.gd
+res://scripts/Singleton.gd

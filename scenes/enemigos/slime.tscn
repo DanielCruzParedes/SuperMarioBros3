@@ -204,7 +204,7 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 
-[node name="slime" type="CharacterBody2D" parent="." groups=["enemigos"]]
+[node name="slime" type="CharacterBody2D" parent="." groups=["enemigos", "slimes"]]
 script = ExtResource("2_i1pn7")
 
 [node name="Sprite2D" type="Sprite2D" parent="slime"]

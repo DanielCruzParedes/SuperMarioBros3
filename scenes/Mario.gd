@@ -13,6 +13,7 @@ var estaSobreTuboEntrable = false
 var estaAladoDeTuboEntrable = false
 
 var MarioGrandeInstanciado=false
+var MarioMareroInstanciado=false
 
 func _ready():
 	Singleton.puedesonartheme=true
@@ -248,5 +249,13 @@ func InstanceGrande():
 		get_tree().root.add_child(Mario_instance)
 		MarioGrandeInstanciado=true
 		queue_free()
-	
+
+func InstanceMarero():
+	if not MarioMareroInstanciado: 
+		var MarioMarero = load("res://scenes/Marios/mario_grande.tscn")
+		var Mario_instance= MarioMarero.instantiate()
+		Mario_instance.global_position= global_position
+		get_tree().root.add_child(Mario_instance)
+		MarioGrandeInstanciado=true
+		queue_free()
 
