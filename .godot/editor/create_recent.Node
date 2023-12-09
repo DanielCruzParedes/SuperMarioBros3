@@ -1,6 +1,6 @@
+Sprite2D
 RayCast2D
 CollisionShape2D
-Sprite2D
 CharacterBody2D
 AnimationPlayer
 StaticBody2D

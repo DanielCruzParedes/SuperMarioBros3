@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1702135876
+::res://::1702151475
 icon.svg::CompressedTexture2D::3277260073642304561::1700334400::1700334400::1::::<><>::
 MenuPrincipal.gd::GDScript::-1::1702135704::0::1::::<>Node2D<>::
 Moneda.gd::GDScript::-1::1701841223::0::1::::<>CharacterBody2D<>::
@@ -32,18 +32,18 @@ image_example.gd::GDScript::-1::1700334400::0::1::::<>Control<>::
 image_example.tscn::PackedScene::8297109785530053854::1700334400::0::1::::<><>::res://addons/godot_gpt/examples/image/image_example.gd<>uid://ckmpdqurkchco
 ::res://fonts/::1700439153
 All Star Resort.ttf::FontFile::547754338585660405::1700439153::1700439153::1::::<><>::
-::res://scenes/::1702135857
+::res://scenes/::1702136254
 bandera.gd::GDScript::-1::1701132815::0::1::::<>Node2D<>::
 bandera.tscn::PackedScene::6427402043336987833::1701132815::0::1::::<><>::uid://c3d8logrgdcso
 bandera_f.tscn::PackedScene::207097913389330530::1701135503::0::1::::<><>::res://StaticBody2D.gd<>uid://c3d8logrgdcso
 bloque cafe.gd::GDScript::-1::1700598097::0::1::::<>StaticBody2D<>::
 bloque_coin.tscn::PackedScene::1272105457896285843::1701135503::0::1::::<><>::res://scripts/bloque_coin.gd<>uid://c3d8logrgdcso
 bloque_Monedas.gd::GDScript::-1::1700597404::0::1::::<>StaticBody2D<>::
-level1-1.tscn::PackedScene::7278170613851924671::1702135837::0::1::::<><>::uid://njbm3nj8wbn1::::res://sprites/level_1.png<>res://scripts/main.gd<>uid://h2lo0venyog8::::res://fonts/All Star Resort.ttf<>uid://bcsidxexjs6jd::::res://sprites/nivel.png<>res://scripts/Camera2D.gd<>uid://tn2ujag8nb2c::::res://scenes/bloques/bloque_cafe.tscn<>uid://cb4wanr0fsbfj::::res://scenes/bloques/bloque_monedas.tscn<>res://scripts/camaraBonus.gd<>uid://c0ed7ivxk2u3n::::res://scenes/bloques/bloque_Power.tscn<>uid://detgsxucp32nk::::res://scenes/enemigos/goomba.tscn<>uid://cxx1o4mn87mat::::res://scenes/bloques/bloque_vida.tscn<>uid://boij7pgtjotdi::::res://scenes/bloques/bloque_m.tscn<>uid://sehnkbhvxmfr::::res://scenes/bloque_coin.tscn<>uid://ckcrdyd70q4wq::::res://sound_effects/Super Mario All Stars (Super Mario Bros) - Overworld Theme (HIGH QUALITY).mp3<>uid://c7k4wp4v0doc::::res://scenes/bandera_f.tscn<>uid://dcll6iy6nbn3q::::res://scenes/moneda.tscn<>uid://bwope3kkfvb02::::res://scenes/enemigos/slime.tscn<>uid://djnnkdyttdv4d::::res://scenes/bloques/bloque_oculto.tscn
+level1-1.tscn::PackedScene::7278170613851924671::1702136238::0::1::::<><>::uid://njbm3nj8wbn1::::res://sprites/level_1.png<>res://scripts/main.gd<>uid://h2lo0venyog8::::res://fonts/All Star Resort.ttf<>uid://bcsidxexjs6jd::::res://sprites/nivel.png<>res://scripts/Camera2D.gd<>uid://tn2ujag8nb2c::::res://scenes/bloques/bloque_cafe.tscn<>uid://cb4wanr0fsbfj::::res://scenes/bloques/bloque_monedas.tscn<>res://scripts/camaraBonus.gd<>uid://c0ed7ivxk2u3n::::res://scenes/bloques/bloque_Power.tscn<>uid://detgsxucp32nk::::res://scenes/enemigos/goomba.tscn<>uid://cxx1o4mn87mat::::res://scenes/bloques/bloque_vida.tscn<>uid://boij7pgtjotdi::::res://scenes/bloques/bloque_m.tscn<>uid://sehnkbhvxmfr::::res://scenes/bloque_coin.tscn<>uid://ckcrdyd70q4wq::::res://sound_effects/Super Mario All Stars (Super Mario Bros) - Overworld Theme (HIGH QUALITY).mp3<>uid://c7k4wp4v0doc::::res://scenes/bandera_f.tscn<>uid://dcll6iy6nbn3q::::res://scenes/moneda.tscn<>uid://bwope3kkfvb02::::res://scenes/enemigos/slime.tscn<>uid://djnnkdyttdv4d::::res://scenes/bloques/bloque_oculto.tscn
 Mario.gd::GDScript::-1::1702134266::0::1::::<>CharacterBody2D<>::
 mensaje_dead.tscn::PackedScene::3314959882820692259::1701839337::0::1::::<><>::uid://dreh8lxdk1yqo
 menu.tscn::PackedScene::3664946261515690865::1701839337::0::1::::<><>::uid://h2lo0venyog8
-menu_principal.tscn::PackedScene::6930809521176524844::1702135837::0::1::::<><>::res://MenuPrincipal.gd<>uid://dreh8lxdk1yqo::::res://sprites/fondo2.png<>uid://h2lo0venyog8::::res://fonts/All Star Resort.ttf
+menu_principal.tscn::PackedScene::6930809521176524844::1702136254::0::1::::<><>::res://MenuPrincipal.gd<>uid://dreh8lxdk1yqo::::res://sprites/fondo2.png<>uid://h2lo0venyog8::::res://fonts/All Star Resort.ttf
 moneda.tscn::PackedScene::7323071598869541300::1701135503::0::1::::<><>::res://Moneda.gd<>uid://b6mgpnbxj3eko
 ::res://scenes/bloques/::1702131585
 bloque_cafe.tscn::PackedScene::1362100487635560788::1700671889::0::1::::<><>::res://scenes/bloque cafe.gd<>uid://c3d8logrgdcso
@@ -51,29 +51,29 @@ bloque_m.tscn::PackedScene::3386183912992838554::1701132815::0::1::::<><>::res:/
 bloque_monedas.tscn::PackedScene::4904233649941333239::1701135503::0::1::::<><>::res://scenes/bloque_Monedas.gd<>uid://bbc85dxa01p4l
 bloque_monedas_power.tscn::PackedScene::5223682518279695667::1700334400::0::1::::<><>::uid://bbc85dxa01p4l
 bloque_oculto.gd::GDScript::-1::1701892252::0::1::::<>StaticBody2D<>::
-bloque_oculto.tscn::PackedScene::7818605929003547737::1702131585::0::1::::<><>::uid://bbc85dxa01p4l::::res://sprites/bloque_premios_desacivado.png<>uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png<>res://scenes/bloques/bloque_oculto.gd
+bloque_oculto.tscn::PackedScene::7818605929003547737::1702131585::0::1::::<><>::uid://bbc85dxa01p4l
 bloque_Power.gd::GDScript::-1::1700785850::0::1::::<>StaticBody2D<>::
 bloque_Power.tscn::PackedScene::6536059719423664173::1701891335::0::1::::<><>::res://scenes/bloques/bloque_Power.gd<>uid://bbc85dxa01p4l
 bloque_powerUp.tscn::PackedScene::5971601034950980355::1700334400::0::1::::<><>::uid://bbc85dxa01p4l
 bloque_PowerUpM.tscn::PackedScene::3426969343429960572::1700334400::0::1::::<><>::uid://bbc85dxa01p4l
-bloque_vida.tscn::PackedScene::6436270644681756787::1702131585::0::1::::<><>::res://scripts/bloque_vida.gd<>uid://bbc85dxa01p4l::::res://sprites/bloque_premios_desacivado.png<>uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png<>uid://c3mcd05hpau4r::::res://scenes/Power_Ups/hongo_v.tscn<>uid://dfdjv11d7sjj8::::res://sound_effects/smb_powerup_appears.wav<>uid://ceucl6n1q8nsq::::res://sound_effects/smb_1-up.wav
+bloque_vida.tscn::PackedScene::6436270644681756787::1702131585::0::1::::<><>::res://scripts/bloque_vida.gd<>uid://bbc85dxa01p4l
 destruccion_bloque.tscn::PackedScene::7571732064623339650::1700598045::0::1::::<><>::res://scripts/destruccion_bloque.gd<>uid://kuj7weiiq3lh
 ::res://scenes/enemigos/::1702131585
 goomba.gd::GDScript::-1::1701892952::0::1::::<>CharacterBody2D<>::
-goomba.tscn::PackedScene::7479638288250645056::1702131585::0::1::::<><>::res://scenes/enemigos/goomba.gd<>uid://8cardx6ejigr::::res://sprites/goomba.png<>uid://bmqk1ks1c12hv::::res://sprites/goomba_dead.png<>uid://h2lo0venyog8::::res://fonts/All Star Resort.ttf<>uid://dxbffh4qa65vk::::res://sound_effects/smb_stomp.wav
+goomba.tscn::PackedScene::7479638288250645056::1702131585::0::1::::<><>::res://scenes/enemigos/goomba.gd<>uid://8cardx6ejigr
 slime.gd::GDScript::-1::1701906524::0::1::::<>CharacterBody2D<>::
-slime.tscn::PackedScene::3960395916917478441::1702131585::0::1::::<><>::uid://b5s0rmo7xd3d0::::res://sprites/slime.png<>res://scenes/enemigos/slime.gd
-::res://scenes/Marios/::1702135837
-mario_grande.tscn::PackedScene::5712089954003325914::1702131585::0::1::::<><>::res://scripts/mario_grande.gd<>uid://rkrn2df1s8i8::::res://scenes/Marios/mario_pequeno.tscn<>uid://3sf2r7ri20if::::res://sprites/run_idle_jump_grande.png<>uid://bl3tb5u46h02q::::res://sound_effects/smb_jump-super.wav<>uid://bnlywyfs3eg41::::res://sprites/down_grande.png<>uid://bu58kwg8r4ayr::::res://sound_effects/smb_powerup.wav<>uid://cy6blxxg2qqrg::::res://sound_effects/smb_pipe.wav
-mario_pequeno.tscn::PackedScene::1214910946612476741::1702135837::0::1::::<><>::res://scenes/Mario.gd<>uid://tw16ohwuibg5::::res://sprites/run_idle_jump_pequeño.png<>uid://cuqi2l4i3ojpm::::res://sprites/dead.png<>uid://dwl600jj163a2::::res://sound_effects/smb_jump-small.wav<>uid://dxonkp6exe4wk::::res://sound_effects/smb_mariodie.wav<>uid://cy6blxxg2qqrg::::res://sound_effects/smb_pipe.wav
-::res://scenes/Power_Ups/::1702135837
-character_body_2d.tscn::PackedScene::8104163110587637452::1702134004::0::1::::<><>::uid://cer5mrtc3j5hs::::res://sprites/pistola.png
+slime.tscn::PackedScene::3960395916917478441::1702131585::0::1::::<><>::uid://b5s0rmo7xd3d0
+::res://scenes/Marios/::1702136239
+mario_grande.tscn::PackedScene::5712089954003325914::1702131585::0::1::::<><>::res://scripts/mario_grande.gd<>uid://rkrn2df1s8i8
+mario_pequeno.tscn::PackedScene::1214910946612476741::1702136239::0::1::::<><>::res://scenes/Mario.gd<>uid://tw16ohwuibg5::::res://sprites/run_idle_jump_pequeño.png<>uid://cuqi2l4i3ojpm::::res://sprites/dead.png<>uid://dwl600jj163a2::::res://sound_effects/smb_jump-small.wav<>uid://dxonkp6exe4wk::::res://sound_effects/smb_mariodie.wav<>uid://cy6blxxg2qqrg::::res://sound_effects/smb_pipe.wav
+::res://scenes/Power_Ups/::1702136239
+character_body_2d.tscn::PackedScene::8104163110587637452::1702134004::0::1::::<><>::uid://cer5mrtc3j5hs
 hongo.gd::GDScript::-1::1700334400::0::1::::<>CharacterBody2D<>::
-hongo.tscn::PackedScene::8313705126990383045::1702135837::0::1::::<><>::uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png<>res://scripts/hongo.gd
+hongo.tscn::PackedScene::8313705126990383045::1702136239::0::1::::<><>::uid://c3d8logrgdcso::::res://sprites/poderes y tiles.png<>res://scripts/hongo.gd
 hongo_v.tscn::PackedScene::6763029673433077003::1701135503::0::1::::<><>::res://scripts/hongo_v.gd<>uid://c3d8logrgdcso
 pistola.gd::GDScript::-1::1702134219::0::1::::<>CharacterBody2D<>::
-pistola.tscn::PackedScene::4370128442088388017::1702135837::0::1::::<><>::res://scenes/Power_Ups/pistola.gd<>uid://cer5mrtc3j5hs::::res://sprites/pistola.png
-::res://scripts/::1702135770
+pistola.tscn::PackedScene::4370128442088388017::1702136239::0::1::::<><>::res://scenes/Power_Ups/pistola.gd<>uid://cer5mrtc3j5hs::::res://sprites/pistola.png
+::res://scripts/::1702136244
 bloque_coin.gd::GDScript::-1::1700597346::0::1::::<>StaticBody2D<>::
 bloque_m.gd::GDScript::-1::1700671499::0::1::::<>StaticBody2D<>::
 bloque_vida.gd::GDScript::-1::1700598388::0::1::::<>StaticBody2D<>::
@@ -83,9 +83,9 @@ destruccion_bloque.gd::GDScript::-1::1700598043::0::1::::<>Node2D<>::
 hongo.gd::GDScript::-1::1700784877::0::1::::<>CharacterBody2D<>::
 hongo_v.gd::GDScript::-1::1701132815::0::1::::<>CharacterBody2D<>::
 main.gd::GDScript::-1::1702135644::0::1::::<>Node<>::
-mario_grande.gd::GDScript::-1::1702131537::0::1::::<>CharacterBody2D<>::
+mario_grande.gd::GDScript::-1::1702135880::0::1::::<>CharacterBody2D<>::
 menu.gd::GDScript::-1::1701839337::0::1::::<>Control<>::
-Singleton.gd::GDScript::-1::1702135770::0::1::::<>Node<>::
+Singleton.gd::GDScript::-1::1702136244::0::1::::<>Node<>::
 ::res://sound_effects/::1700600858
 smb_1-up.wav::AudioStreamWAV::5095027024248340912::1700491474::1700491474::1::::<><>::
 smb_bowserfalls.wav::AudioStreamWAV::2741473847487243434::1700491474::1700491474::1::::<><>::
@@ -109,8 +109,9 @@ smb_stomp.wav::AudioStreamWAV::8775982759632464260::1700491474::1700491474::1:::
 smb_warning.wav::AudioStreamWAV::6346692789410962967::1700491474::1700491474::1::::<><>::
 smb_world_clear.wav::AudioStreamWAV::8059666646113734895::1700491474::1700491474::1::::<><>::
 Super Mario All Stars (Super Mario Bros) - Overworld Theme (HIGH QUALITY).mp3::AudioStreamMP3::5479897372216211904::1700600858::1700600858::1::::<><>::
-::res://sprites/::1702133490
+::res://sprites/::1702152412
 bloque_premios_desacivado.png::CompressedTexture2D::2462795710552693825::1700334400::1700334400::1::::<><>::
+Castillo.png::CompressedTexture2D::1516667898096919110::1702152390::1702152418::1::::<><>::
 coin.png::CompressedTexture2D::4587439143792498050::1700524789::1700524789::1::::<><>::
 dead.png::CompressedTexture2D::6210182859547011742::1700334400::1700334400::1::::<><>::
 destruccion bloque.png::CompressedTexture2D::743780751869130733::1700334400::1700334400::1::::<><>::

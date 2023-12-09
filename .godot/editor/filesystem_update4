@@ -1,7 +1,6 @@
-res://scenes/menu_principal.tscn
-res://scripts/mario_grande.gd
 res://scenes/level1-1.tscn
+res://scripts/mario_grande.gd
 res://scenes/Power_Ups/pistola.tscn
 res://scenes/Power_Ups/hongo.tscn
 res://scenes/Marios/mario_pequeno.tscn
-res://scripts/Singleton.gd
+res://scenes/menu_principal.tscn
