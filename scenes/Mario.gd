@@ -11,6 +11,7 @@ var Morir=false
 var puedeSonarBrincar = true
 var estaSobreTuboEntrable = false
 var estaAladoDeTuboEntrable = false
+var estaEntradaCastillo=false
 
 var MarioGrandeInstanciado=false
 var MarioMareroInstanciado=false
@@ -41,6 +42,12 @@ func _physics_process(delta):
 			print("intenta salir")
 			salirDelBonus()
 			estaAladoDeTuboEntrable=false
+		
+		if Input.is_action_pressed("derecha") and estaEntradaCastillo==true:
+			print("intento nivel2")
+			teletransportarNivel2()
+			Singleton.fueNivel2+=1
+			estaEntradaCastillo=false
 			
 	
 		if Input.is_action_pressed("derecha"):
@@ -181,6 +188,11 @@ func detectar():
 					estaAladoDeTuboEntrable=true
 				else:
 					estaAladoDeTuboEntrable=false
+					
+				if colision3.is_in_group("castillo"):
+					estaEntradaCastillo=true
+				else:
+					estaEntradaCastillo=false
 				
 		if $izquierda.is_colliding():
 			var colision4=$izquierda.get_collider()
@@ -200,6 +212,10 @@ func detectar():
 					Singleton.monedas+=1
 				else:
 					pass
+					
+func teletransportarNivel2():
+	get_tree().get_nodes_in_group("mario_peque")[0].global_position = get_tree().get_nodes_in_group("nivel2")[0].global_position
+	
 			
 func teletransportarABonus():
 	$entraATubo.play()

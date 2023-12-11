@@ -11,6 +11,7 @@ var Morir=false
 var MarioPequenoInstanciado=false
 var estaSobreTuboEntrable = false
 var estaAladoDeTuboEntrable = false
+var estaEntradaCastillo=false
 
 @export var MarioPeque = load("res://scenes/Marios/mario_pequeno.tscn")
 func _ready():
@@ -36,6 +37,12 @@ func _physics_process(delta):
 		print("intenta salir")
 		salirDelBonus()
 		estaAladoDeTuboEntrable=false
+	
+	if Input.is_action_pressed("derecha") and estaEntradaCastillo==true:
+			print("intento nivel2")
+			teletransportarNivel2()
+			Singleton.fueNivel2+=1
+			estaEntradaCastillo=false
 		
 		
 	if Input.is_action_pressed("derecha"):
@@ -163,7 +170,11 @@ func detectar():
 				estaAladoDeTuboEntrable=true
 			else:
 				estaAladoDeTuboEntrable=false
-				
+			
+			if colision3.is_in_group("castillo"):
+				estaEntradaCastillo=true
+			else:
+				estaEntradaCastillo=false
 
 	if $izquierda.is_colliding():
 		var colision4=$izquierda.get_collider()
@@ -189,7 +200,10 @@ func InstanceMarioPeque():
 	get_tree().get_nodes_in_group("main")[0].add_child(InstanceMario)
 	Singleton.Inmunidad()
 	queue_free()
-
+	
+func teletransportarNivel2():
+	get_tree().get_nodes_in_group("mario")[0].global_position = get_tree().get_nodes_in_group("nivel2")[0].global_position
+	
 func teletransportarABonus():
 	$entraATubo.play()
 	get_tree().get_nodes_in_group("mario")[0].global_position = get_tree().get_nodes_in_group("entradabonus")[0].global_position

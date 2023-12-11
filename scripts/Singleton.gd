@@ -13,18 +13,26 @@ var monedas = 0
 var primeraVezApareciendo = true
 var puedesonartheme = false
 var ledioplay = false
+var conteoMenu=0
+
+
+var fueNivel2=0;
 func _ready():
-	Spawn()
+	if ledioplay==true:
+		Spawn()
 
 
 
 func Spawn():
-	print("spawnea")
-	mario = load("res://scenes/Marios/mario_pequeno.tscn")
-	var mario_instance = mario.instantiate()
-	add_child(mario_instance)
-	
-	mario_instance.global_position =get_tree().get_nodes_in_group("spawnmario")[0].global_position
+	if ledioplay==true:
+		print("spawnea")
+		mario = load("res://scenes/Marios/mario_pequeno.tscn")
+		var mario_instance = mario.instantiate()
+		add_child(mario_instance)
+		if fueNivel2==0:
+			mario_instance.global_position =get_tree().get_nodes_in_group("spawnmario")[0].global_position
+		elif fueNivel2>0:
+			mario_instance.global_position= get_tree().get_nodes_in_group("nivel2")[0].global_position
 
 func MostrarMensajeMuerte():
 	var mensajeMuerteInstance = mensajeMuerteScene.instantiate()
@@ -54,8 +62,12 @@ func Respawn():
 	
 
 func _physics_process(_delta):
-	get_tree().get_nodes_in_group("vidas")[0].text = str(vidas)
-	get_tree().get_nodes_in_group("coins")[0].text = str(monedas)
+	var vidas_nodes = get_tree().get_nodes_in_group("vidas")
+	var coins_nodes = get_tree().get_nodes_in_group("coins")
+	if vidas_nodes.size() > 0:
+		vidas_nodes[0].text = str(vidas)
+	if coins_nodes.size() > 0:
+		coins_nodes[0].text = str(monedas)
 	if monedas == 100:
 		vidas += 1
 		monedas = 0
