@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0n4xd3pn8bxq"]
+
+[ext_resource type="Texture2D" uid="uid://bbc85dxa01p4l" path="res://sprites/bloque_premios_desacivado.png" id="1_a00pf"]
+[ext_resource type="Script" path="res://scenes/bloques/bloquePistola.gd" id="1_ohi7m"]
+[ext_resource type="Texture2D" uid="uid://c3d8logrgdcso" path="res://sprites/poderes y tiles.png" id="2_jqbdj"]
+[ext_resource type="PackedScene" uid="uid://b3i6m2062dss4" path="res://scenes/Power_Ups/pistola.tscn" id="3_f760c"]
+[ext_resource type="AudioStream" uid="uid://dfdjv11d7sjj8" path="res://sound_effects/smb_powerup_appears.wav" id="4_ep585"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqlda"]
+size = Vector2(16, 16)
+
+[node name="pistola" type="StaticBody2D" groups=["bloques", "suelos"]]
+script = ExtResource("1_ohi7m")
+
+[node name="desactivado" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_a00pf")
+
+[node name="activado" type="Sprite2D" parent="."]
+texture = ExtResource("2_jqbdj")
+hframes = 10
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_bqlda")
+
+[node name="spawn_pistola" type="Marker2D" parent="."]
+z_index = 1
+
+[node name="pistola" parent="." instance=ExtResource("3_f760c")]
+position = Vector2(0, 2)
+
+[node name="aparecepowerup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ep585")
+volume_db = -10.0

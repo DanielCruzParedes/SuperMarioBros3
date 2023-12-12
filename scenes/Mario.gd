@@ -14,9 +14,13 @@ var estaAladoDeTuboEntrable = false
 var estaEntradaCastillo=false
 
 var MarioGrandeInstanciado=false
-var MarioMareroInstanciado=false
+var MarioGangsterInstanciado=false
 
 func _ready():
+	print("soy mario peque")
+	Singleton.esPeque=true
+	Singleton.esGrande=false
+	Singleton.esGangster=false
 	Singleton.puedesonartheme=true
 	if Singleton.primeraVezApareciendo == false:
 		print("deberia de sonar el dano")
@@ -120,6 +124,8 @@ func detectar():
 						InstanceGrande()
 						MarioGrandeInstanciado = true
 						colision.queue_free()
+				elif colision.is_in_group("pistolapowerup"):
+					print("esta sobre pistola")
 				elif colision.is_in_group("vida"):
 					Singleton.vidas+=1
 					colision.queue_free()
@@ -128,6 +134,7 @@ func detectar():
 				elif colision.is_in_group("moneda"):
 					colision.queue_free()
 					Singleton.monedas+=1
+					$sonidomoneda.play()
 				if colision.is_in_group("tubosentrables"):
 					estaSobreTuboEntrable=true
 					salto_valido=true
@@ -153,6 +160,7 @@ func detectar():
 				elif colision2.is_in_group("moneda"):
 					colision2.queue_free()
 					Singleton.monedas+=1
+					$sonidomoneda.play()
 				elif colision2.is_in_group("power_Up"):
 					if not MarioGrandeInstanciado:
 						InstanceGrande()
@@ -177,10 +185,13 @@ func detectar():
 					Singleton.vidas+=1
 					colision3.queue_free()
 				elif colision3.is_in_group("bandera"):
+					$audioBandera.play()
 					colision3.muevete()
+					
 				elif colision3.is_in_group("moneda"):
 					colision3.queue_free()
 					Singleton.monedas+=1
+					$sonidomoneda.play()
 				else:
 					pass
 					
@@ -210,6 +221,7 @@ func detectar():
 				elif colision4.is_in_group("moneda"):
 					colision4.queue_free()
 					Singleton.monedas+=1
+					$sonidomoneda.play()
 				else:
 					pass
 					
@@ -259,6 +271,7 @@ func Muerte():
 	#saltar_valido=ha tocado el piso
 func InstanceGrande():
 	if not MarioGrandeInstanciado: 
+		Singleton.estaEnInmunidad = false
 		var MarioGrande= load("res://scenes/Marios/mario_grande.tscn")
 		var Mario_instance= MarioGrande.instantiate()
 		Mario_instance.global_position= global_position
@@ -266,12 +279,13 @@ func InstanceGrande():
 		MarioGrandeInstanciado=true
 		queue_free()
 
-func InstanceMarero():
-	if not MarioMareroInstanciado: 
-		var MarioMarero = load("res://scenes/Marios/mario_grande.tscn")
-		var Mario_instance= MarioMarero.instantiate()
+func InstanceGangster():
+	if not MarioGangsterInstanciado: 
+		Singleton.estaEnInmunidad = false
+		var MarioGangster = load("res://scenes/Marios/mario_gangster.tscn")
+		var Mario_instance= MarioGangster.instantiate()
 		Mario_instance.global_position= global_position
 		get_tree().root.add_child(Mario_instance)
-		MarioGrandeInstanciado=true
+		MarioGangsterInstanciado=true
 		queue_free()
 

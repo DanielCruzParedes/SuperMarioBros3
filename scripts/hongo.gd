@@ -34,14 +34,17 @@ func _physics_process(delta):
 		elif pegoIzquierda==true:
 			velocity.x = SPEED
 			move_and_slide()
-		if $izquierda.is_colliding() and $izquierda.get_collider().is_in_group("mario"):
-			colision_con_mario($izquierda.get_collider())
-		if $derecha.is_colliding() and $derecha.get_collider().is_in_group("mario"):
-			colision_con_mario($derecha.get_collider())
-		if $arriba.is_colliding() and $arriba.get_collider().is_in_group("mario"):
-			colision_con_mario($arriba.get_collider())
-		if $abajo.is_colliding() and $abajo.get_collider().is_in_group("mario"):
-			colision_con_mario($abajo.get_collider())
+		if Singleton.esPeque == true:
+			if $izquierda.is_colliding() and $izquierda.get_collider().is_in_group("mario"):
+				colision_con_mario($izquierda.get_collider())
+			if $derecha.is_colliding() and $derecha.get_collider().is_in_group("mario"):
+				colision_con_mario($derecha.get_collider())
+			if $arriba.is_colliding() and $arriba.get_collider().is_in_group("mario"):
+				colision_con_mario($arriba.get_collider())
+			if $abajo.is_colliding() and $abajo.get_collider().is_in_group("mario"):
+				colision_con_mario($abajo.get_collider())
+		else:
+			pass
 		
 	else:
 		position.y -= 1
@@ -69,7 +72,16 @@ func desaparece():
 	
 func colision_con_mario(colision_mario):
 	if not colision_mario.is_queued_for_deletion() and colision_mario.is_in_group("mario"):
-		colision_mario.InstanceGrande()
-		colision_mario.MarioGrandeInstanciado = true
-		queue_free()
+		if Singleton.esPeque:
+			colision_mario.InstanceGrande()
+			colision_mario.MarioGrandeInstanciado = true
+			print("hongo en peque")
+			queue_free()
+		elif Singleton.esGrande:
+			print("hongo en grande")
+			queue_free()
+		elif Singleton.esGangster:
+			queue_free()
+	else:
+		pass
 		

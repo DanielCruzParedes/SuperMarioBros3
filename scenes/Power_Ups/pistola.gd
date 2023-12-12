@@ -10,7 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func muevete():
 	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if puedoMoverme == true:
 		detectar()
 		if $izquierda.is_colliding() and $izquierda.get_collider().is_in_group("mario"):
@@ -23,11 +23,11 @@ func _physics_process(delta):
 			colision_con_mario($abajo.get_collider())
 		
 	else:
-		position.y -= 1
+		position.y -= 0.5
 		move_and_slide()
 		await get_tree().create_timer(0.25).timeout
 		puedoMoverme=true
-		$colisionHongo.disabled=false
+		$colisionPistola.disabled=false
 		
 
 
@@ -41,7 +41,7 @@ func desaparece():
 	
 func colision_con_mario(colision_mario):
 	if not colision_mario.is_queued_for_deletion() and colision_mario.is_in_group("mario"):
-		colision_mario.InstanceMarero()
-		colision_mario.MarioMareroInstanciado = true
+		colision_mario.InstanceGangster()
+		colision_mario.MarioGangsterInstanciado = true
 		queue_free()
 		

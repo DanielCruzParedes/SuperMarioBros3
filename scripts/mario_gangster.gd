@@ -12,15 +12,17 @@ var MarioPequenoInstanciado=false
 var estaSobreTuboEntrable = false
 var estaAladoDeTuboEntrable = false
 var estaEntradaCastillo=false
-var MarioGangsterInstanciado
 
-@export var MarioPeque = load("res://scenes/Marios/mario_pequeno.tscn")
+var ultimoDisparo = 0
+const cooldownDisparo = 0.2
+
+@export var MarioGrande = load("res://scenes/Marios/mario_grande.tscn")
 func _ready():
 	Singleton.esPeque=false
-	Singleton.esGrande=true
-	Singleton.esGangster=false
+	Singleton.esGrande=false
+	Singleton.esGangster=true
 	$mariocreciendo.play()
-	print("soy mario grande")
+	print("soy mario gangster")
 	
 func _physics_process(delta):
 	detectar()
@@ -28,9 +30,34 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	
 	# Get the input direction and handle the movement/deceleration.
-	var direction = Input.get_axis("izquierda", "derecha")
+	var direction = Input.get_axis("izquierda", "derecha" )
 	#if Input.is_action_pressed("derecha") or Input.is_action_pressed("izquierda"): 
 	velocity.x = direction * SPEED
+	if Input.is_action_pressed("disparar"):
+	
+		if ultimoDisparo + cooldownDisparo < Time.get_unix_time_from_system():
+			# Detectar direccion de bala 1 derecha, -1 izquierda
+			var dir = 1 if $SpriteMario.flip_h == false else -1
+			print(dir)
+			
+			# Vector para decirle a la bala donde debe de ir
+			var objetivo_bala = Vector2((global_position.x + 20) * dir, global_position.y+1)		
+			var bala = preload("res://Bala.tscn").instantiate()
+			
+			# Crear la posicion inicial de la bala
+			
+			var pos_inicial = global_position
+			pos_inicial.x += (15 * dir)
+			
+			# Inidicarle a la bala donde debe ir
+			bala.set_objective(global_position.direction_to(objetivo_bala))
+			
+			# Asignar pos donde va a spawnear a bala
+			bala.global_position = pos_inicial
+			get_parent().add_child(bala)
+			
+			print("dispara dispara")
+			ultimoDisparo = Time.get_unix_time_from_system()
 	
 	if Input.is_action_just_pressed("abajo") and estaSobreTuboEntrable==true:
 		print("intento entrar")
@@ -148,12 +175,12 @@ func detectar():
 					colision2.muevete()
 			if colision2.is_in_group("power_up"):
 				colision2.muevete()
+			elif colision2.is_in_group("bloquePowerUp"):
+				colision2.muevete()
 			elif colision2.is_in_group("power_Up"):
 				$sonidomoneda.play()
 				Singleton.monedas += 1
 				colision2.queue_free()
-			elif colision2.is_in_group("bloquePowerUp"):
-				colision2.muevete()
 			elif colision2.is_in_group("bloques"):
 				colision2.Destruir()
 			elif colision2.is_in_group("aqum_coins"):
@@ -175,7 +202,6 @@ func detectar():
 			elif colision3.is_in_group("bandera"):
 					$audioBandera.play()
 					colision3.muevete()
-					
 			elif colision3.is_in_group("moneda"):
 					colision3.queue_free()
 					Singleton.monedas+=1
@@ -223,7 +249,7 @@ func detectar():
 func InstanceMarioPeque():
 	Singleton.primeraVezApareciendo=false
 	print("se hizo false")
-	var InstanceMario  = MarioPeque.instantiate()
+	var InstanceMario  = MarioGrande.instantiate()
 	InstanceMario.global_position = global_position
 	get_tree().get_nodes_in_group("main")[0].add_child(InstanceMario)
 	Singleton.Inmunidad()
@@ -247,13 +273,3 @@ func salirDelBonus():
 
 func InstangeGrande():
 	pass
-
-func InstanceGangster():
-	if not MarioGangsterInstanciado: 
-		Singleton.estaEnInmunidad = false
-		var MarioGangster = load("res://scenes/Marios/mario_gangster.tscn")
-		var Mario_instance= MarioGangster.instantiate()
-		Mario_instance.global_position= global_position
-		get_tree().root.add_child(Mario_instance)
-		MarioGangsterInstanciado=true
-		queue_free()

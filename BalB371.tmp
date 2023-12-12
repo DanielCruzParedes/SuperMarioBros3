@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds1ppepe2ipdx"]
+
+[ext_resource type="Script" path="res://Bala.gd" id="1_b2ico"]
+
+[sub_resource type="Gradient" id="Gradient_pu870"]
+colors = PackedColorArray(1, 0.423529, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ildqv"]
+gradient = SubResource("Gradient_pu870")
+
+[node name="Bala" type="RigidBody2D"]
+script = ExtResource("1_b2ico")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(2, -3)
+scale = Vector2(1.47266, 0.320313)
+texture = SubResource("GradientTexture2D_ildqv")

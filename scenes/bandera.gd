@@ -8,7 +8,6 @@ func _ready():
 
 func bandera():
 	$AnimationPlayer.play("bandera")
-	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

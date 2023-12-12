@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds1ppepe2ipdx"]
+
+[ext_resource type="Script" path="res://Bala.gd" id="1_b2ico"]
+
+[sub_resource type="Gradient" id="Gradient_pu870"]
+colors = PackedColorArray(1, 0.423529, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ildqv"]
+gradient = SubResource("Gradient_pu870")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofxqm"]
+size = Vector2(4, 2)
+
+[node name="Bala" type="RigidBody2D"]
+script = ExtResource("1_b2ico")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-5.96046e-08, 0)
+scale = Vector2(0.0625, 0.0400391)
+texture = SubResource("GradientTexture2D_ildqv")
+
+[node name="derecha" type="RayCast2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(1, 3)
+target_position = Vector2(2, 0)
+
+[node name="izquierda" type="RayCast2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(1, 3)
+target_position = Vector2(-2, 0)
+
+[node name="abajo" type="RayCast2D" parent="."]
+target_position = Vector2(0, 5)
+
+[node name="arriba" type="RayCast2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(3, 1)
+target_position = Vector2(0, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ofxqm")

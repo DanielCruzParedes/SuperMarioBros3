@@ -3,6 +3,8 @@ extends Node
 var mario = load("res://scenes/Marios/mario_pequeno.tscn")
 var hongo = load("res://scenes/Power_Ups/hongo.tscn")
 
+var estaEnInmunidad = false
+
 var mensajeMuerteScene = preload("res://scenes/mensaje_dead.tscn")
 var goombas
 var slimes
@@ -14,6 +16,10 @@ var primeraVezApareciendo = true
 var puedesonartheme = false
 var ledioplay = false
 var conteoMenu=0
+
+var esPeque = false
+var esGrande = false
+var esGangster = false
 
 
 var fueNivel2=0;
@@ -73,8 +79,9 @@ func _physics_process(_delta):
 		monedas = 0
 
 func desactivarRaycasts(cosa):
-	var raycastDerecha = cosa.get_node("derecha") # Replace with the actual path of the raycast derecha node
-	var raycastIzquierda = cosa.get_node("izquierda") # Replace with the actual path of the raycast izquierda node
+	print(cosa)
+	var raycastDerecha = cosa.get_node("derecha")
+	var raycastIzquierda = cosa.get_node("izquierda") 
 	var raycastAbajo1 = cosa.get_node("abajo")
 	var raycastAbajo2 = cosa.get_node("abajo2")
 	if raycastDerecha:
@@ -103,41 +110,57 @@ func desactivarRaycasts(cosa):
 				raycastAbajo2.add_exception(slime)
 
 func activarRaycasts(cosa):
-	var raycastDerecha = cosa.get_node("derecha") # Replace with the actual path of the raycast derecha node
-	var raycastIzquierda = cosa.get_node("izquierda") # Replace with the actual path of the raycast izquierda node
-	var raycastAbajo1 = cosa.get_node("abajo")
-	var raycastAbajo2 = cosa.get_node("abajo2")
-	if raycastDerecha:
-		if raycastDerecha.is_visible_in_tree():
-			raycastDerecha.enabled = true  # Disable the raycast derecha
-	
-	if raycastIzquierda:
-		if raycastIzquierda.is_visible_in_tree():
-			raycastIzquierda.enabled = true  # Disable the raycast izquierda
-	
-	if raycastAbajo1 and raycastAbajo1.is_visible_in_tree():
-		for goomba in goombas:
-			if goomba.is_visible_in_tree():
-				raycastAbajo1.remove_exception(goomba)
-		for slime in slimes:
-			if slime.is_visible_in_tree():
-				raycastAbajo1.remove_exception(slime)
+	if cosa != null:
+		if not cosa.is_queued_for_deletion():
+			var raycastDerecha = cosa.get_node("derecha") # Replace with the actual path of the raycast derecha node
+			var raycastIzquierda = cosa.get_node("izquierda") # Replace with the actual path of the raycast izquierda node
+			var raycastAbajo1 = cosa.get_node("abajo")
+			var raycastAbajo2 = cosa.get_node("abajo2")
+			if raycastDerecha:
+				if raycastDerecha.is_visible_in_tree():
+					raycastDerecha.enabled = true  # Disable the raycast derecha
+			
+			if raycastIzquierda:
+				if raycastIzquierda.is_visible_in_tree():
+					raycastIzquierda.enabled = true  # Disable the raycast izquierda
+			
+			if raycastAbajo1 and raycastAbajo1.is_visible_in_tree():
+				for goomba in goombas:
+					if goomba.is_visible_in_tree():
+						raycastAbajo1.remove_exception(goomba)
+				for slime in slimes:
+					if slime.is_visible_in_tree():
+						raycastAbajo1.remove_exception(slime)
 
-	
-	if raycastAbajo2 and raycastAbajo2.is_visible_in_tree():
-		for goomba in goombas:
-			if goomba.is_visible_in_tree():
-				raycastAbajo2.remove_exception(goomba)
-			for slime in slimes:
-				if slime.is_visible_in_tree():
-					raycastAbajo2.remove_exception(slime)
+			
+			if raycastAbajo2 and raycastAbajo2.is_visible_in_tree():
+				for goomba in goombas:
+					if goomba.is_visible_in_tree():
+						raycastAbajo2.remove_exception(goomba)
+					for slime in slimes:
+						if slime.is_visible_in_tree():
+							raycastAbajo2.remove_exception(slime)
 
 
 func Inmunidad():
-	mario = get_tree().get_nodes_in_group("mario_peque")[0]
+	print("se hizo inmune")
+	estaEnInmunidad = true
+	if esPeque:
+		print("es peque inmune")
+		mario = get_tree().get_nodes_in_group("mario_peque")[0]
+		spr = get_tree().get_nodes_in_group("spritePeque")[0]
+	elif esGrande:
+		print("es grande inmune")
+		mario = get_tree().get_nodes_in_group("marioGrande")[0]
+		spr = get_tree().get_nodes_in_group("spriteGrande")[0]
+	elif esGangster:
+		print("es gangster inmune")
+		mario = get_tree().get_nodes_in_group("mariogangster")[0]
+		spr = get_tree().get_nodes_in_group("spriteGangster")[0]
+		
 	goombas = get_tree().get_nodes_in_group("enemigos")
 	slimes = get_tree().get_nodes_in_group("slimes")
-	spr = get_tree().get_nodes_in_group("spr")[0]
+	
 	#agrega la collision exception a todos los goombas
 	for slime in slimes:
 		mario.add_collision_exception_with(slime)
@@ -147,66 +170,100 @@ func Inmunidad():
 	EfectoInmunidad()
 	await get_tree().create_timer(3).timeout
 	activarRaycasts(mario)
+	estaEnInmunidad = false
 	
 func EfectoInmunidad():
-	spr.modulate = Color(1,1,1,1)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,0.5)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,1)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,0.5)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,1)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,0.5)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,1)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,0.5)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,1)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,0.5)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,1)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,0.5)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,1)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,0.5)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,1)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,0.5)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,1)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,0.5)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,1)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,0.5)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,1)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,0.5)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,1)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,0.5)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,1)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,0.5)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,1)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,0.5)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,1)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,0.5)
-	await get_tree().create_timer(0.1).timeout
-	spr.modulate = Color(1,1,1,1)
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,1)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,0.5)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,1)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,0.5)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,1)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,0.5)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,1)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,0.5)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,1)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,0.5)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,1)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,0.5)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,1)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,0.5)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,1)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,0.5)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,1)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,0.5)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,1)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,0.5)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,1)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,0.5)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,1)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,0.5)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,1)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,0.5)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,1)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,0.5)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,1)
+		await get_tree().create_timer(0.1).timeout
+	if estaEnInmunidad:
+		spr.modulate = Color(1,1,1,0.5)
+		await get_tree().create_timer(0.1).timeout
+		spr.modulate = Color(1,1,1,1)
+	
+	if estaEnInmunidad == false:
+		spr.modulate = Color(1,1,1,1)

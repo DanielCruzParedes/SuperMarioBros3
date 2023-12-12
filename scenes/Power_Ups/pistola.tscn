@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsnb6"]
 size = Vector2(14, 10)
 
-[node name="pistola" type="CharacterBody2D"]
+[node name="pistola" type="CharacterBody2D" groups=["pistolapowerup"]]
 script = ExtResource("1_b7sge")
 
 [node name="spritePistola" type="Sprite2D" parent="."]

@@ -9,7 +9,5 @@ func _physics_process(_delta):
 	
 	if Singleton.puedesonartheme==false:
 		$"main theme".stop()
-		
-
 
 
