@@ -65,7 +65,7 @@ func _physics_process(delta):
 			# Asignar pos donde va a spawnear a bala
 			bala.global_position = pos_inicial
 			get_parent().add_child(bala)
-			
+			#$Animacion.play("disparar")
 			print("dispara dispara")
 			ultimoDisparo = Time.get_unix_time_from_system()
 	
@@ -282,4 +282,7 @@ func salirDelBonus():
 
 
 func InstangeGrande():
+	pass
+
+func InstanceGangster():
 	pass
