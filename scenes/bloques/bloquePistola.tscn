@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bqlda"]
 size = Vector2(16, 16)
 
-[node name="pistola" type="StaticBody2D" groups=["bloques", "suelos"]]
+[node name="pistola" type="StaticBody2D" groups=["bloquePowerUp", "bloques", "suelos"]]
 script = ExtResource("1_ohi7m")
 
 [node name="desactivado" type="Sprite2D" parent="."]

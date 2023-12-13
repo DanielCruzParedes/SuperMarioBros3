@@ -25,7 +25,17 @@ func _ready():
 	print("soy mario gangster")
 	
 func _physics_process(delta):
+	
 	detectar()
+	# Detectar si colisiono con alguna moneeda
+	var areas = $Area2D.get_overlapping_areas()
+	for a in areas:
+		var area: Area2D = a
+		print(area.get_parent().name)
+		if (area.get_parent().is_in_group("moneda")):
+			$sonidomoneda.play()
+			Singleton.monedas += 1
+			area.get_parent().queue_free() #Eliminar moneda
 	
 	velocity.y += gravity * delta
 	
@@ -147,10 +157,10 @@ func detectar():
 				$sonidomoneda.play()
 				Singleton.monedas += 1
 				colision.queue_free()
-			elif colision.is_in_group("moneda"):
-					colision.queue_free()
-					Singleton.monedas+=1
-					$sonidomoneda.play()
+#			elif colision.is_in_group("moneda"):
+#					colision.queue_free()
+#					Singleton.monedas+=1
+#					$sonidomoneda.play()
 			elif colision.is_in_group("bloqueM"):
 				InstanceMarioPeque()
 				
@@ -185,10 +195,10 @@ func detectar():
 				colision2.Destruir()
 			elif colision2.is_in_group("aqum_coins"):
 				colision2.muevete()
-			elif colision2.is_in_group("moneda"):
-					colision2.queue_free()
-					Singleton.monedas+=1
-					$sonidomoneda.play()
+#			elif colision2.is_in_group("moneda"):
+#					colision2.queue_free()
+#					Singleton.monedas+=1
+#					$sonidomoneda.play()
 			elif colision2.is_in_group("enemigos"):
 				InstanceMarioPeque()
 			else:
@@ -202,10 +212,10 @@ func detectar():
 			elif colision3.is_in_group("bandera"):
 					$audioBandera.play()
 					colision3.muevete()
-			elif colision3.is_in_group("moneda"):
-					colision3.queue_free()
-					Singleton.monedas+=1
-					$sonidomoneda.play()
+#			elif colision3.is_in_group("moneda"):
+#					colision3.queue_free()
+#					Singleton.monedas+=1
+#					$sonidomoneda.play()
 			elif colision3.is_in_group("power_Up"):
 				$sonidomoneda.play()
 				Singleton.monedas += 1
@@ -230,10 +240,10 @@ func detectar():
 		if colision4!=null:
 			if colision4.is_in_group("enemigos"):
 				InstanceMarioPeque()
-			elif colision4.is_in_group("moneda"):
-					colision4.queue_free()
-					Singleton.monedas+=1
-					$sonidomoneda.play()
+#			elif colision4.is_in_group("moneda"):
+#					colision4.queue_free()
+#					Singleton.monedas+=1
+#					$sonidomoneda.play()
 			elif colision4.is_in_group("power_Up"):
 				$sonidomoneda.play()
 				Singleton.monedas += 1

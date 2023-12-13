@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cnm8j01cu7vd7"]
+[gd_scene load_steps=19 format=3 uid="uid://cnm8j01cu7vd7"]
 
 [ext_resource type="Script" path="res://scripts/mario_grande.gd" id="1_5r6d0"]
 [ext_resource type="PackedScene" uid="uid://rkrn2df1s8i8" path="res://scenes/Marios/mario_pequeno.tscn" id="2_rl0xb"]
@@ -762,6 +762,9 @@ _data = {
 "run": SubResource("Animation_rxjt2")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ni4p2"]
+size = Vector2(15, 31)
+
 [node name="MarioGrande" type="CharacterBody2D" groups=["mario", "marioGrande"]]
 position = Vector2(134, 200)
 script = ExtResource("1_5r6d0")
@@ -832,3 +835,9 @@ volume_db = -10.0
 [node name="audioBandera" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_mwoi6")
 volume_db = -10.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_ni4p2")

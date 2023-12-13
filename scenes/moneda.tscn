@@ -3,18 +3,14 @@
 [ext_resource type="Script" path="res://Moneda.gd" id="1_k6gny"]
 [ext_resource type="Texture2D" uid="uid://b6mgpnbxj3eko" path="res://sprites/coin.png" id="2_lwurp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kijm"]
-size = Vector2(8, 12)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hiw4"]
+size = Vector2(10, 15)
 
 [node name="Moneda" type="CharacterBody2D" groups=["moneda"]]
 script = ExtResource("1_k6gny")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_lwurp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_8kijm")
 
 [node name="abajo" type="RayCast2D" parent="."]
 position = Vector2(0, 5)
@@ -35,3 +31,9 @@ target_position = Vector2(-2, 0)
 position = Vector2(0, -6)
 scale = Vector2(7, 1.5)
 target_position = Vector2(0, -2)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_6hiw4")

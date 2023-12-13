@@ -24,7 +24,15 @@ func _ready():
 	
 func _physics_process(delta):
 	detectar()
-	
+	# Detectar si colisiono con alguna moneeda
+	var areas = $Area2D.get_overlapping_areas()
+	for a in areas:
+		var area: Area2D = a
+		print(area.get_parent().name)
+		if (area.get_parent().is_in_group("moneda")):
+			$sonidomoneda.play()
+			Singleton.monedas += 1
+			area.get_parent().queue_free() #Eliminar moneda
 	velocity.y += gravity * delta
 	
 	# Get the input direction and handle the movement/deceleration.
@@ -120,10 +128,10 @@ func detectar():
 				$sonidomoneda.play()
 				Singleton.monedas += 1
 				colision.queue_free()
-			elif colision.is_in_group("moneda"):
-					colision.queue_free()
-					Singleton.monedas+=1
-					$sonidomoneda.play()
+#			elif colision.is_in_group("moneda"):
+#					colision.queue_free()
+#					Singleton.monedas+=1
+#					$sonidomoneda.play()
 			elif colision.is_in_group("bloqueM"):
 				InstanceMarioPeque()
 				

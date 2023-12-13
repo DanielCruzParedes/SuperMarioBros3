@@ -507,27 +507,6 @@ position = Vector2(2745, 167)
 [node name="bloque cafe31" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
 position = Vector2(2777, 167)
 
-[node name="bloque cafe32" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(3764, 150)
-
-[node name="bloque cafe33" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(3736, 104)
-
-[node name="bloque cafe34" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(4207, 135)
-
-[node name="bloque cafe39" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(4103, 100)
-
-[node name="bloque cafe35" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(4436, 135)
-
-[node name="bloque cafe41" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(4538, 100)
-
-[node name="bloque cafe40" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
-position = Vector2(4338, 100)
-
 [node name="bloque cafe36" parent="level-1/bloques" instance=ExtResource("5_c7n8w")]
 position = Vector2(4667, 150)
 
@@ -716,25 +695,25 @@ position = Vector2(2121, 103)
 [node name="bloque_Monedas12" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
 position = Vector2(3933, 115)
 
-[node name="bloque_Monedas14" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
-position = Vector2(3791, 104)
-
-[node name="bloque_Monedas13" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
-position = Vector2(5333, 110)
-
-[node name="bloque_Monedas11" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
-position = Vector2(2761, 167)
-
 [node name="bloque_Monedas2" parent="bloques moneda" instance=ExtResource("5_s6lbr")]
 position = Vector2(393, 167)
 
 [node name="bloques_powerUp" type="Node" parent="."]
+
+[node name="pistola2" parent="bloques_powerUp" instance=ExtResource("20_qogry")]
+position = Vector2(2761, 167)
+
+[node name="pistola" parent="bloques_powerUp" instance=ExtResource("20_qogry")]
+position = Vector2(1273, 167)
 
 [node name="bloque_Power" parent="bloques_powerUp" instance=ExtResource("7_sp4qf")]
 position = Vector2(361, 167)
 
 [node name="bloque_Vida" parent="bloques_powerUp" instance=ExtResource("9_pwk2f")]
 position = Vector2(1048, 156)
+
+[node name="bloque_Vida3" parent="bloques_powerUp" instance=ExtResource("9_pwk2f")]
+position = Vector2(1785, 105)
 
 [node name="bloque_Vida2" parent="bloques_powerUp" instance=ExtResource("9_pwk2f")]
 position = Vector2(5206, 99)
@@ -788,7 +767,10 @@ position = Vector2(1344, 86)
 position = Vector2(1833, 216)
 
 [node name="goomba5" parent="enemigos" instance=ExtResource("9_dvt07")]
-position = Vector2(4774, 152)
+position = Vector2(4406, 135)
+
+[node name="goomba6" parent="enemigos" instance=ExtResource("9_dvt07")]
+position = Vector2(4426, 135)
 
 [node name="slime" parent="enemigos" instance=ExtResource("17_fbm0m")]
 position = Vector2(2886, 217)
@@ -918,5 +900,59 @@ shape = SubResource("RectangleShape2D_eln67")
 [node name="entradaNivel2" type="Marker2D" parent="level-2" groups=["nivel2"]]
 position = Vector2(3701, 139)
 
+[node name="Moneda" parent="." instance=ExtResource("16_un1px")]
+position = Vector2(2248, 105)
+
+[node name="Moneda2" parent="." instance=ExtResource("16_un1px")]
+position = Vector2(2263, 105)
+
+[node name="Moneda3" parent="." instance=ExtResource("16_un1px")]
+position = Vector2(2489, 106)
+
+[node name="Moneda4" parent="." instance=ExtResource("16_un1px")]
+position = Vector2(2504, 106)
+
+[node name="Moneda5" parent="." instance=ExtResource("16_un1px")]
+position = Vector2(377, 55)
+
+[node name="Moneda6" parent="." instance=ExtResource("16_un1px")]
+position = Vector2(944, 114)
+
+[node name="Moneda7" parent="." instance=ExtResource("16_un1px")]
+position = Vector2(944, 133)
+
+[node name="Moneda8" parent="." instance=ExtResource("16_un1px")]
+position = Vector2(944, 94)
+
+[node name="Moneda9" parent="." instance=ExtResource("16_un1px")]
+position = Vector2(944, 76)
+
+[node name="Moneda10" parent="." instance=ExtResource("16_un1px")]
+position = Vector2(960, 121)
+
+[node name="Moneda11" parent="." instance=ExtResource("16_un1px")]
+position = Vector2(973, 109)
+
+[node name="Moneda12" parent="." instance=ExtResource("16_un1px")]
+position = Vector2(927, 122)
+
+[node name="Moneda13" parent="." instance=ExtResource("16_un1px")]
+position = Vector2(915, 109)
+
+[node name="Moneda14" parent="." instance=ExtResource("16_un1px")]
+position = Vector2(1048, 177)
+
+[node name="Moneda20" parent="." instance=ExtResource("16_un1px")]
+position = Vector2(1433, 48)
+
+[node name="Moneda21" parent="." instance=ExtResource("16_un1px")]
+position = Vector2(1447, 48)
+
+[node name="Moneda22" parent="." instance=ExtResource("16_un1px")]
+position = Vector2(1460, 48)
+
+[node name="Moneda23" parent="." instance=ExtResource("16_un1px")]
+position = Vector2(3080, 185)
+
 [node name="pistola" parent="." instance=ExtResource("20_qogry")]
-position = Vector2(224, 167)
+position = Vector2(5333, 107)

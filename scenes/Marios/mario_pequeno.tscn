@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://rkrn2df1s8i8"]
+[gd_scene load_steps=17 format=3 uid="uid://rkrn2df1s8i8"]
 
 [ext_resource type="Script" path="res://scenes/Mario.gd" id="1_wavbs"]
 [ext_resource type="Texture2D" uid="uid://tw16ohwuibg5" path="res://sprites/run_idle_jump_pequeño.png" id="2_r48l5"]
@@ -578,6 +578,9 @@ _data = {
 "run": SubResource("Animation_rxjt2")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_624s0"]
+size = Vector2(12, 16)
+
 [node name="MarioPequeno" type="CharacterBody2D" groups=["mario", "mario_peque"]]
 z_index = 2
 position = Vector2(-6, 0)
@@ -648,3 +651,9 @@ volume_db = -10.0
 [node name="audioBandera" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_yj2yf")
 volume_db = -10.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_624s0")

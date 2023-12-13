@@ -11,6 +11,7 @@ func muevete():
 	pass
 
 func _physics_process(_delta):
+	# Obtener las areas que chocan con el area de la moneda
 	if monedaAgarrada:
 		if $izquierda.is_colliding() and $izquierda.get_collider().is_in_group("mario"):
 			colision_con_mario($izquierda.get_collider())
@@ -24,12 +25,7 @@ func _physics_process(_delta):
 		elif $abajo.is_colliding() and $abajo.get_collider().is_in_group("mario"):
 			colision_con_mario($abajo.get_collider())
 			monedaAgarrada=true
-		##Cuando me tiro encima del hongo no desaparece de todas las otas formas si el mario 
-		#for i in get_slide_collision_count():
-		#	var obj_colisionado=get_slide_collision(i).get_collider()
-		#	if(obj_colisionado.is_in_group("mario")):
-		#		print("salto mario en mi")
-		#		desaparece()
+		
 		
 		
 
