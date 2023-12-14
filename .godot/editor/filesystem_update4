@@ -1,13 +1,11 @@
-res://scenes/Marios/mario_gangster.tscn
-res://scripts/mario_grande.gd
 res://scenes/level1-1.tscn
+res://scripts/mario_grande.gd
+res://scenes/menu_principal.tscn
 res://scenes/Power_Ups/pistola.tscn
 res://scenes/Power_Ups/hongo.tscn
-res://scenes/menu_principal.tscn
-res://scenes/Marios/mario_pequeno.tscn
 res://scenes/Marios/mario_grande.tscn
+res://scenes/Marios/mario_gangster.tscn
+res://scenes/Marios/mario_pequeno.tscn
 res://scenes/bandera.tscn
 res://Bala.tscn
-res://scenes/moneda.tscn
 res://scenes/bloques/bloquePistola.tscn
-res://scripts/mario_gangster.gd

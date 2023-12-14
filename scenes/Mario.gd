@@ -237,7 +237,8 @@ func detectar():
 					
 func teletransportarNivel2():
 	get_tree().get_nodes_in_group("mario_peque")[0].global_position = get_tree().get_nodes_in_group("nivel2")[0].global_position
-	
+	get_tree().get_nodes_in_group("camara")[0].enabled = false
+	get_tree().get_nodes_in_group("camaraNivel2")[0].enabled = true
 			
 func teletransportarABonus():
 	$entraATubo.play()
@@ -263,6 +264,7 @@ func Muerte():
 	Singleton.puedesonartheme=false
 	Morir=true
 	get_tree().get_nodes_in_group("camara")[0].puedo_seguir=false
+	get_tree().get_nodes_in_group("camaraNivel2")[0].puedo_seguir=false
 	Singleton.primeraVezApareciendo=true
 	$morir.play()
 	$Animacion.play("dead")

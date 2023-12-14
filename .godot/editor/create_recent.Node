@@ -1,9 +1,10 @@
 CollisionShape2D
-Area2D
 RayCast2D
+Sprite2D
+Camera2D
+Area2D
 RigidBody2D
 CharacterBody2D
-Sprite2D
 AudioStreamPlayer
 StaticBody2D
 Marker2D
@@ -15,7 +16,6 @@ CanvasGroup
 CanvasLayer
 Label
 Node2D
-Camera2D
 VBoxContainer
 Control
 AnimatedSprite2D

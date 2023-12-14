@@ -30,6 +30,8 @@ func _ready():
 
 
 func Spawn():
+	print("fue nivel 2 = ")
+	print(fueNivel2)
 	if ledioplay==true:
 		print("spawnea")
 		mario = load("res://scenes/Marios/mario_pequeno.tscn")
@@ -37,8 +39,13 @@ func Spawn():
 		add_child(mario_instance)
 		if fueNivel2==0:
 			mario_instance.global_position =get_tree().get_nodes_in_group("spawnmario")[0].global_position
+		
 		elif fueNivel2>0:
+			print("si es mayor que 0")
+			get_tree().get_nodes_in_group("camara")[0].enabled = false
+			get_tree().get_nodes_in_group("camaraNivel2")[0].enabled = true
 			mario_instance.global_position= get_tree().get_nodes_in_group("nivel2")[0].global_position
+			
 
 func MostrarMensajeMuerte():
 	var mensajeMuerteInstance = mensajeMuerteScene.instantiate()

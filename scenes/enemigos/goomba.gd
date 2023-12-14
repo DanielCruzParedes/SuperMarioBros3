@@ -30,15 +30,17 @@ func _physics_process(delta):
 		move_and_slide()
 	
 	
+	
 func detectar():
 	#para que rebote cuando pegue a los costados
-		if $derecha.is_colliding():
-			pegoDerecha=true
-			pegoIzquierda=false
-		elif $izquierda.is_colliding():
-			pegoIzquierda=true
-			pegoDerecha=false
-			
+	if $derecha.is_colliding():
+		pegoDerecha=true
+		pegoIzquierda=false
+	elif $izquierda.is_colliding():
+		pegoIzquierda=true
+		pegoDerecha=false
+	elif $abajo.is_colliding() and $abajo.get_collider().is_in_group("bloqueM"):
+		$colisionGoomba.disabled = true
 
 func desaparecer():
 	$colisionGoomba.disabled = true
