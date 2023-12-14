@@ -1006,9 +1006,6 @@ position = Vector2(5333, 107)
 [node name="Bowser" parent="." instance=ExtResource("25_mpeaq")]
 position = Vector2(5671, 137)
 
-[node name="pistola2" parent="." instance=ExtResource("20_qogry")]
-position = Vector2(87, 159)
-
 [node name="fuegoBowser" type="AudioStreamPlayer" parent="." groups=["sonidofuegobowser"]]
 stream = ExtResource("28_sn13u")
 volume_db = -10.0

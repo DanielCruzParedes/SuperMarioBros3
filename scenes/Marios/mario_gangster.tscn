@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c732kgru4yu40"]
+[gd_scene load_steps=16 format=3 uid="uid://c732kgru4yu40"]
 
 [ext_resource type="Script" path="res://scripts/mario_gangster.gd" id="1_ekgwj"]
 [ext_resource type="Texture2D" uid="uid://3sf2r7ri20if" path="res://sprites/run_idle_jump_grande.png" id="2_c41tf"]
@@ -6,7 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://bu58kwg8r4ayr" path="res://sound_effects/smb_powerup.wav" id="4_kwoks"]
 [ext_resource type="AudioStream" uid="uid://cy6blxxg2qqrg" path="res://sound_effects/smb_pipe.wav" id="5_h8bb1"]
 [ext_resource type="AudioStream" uid="uid://coulf2aw6fkht" path="res://sound_effects/smb_coin.wav" id="6_wljt5"]
-[ext_resource type="Texture2D" uid="uid://b1m67ia15vssw" path="res://sprites/downGangster.png" id="7_nh5om"]
 [ext_resource type="Texture2D" uid="uid://bv8p50j7p0m84" path="res://sprites/animationsGangster.png" id="8_ssqyb"]
 [ext_resource type="AudioStream" uid="uid://snm0sdxtlu0x" path="res://sound_effects/smb_flagpole.wav" id="8_xliqx"]
 
@@ -170,108 +169,6 @@ tracks/12/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(3, -14)]
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bitue"]
-size = Vector2(14, 20)
-
-[sub_resource type="Animation" id="Animation_4rodn"]
-resource_name = "down"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SpriteMario:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [5]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("SpriteMario:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColisionMario:shape")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("RectangleShape2D_bitue")]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ColisionMario:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 5)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("arriba2:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3, -6)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("arriba:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-3, -6)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("SpriteMario:texture")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("7_nh5om")]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("SpriteMario:frame")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_r6lhp"]
@@ -757,7 +654,6 @@ tracks/12/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6107w"]
 _data = {
 "RESET": SubResource("Animation_4h8wt"),
-"down": SubResource("Animation_4rodn"),
 "idle": SubResource("Animation_r6lhp"),
 "jump": SubResource("Animation_piymv"),
 "run": SubResource("Animation_rxjt2")
@@ -770,6 +666,7 @@ size = Vector2(12, 29)
 script = ExtResource("1_ekgwj")
 
 [node name="SpriteMario" type="Sprite2D" parent="." groups=["mario", "spriteGangster"]]
+visible = false
 z_index = 1
 texture = ExtResource("2_c41tf")
 hframes = 4
@@ -787,14 +684,14 @@ position = Vector2(3, -14)
 target_position = Vector2(0, -4)
 
 [node name="derecha" type="RayCast2D" parent="."]
-position = Vector2(4, 5)
-scale = Vector2(1, 8)
+position = Vector2(4, 3)
+scale = Vector2(1, 20)
 target_position = Vector2(2, 0)
 
 [node name="izquierda" type="RayCast2D" parent="."]
-position = Vector2(-6, 5)
-scale = Vector2(1, 8)
-target_position = Vector2(-1, -0.125)
+position = Vector2(-6, 3)
+scale = Vector2(1, 20)
+target_position = Vector2(-2, 0)
 
 [node name="abajo" type="RayCast2D" parent="."]
 position = Vector2(-4, 15)
@@ -836,7 +733,9 @@ stream = ExtResource("8_xliqx")
 volume_db = -10.0
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_qro5v")

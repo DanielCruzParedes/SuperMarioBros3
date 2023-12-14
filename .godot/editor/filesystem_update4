@@ -10,6 +10,9 @@ res://scenes/Marios/mario_pequeno.tscn
 res://Bala.tscn
 res://scenes/mensaje_dead.tscn
 res://scenes/mensaje_win.tscn
-res://scenes/Mario.gd
 res://scripts/main.gd
+res://scripts/mario_gangster.gd
+res://scenes/Power_Ups/pistola.tscn
+res://scenes/Power_Ups/pistola.gd
+res://scenes/Mario.gd
 res://scripts/Singleton.gd

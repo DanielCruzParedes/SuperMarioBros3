@@ -21,6 +21,7 @@ func _physics_process(_delta):
 			colision_con_mario($arriba.get_collider())
 		if $abajo.is_colliding() and $abajo.get_collider().is_in_group("mario"):
 			colision_con_mario($abajo.get_collider())
+		pass
 		
 	else:
 		position.y -= 0.5

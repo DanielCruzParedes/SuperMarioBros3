@@ -101,8 +101,7 @@ func _physics_process(delta):
 		$SpriteMario.flip_h = true
 		if is_on_floor():
 			$Animacion.play("run")
-	elif Input.is_action_pressed("abajo") and salto_valido:
-		$Animacion.play("down")
+	
 	else:
 		if salto_valido:
 			$Animacion.play("idle")
@@ -196,14 +195,14 @@ func detectar():
 				$sonidomoneda.play()
 				Singleton.monedas += 1
 				colision2.queue_free()
-			elif colision2.is_in_group("vida"):
-				Singleton.vidas+=1
-				colision2.queue_free()
-				Singleton.sonar1up()
 			elif colision2.is_in_group("pistolapowerup"):
 				$sonidomoneda.play()
 				Singleton.monedas += 1
 				colision2.queue_free()
+			elif colision2.is_in_group("vida"):
+				Singleton.vidas+=1
+				colision2.queue_free()
+				Singleton.sonar1up()
 			elif colision2.is_in_group("bloques"):
 				colision2.Destruir()
 			elif colision2.is_in_group("aqum_coins"):
@@ -225,10 +224,6 @@ func detectar():
 			elif colision3.is_in_group("bandera"):
 					$audioBandera.play()
 					colision3.muevete()
-#			elif colision3.is_in_group("moneda"):
-#					colision3.queue_free()
-#					Singleton.monedas+=1
-#					$sonidomoneda.play()
 			elif colision3.is_in_group("pistolapowerup"):
 				$sonidomoneda.play()
 				Singleton.monedas += 1
@@ -259,15 +254,12 @@ func detectar():
 		if colision4!=null:
 			if colision4.is_in_group("enemigos"):
 				InstanceMarioPeque()
-#			elif colision4.is_in_group("moneda"):
-#					colision4.queue_free()
-#					Singleton.monedas+=1
-#					$sonidomoneda.play()
-			elif colision4.is_in_group("power_Up"):
+			elif colision4.is_in_group("pistolapowerup"):
 				$sonidomoneda.play()
 				Singleton.monedas += 1
 				colision4.queue_free()
-			elif colision4.is_in_group("pistolapowerup"):
+				print(colision4.name)
+			elif colision4.is_in_group("power_Up"):
 				$sonidomoneda.play()
 				Singleton.monedas += 1
 				colision4.queue_free()

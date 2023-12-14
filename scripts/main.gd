@@ -25,11 +25,6 @@ func _ready():
 		
 
 
-
-
-	
-
-
 func _physics_process(_delta):
 
 	if Singleton.fueNivel2 != 0:

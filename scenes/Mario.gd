@@ -144,6 +144,10 @@ func detectar():
 				Singleton.vidas+=1
 				Singleton.sonar1up()
 				colision.queue_free()
+			elif colision.is_in_group("pistolapowerup"):
+				InstanceGangster()
+				MarioGangsterInstanciado = true
+				colision.queue_free()
 			elif colision.is_in_group("bloqueM"):
 				Muerte()
 #				elif colision.is_in_group("moneda"):
@@ -184,6 +188,10 @@ func detectar():
 					InstanceGrande()
 					MarioGrandeInstanciado = true
 					colision2.queue_free()
+			elif colision2.is_in_group("pistolapowerup"):
+				InstanceGangster()
+				MarioGangsterInstanciado = true
+				colision2.queue_free()
 			elif colision2.is_in_group("enemigos"):
 				Muerte()
 			else:
@@ -206,7 +214,10 @@ func detectar():
 			elif colision3.is_in_group("bandera"):
 				$audioBandera.play()
 				colision3.muevete()
-					
+			elif colision3.is_in_group("pistolapowerup"):
+				InstanceGangster()
+				MarioGangsterInstanciado = true
+				colision3.queue_free()
 			elif colision3.is_in_group("moneda"):
 				colision3.queue_free()
 				Singleton.monedas+=1
@@ -238,6 +249,10 @@ func detectar():
 				Singleton.vidas+=1
 				colision4.queue_free()
 				Singleton.sonar1up()
+			elif colision4.is_in_group("pistolapowerup"):
+				InstanceGangster()
+				MarioGangsterInstanciado = true
+				colision4.queue_free()
 			elif colision4.is_in_group("moneda"):
 				colision4.queue_free()
 				Singleton.monedas+=1

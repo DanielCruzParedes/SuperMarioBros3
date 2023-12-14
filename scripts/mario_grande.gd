@@ -72,8 +72,7 @@ func _physics_process(delta):
 		$SpriteMario.flip_h = true
 		if is_on_floor():
 			$Animacion.play("run")
-	elif Input.is_action_pressed("abajo") and salto_valido:
-		$Animacion.play("down")
+	
 	else:
 		if salto_valido:
 			$Animacion.play("idle")
@@ -123,8 +122,11 @@ func detectar():
 				
 			if colision.is_in_group("enemigos"):
 				position.y -= 20
-
 				colision.desaparecer()
+			elif colision.is_in_group("pistolapowerup"):
+				InstanceGangster()
+				MarioGangsterInstanciado = true
+				colision.queue_free()
 			elif colision.is_in_group("vida"):
 				Singleton.vidas+=1
 				colision.queue_free()
@@ -154,9 +156,13 @@ func detectar():
 				
 		if colision2!=null:
 			if colision2.is_in_group("oculto"):
-					colision2.muevete()
+				colision2.muevete()
 			if colision2.is_in_group("power_up"):
 				colision2.muevete()
+			elif colision2.is_in_group("pistolapowerup"):
+				InstanceGangster()
+				MarioGangsterInstanciado = true
+				colision2.queue_free()
 			elif colision2.is_in_group("power_Up"):
 				$sonidomoneda.play()
 				Singleton.monedas += 1
@@ -197,6 +203,10 @@ func detectar():
 				$sonidomoneda.play()
 				Singleton.monedas += 1
 				colision3.queue_free()
+			elif colision3.is_in_group("pistolapowerup"):
+				InstanceGangster()
+				MarioGangsterInstanciado = true
+				colision3.queue_free()
 			elif colision3.is_in_group("vida"):
 				Singleton.vidas+=1
 				colision3.queue_free()
@@ -221,10 +231,15 @@ func detectar():
 					colision4.queue_free()
 					Singleton.monedas+=1
 					$sonidomoneda.play()
+			elif colision4.is_in_group("pistolapowerup"):
+				InstanceGangster()
+				MarioGangsterInstanciado = true
+				colision4.queue_free()
 			elif colision4.is_in_group("power_Up"):
 				$sonidomoneda.play()
 				Singleton.monedas += 1
 				colision4.queue_free()
+			
 			elif colision4.is_in_group("vida"):
 				Singleton.vidas+=1
 				colision4.queue_free()
