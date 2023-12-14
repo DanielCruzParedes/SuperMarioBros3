@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c50loj06r7s6w"]
+[gd_scene load_steps=6 format=3 uid="uid://c50loj06r7s6w"]
 
 [ext_resource type="Script" path="res://MenuPrincipal.gd" id="1_4lkpj"]
-[ext_resource type="Texture2D" uid="uid://dreh8lxdk1yqo" path="res://sprites/fondo2.png" id="2_beya3"]
+[ext_resource type="Texture2D" uid="uid://bcsidxexjs6jd" path="res://sprites/nivel.png" id="2_pva4t"]
 [ext_resource type="FontFile" uid="uid://h2lo0venyog8" path="res://fonts/All Star Resort.ttf" id="3_0vexb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w568l"]
+bg_color = Color(0.176471, 0.643137, 0.427451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pg6x2"]
+bg_color = Color(0.14902, 0.705882, 0.470588, 1)
 
 [node name="MenuPrincipal" type="Node2D"]
 script = ExtResource("1_4lkpj")
@@ -10,33 +16,41 @@ script = ExtResource("1_4lkpj")
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
 [node name="MenuP" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(454.5, 321.5)
+position = Vector2(-624, 771)
 scale = Vector2(2.00667, 3.00463)
-texture = ExtResource("2_beya3")
+texture = ExtResource("2_pva4t")
 
 [node name="MenuName" type="Label" parent="CanvasGroup"]
-offset_left = 170.0
-offset_top = 179.0
-offset_right = 738.0
-offset_bottom = 299.0
+offset_left = 33.0
+offset_right = 884.0
+offset_bottom = 179.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_0vexb")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 150
 text = "MARIO BROS"
 
 [node name="Play" type="Button" parent="CanvasGroup"]
-offset_left = 170.0
+offset_left = 83.0
 offset_top = 347.0
-offset_right = 357.0
-offset_bottom = 424.0
-theme_override_font_sizes/font_size = 50
+offset_right = 270.0
+offset_bottom = 443.0
+theme_override_colors/font_color = Color(0.933333, 0.219608, 0.337255, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.580392, 0.803922, 0.847059, 1)
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_w568l")
 text = "Play"
 
 [node name="quit" type="Button" parent="CanvasGroup"]
-offset_left = 507.0
+offset_left = 622.0
 offset_top = 347.0
-offset_right = 620.0
-offset_bottom = 424.0
-theme_override_font_sizes/font_size = 50
+offset_right = 769.0
+offset_bottom = 443.0
+theme_override_colors/font_color = Color(0.772549, 0.0941176, 0.282353, 1)
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_pg6x2")
 text = "Quit"
 
 [node name="spawn" type="Marker2D" parent="." groups=["spawnmario"]]

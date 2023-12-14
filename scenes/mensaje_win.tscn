@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfhndmvm71g7k"]
+
+[ext_resource type="Script" path="res://scripts/mensaje_win.gd" id="1_e0kqp"]
+[ext_resource type="Texture2D" uid="uid://bcsidxexjs6jd" path="res://sprites/nivel.png" id="2_21ngv"]
+[ext_resource type="FontFile" uid="uid://h2lo0venyog8" path="res://fonts/All Star Resort.ttf" id="2_dh582"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6lqv"]
+bg_color = Color(0.372549, 0.654902, 0.666667, 1)
+
+[node name="mensajeWin" type="Node2D"]
+script = ExtResource("1_e0kqp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(-2506, 799)
+scale = Vector2(2.00667, 3.05093)
+texture = ExtResource("2_21ngv")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 250.0
+offset_top = 218.0
+offset_right = 780.0
+offset_bottom = 576.0
+theme_override_colors/font_color = Color(0.027451, 0.215686, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_dh582")
+theme_override_font_sizes/font_size = 100
+text = "You WON!!!"
+uppercase = true
+
+[node name="Exit" type="Button" parent="CanvasLayer"]
+offset_left = 744.0
+offset_top = 36.0
+offset_right = 855.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(0.741176, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6lqv")
+text = "Exit
+"
+
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]

@@ -5,14 +5,8 @@ res://scenes/enemigos/goomba.tscn
 res://scenes/Marios/mario_gangster.tscn
 res://scenes/enemigos/bowser.tscn
 res://scenes/enemigos/fuego_bowser.tscn
-res://scenes/Power_Ups/hongo.tscn
-res://Bala.tscn
-res://scripts/bowser.gd
-res://scripts/Singleton.gd
-res://scripts/fuego_bowser.gd
-res://scenes/bloques/bloque_Power.tscn
 res://scenes/Marios/mario_grande.tscn
 res://scenes/Marios/mario_pequeno.tscn
-res://scripts/mario_gangster.gd
-res://scenes/Mario.gd
-res://Bala.gd
+res://Bala.tscn
+res://scenes/mensaje_dead.tscn
+res://scenes/mensaje_win.tscn

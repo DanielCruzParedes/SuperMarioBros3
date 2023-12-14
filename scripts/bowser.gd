@@ -102,6 +102,7 @@ func desaparecer():
 #	$aplastamiento.play()
 	await(get_tree().create_timer(0.4).timeout)
 	queue_free()
+	Singleton.MostraeMensajeWin()
 	
 
 

@@ -6,6 +6,7 @@ var hongo = load("res://scenes/Power_Ups/hongo.tscn")
 var estaEnInmunidad = false
 
 var mensajeMuerteScene = preload("res://scenes/mensaje_dead.tscn")
+var mensajeWin=preload("res://scenes/mensaje_win.tscn")
 var goombas
 var slimes
 var spr
@@ -73,6 +74,9 @@ func MostrarMensajeMuerte():
 	var mensajeMuerteInstance = mensajeMuerteScene.instantiate()
 	get_tree().root.add_child(mensajeMuerteInstance)
 
+func MostraeMensajeWin():
+	var mensajeWinInstance=mensajeWin.instantiate()
+	get_tree().root.add_child(mensajeWinInstance)
 	
 func sonar1up():
 	get_tree().get_nodes_in_group("audiovida")[0].play()
