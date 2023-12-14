@@ -1,9 +1,11 @@
-[gd_scene load_steps=90 format=3 uid="uid://dbxun3dhgvk8n"]
+[gd_scene load_steps=94 format=3 uid="uid://dbxun3dhgvk8n"]
 
 [ext_resource type="Texture2D" uid="uid://njbm3nj8wbn1" path="res://sprites/level_1.png" id="1_6ik2n"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_jfq7o"]
 [ext_resource type="FontFile" uid="uid://ci0wckh0sewen" path="res://fonts/Xolonium-Bold.ttf" id="2_i0mr6"]
+[ext_resource type="Texture2D" uid="uid://b6mgpnbxj3eko" path="res://sprites/coin.png" id="3_cngqy"]
 [ext_resource type="Texture2D" uid="uid://vuxkfj4fbxqs" path="res://sprites/Castillo.png" id="3_kvkfd"]
+[ext_resource type="Texture2D" uid="uid://dnphhsbbmqjvb" path="res://sprites/cabezamario.png" id="4_4ij5c"]
 [ext_resource type="Texture2D" uid="uid://bcsidxexjs6jd" path="res://sprites/nivel.png" id="4_cr56i"]
 [ext_resource type="Texture2D" uid="uid://drv8l72pc1jtq" path="res://sprites/level_1 (1).png" id="4_pkbxa"]
 [ext_resource type="Texture2D" uid="uid://diww24xi3m02q" path="res://sprites/Castillo_pedacito.png" id="4_sb660"]
@@ -25,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://c0n4xd3pn8bxq" path="res://scenes/bloques/bloquePistola.tscn" id="20_qogry"]
 [ext_resource type="Script" path="res://scripts/camaraNivel2.gd" id="21_75ano"]
 [ext_resource type="PackedScene" uid="uid://dm670yycqgyhf" path="res://scenes/enemigos/bowser.tscn" id="25_mpeaq"]
+[ext_resource type="AudioStream" uid="uid://b6q5vvsbh7cx4" path="res://sound_effects/smb_bowserfire.wav" id="28_sn13u"]
+[ext_resource type="AudioStream" uid="uid://dsbk2vhau47a0" path="res://sound_effects/cancion_castillo.mp3" id="29_u3j8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wofq8"]
 size = Vector2(1103, 30)
@@ -224,10 +228,10 @@ script = ExtResource("1_jfq7o")
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="vidas" type="Label" parent="GUI" groups=["vidas"]]
-offset_left = 865.0
-offset_top = 11.0
-offset_right = 893.0
-offset_bottom = 57.0
+offset_left = 102.0
+offset_top = 25.0
+offset_right = 130.0
+offset_bottom = 71.0
 theme_override_colors/font_color = Color(0.8, 0.282353, 0.313726, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_i0mr6")
@@ -236,26 +240,25 @@ text = "5"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="texto vidas" type="Label" parent="GUI"]
-offset_left = 739.0
-offset_top = 11.0
-offset_right = 859.0
-offset_bottom = 57.0
-theme_override_colors/font_color = Color(0.733333, 0.247059, 0.313726, 1)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_i0mr6")
-theme_override_font_sizes/font_size = 35
-text = "Vidas:"
-
 [node name="num_monedas" type="Label" parent="GUI" groups=["coins"]]
-offset_left = 42.0
-offset_top = 17.0
-offset_right = 85.0
-offset_bottom = 63.0
+offset_left = 213.0
+offset_top = 30.0
+offset_right = 256.0
+offset_bottom = 77.0
 theme_override_colors/font_color = Color(0.709804, 0.262745, 0.34902, 1)
 theme_override_fonts/font = ExtResource("2_i0mr6")
 theme_override_font_sizes/font_size = 36
 text = "0"
+
+[node name="spriteMoneda" type="Sprite2D" parent="GUI"]
+position = Vector2(178, 52)
+scale = Vector2(3, 3)
+texture = ExtResource("3_cngqy")
+
+[node name="cabezaMario" type="Sprite2D" parent="GUI"]
+position = Vector2(56, 47)
+scale = Vector2(4, 4)
+texture = ExtResource("4_4ij5c")
 
 [node name="level-1" type="Node" parent="." groups=["main"]]
 
@@ -1005,3 +1008,11 @@ position = Vector2(5671, 137)
 
 [node name="pistola2" parent="." instance=ExtResource("20_qogry")]
 position = Vector2(87, 159)
+
+[node name="fuegoBowser" type="AudioStreamPlayer" parent="." groups=["sonidofuegobowser"]]
+stream = ExtResource("28_sn13u")
+volume_db = -10.0
+
+[node name="themeSegundoNivel" type="AudioStreamPlayer" parent="." groups=["themesegundonivel"]]
+stream = ExtResource("29_u3j8k")
+volume_db = -10.0

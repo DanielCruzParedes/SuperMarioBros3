@@ -39,7 +39,7 @@ func _physics_process(delta):
 		move_and_slide()
 	elif numAlAzar == 5:
 		disparar()
-		print("dispara se supone")
+		get_tree().get_nodes_in_group("sonidofuegobowser")[0].play()
 	
 		
 	if is_on_floor():

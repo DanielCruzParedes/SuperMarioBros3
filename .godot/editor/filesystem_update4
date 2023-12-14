@@ -10,3 +10,7 @@ res://scenes/Marios/mario_pequeno.tscn
 res://Bala.tscn
 res://scenes/mensaje_dead.tscn
 res://scenes/mensaje_win.tscn
+res://scripts/Singleton.gd
+res://scripts/main.gd
+res://scripts/bowser.gd
+res://scenes/Mario.gd

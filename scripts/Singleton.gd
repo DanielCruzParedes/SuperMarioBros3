@@ -14,7 +14,10 @@ var sePuedenEliminarVidas = true
 var vidas = 5
 var monedas = 0
 var primeraVezApareciendo = true
+
 var puedesonartheme = false
+var puedesonarthemcastillo = false
+
 var ledioplay = false
 var conteoMenu=0
 
@@ -27,6 +30,30 @@ var esGangster = false
 var rng = RandomNumberGenerator.new()
 var mePegaron = false
 var mePegoFuego = false
+
+#TIMER
+var tiempoRestante = 500
+var puedeRestar
+func startTimer():
+	while Singleton.puedeRestar== true:
+		Singleton.tiempoRestante -= 1
+		await(get_tree().create_timer(1).timeout)
+#func stopTimer():
+#	puedeRestar = false
+#
+#func _process(delta):
+#	if puedeRestar:
+#		await(get_tree().create_timer(1).timeout)
+#		restarTiempo(1)  
+#
+#func restarTiempo(valor):
+#	tiempoRestante -= valor
+#	if tiempoRestante <= 0:
+#
+#		tiempoRestante = 0
+#		stopTimer()
+
+
 
 func timerDePegar():
 	mePegoFuego = true

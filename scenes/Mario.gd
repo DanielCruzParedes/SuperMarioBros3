@@ -272,6 +272,7 @@ func desactivarPhysicsProcesses():
 
 func Muerte():
 	Singleton.puedesonartheme=false
+	Singleton.puedesonarthemcastillo = false
 	Morir=true
 	get_tree().get_nodes_in_group("camara")[0].puedo_seguir=false
 	get_tree().get_nodes_in_group("camaraNivel2")[0].puedo_seguir=false
