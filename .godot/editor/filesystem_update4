@@ -9,4 +9,5 @@ res://scenes/Marios/mario_pequeno.tscn
 res://scenes/bandera.tscn
 res://Bala.tscn
 res://scenes/bloques/bloquePistola.tscn
-res://scenes/mensaje_dead.tscn
+res://scenes/enemigos/goomba.tscn
+res://scenes/enemigos/slime.tscn

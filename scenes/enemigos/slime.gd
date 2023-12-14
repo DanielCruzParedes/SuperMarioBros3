@@ -40,7 +40,9 @@ func detectar():
 		elif $izquierda.is_colliding():
 			pegoIzquierda=true
 			pegoDerecha=false
-			
+		elif $abajo.is_colliding() and $abajo.get_collider().is_in_group("bloqueM"):
+			$colisionSlime.disabled = true
+			$Sprite2D.visible=false
 
 func desaparecer():
 	$colisionSlime.disabled = true

@@ -235,4 +235,9 @@ libraries = {
 "": SubResource("AnimationLibrary_wef20")
 }
 
+[node name="abajo" type="RayCast2D" parent="slime"]
+position = Vector2(0, 5)
+scale = Vector2(12, 2)
+target_position = Vector2(0, 2)
+
 [connection signal="screen_entered" from="slime/VisibleOnScreenNotifier2D" to="slime" method="_on_visible_on_screen_notifier_2d_screen_entered"]
