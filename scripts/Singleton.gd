@@ -50,9 +50,7 @@ func Spawn():
 func MostrarMensajeMuerte():
 	var mensajeMuerteInstance = mensajeMuerteScene.instantiate()
 	get_tree().root.add_child(mensajeMuerteInstance)
-	await(get_tree().create_timer(2).timeout)  # Ajusta el tiempo según sea necesario
-	mensajeMuerteInstance.queue_free()
-	Respawn()  
+
 	
 func sonar1up():
 	get_tree().get_nodes_in_group("audiovida")[0].play()
@@ -64,14 +62,14 @@ func Respawn():
 		print("vida eliminada")
 		sePuedenEliminarVidas = false
 		if vidas>0:
-			
-			
 			sePuedenEliminarVidas=true
-		
 		else:
+			sePuedenEliminarVidas=false
 			MostrarMensajeMuerte()
-	Spawn()
-	get_tree().reload_current_scene()
+			sePuedenEliminarVidas=false
+			
+		Spawn()
+		get_tree().reload_current_scene()
 	
 
 func _physics_process(_delta):
