@@ -26,7 +26,7 @@ func _physics_process(delta):
 func detectar():
 	if $derecha.is_colliding():
 		var colisionDerecha = $derecha.get_collider()
-		if colisionDerecha.is_in_group("enemigos"):
+		if colisionDerecha.is_in_group("enemigos") and not colisionDerecha.is_in_group("bowser"):
 			print("pego derecha")
 			colisionDerecha.queue_free()
 			queue_free()
@@ -35,7 +35,7 @@ func detectar():
 			
 	if $arriba.is_colliding():
 		var colisionArriba = $arriba.get_collider()
-		if colisionArriba.is_in_group("enemigos"):
+		if colisionArriba.is_in_group("enemigos") and not colisionArriba.is_in_group("bowser"):
 			print("pego derecha")
 			colisionArriba.queue_free()
 			queue_free()
@@ -44,7 +44,7 @@ func detectar():
 	
 	if $izquierda.is_colliding():
 		var colisionIzquierda = $izquierda.get_collider()
-		if colisionIzquierda.is_in_group("enemigos"):
+		if colisionIzquierda.is_in_group("enemigos") and not colisionIzquierda.is_in_group("bowser"):
 			colisionIzquierda.queue_free()
 			print("pego izquierda")
 			queue_free()
@@ -52,9 +52,9 @@ func detectar():
 			queue_free()
 	
 	if $abajo.is_colliding():
-		var colisionIzquierda = $abajo.get_collider()
-		if colisionIzquierda.is_in_group("enemigos"):
-			colisionIzquierda.queue_free()
+		var colisionAbajo = $abajo.get_collider()
+		if colisionAbajo.is_in_group("enemigos") and not colisionAbajo.is_in_group("bowser"):
+			colisionAbajo.queue_free()
 			print("pego abajo")
 			queue_free()
 		else:

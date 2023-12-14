@@ -1,9 +1,11 @@
+Marker2D
+AnimationPlayer
+AnimationTree
 CollisionShape2D
 Area2D
-CharacterBody2D
-AnimationPlayer
-VisibleOnScreenNotifier2D
 Sprite2D
+CharacterBody2D
+VisibleOnScreenNotifier2D
 Label
 AudioStreamPlayer
 Button
@@ -11,7 +13,6 @@ RayCast2D
 Camera2D
 RigidBody2D
 StaticBody2D
-Marker2D
 Node
 CanvasGroup
 CanvasLayer

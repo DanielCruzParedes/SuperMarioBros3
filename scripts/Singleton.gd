@@ -24,31 +24,42 @@ var esGangster = false
 
 #COSAS DEL BOWSER
 var rng = RandomNumberGenerator.new()
+var mePegaron = false
+var mePegoFuego = false
 
+func timerDePegar():
+	mePegoFuego = true
+	mePegaron = true
+	await(get_tree().create_timer(4).timeout)
+	mePegaron = false
+	mePegoFuego = true
 func generarNumeroAlAzar():
-	var numeroAlAzar = rng.randf_range(0,5)
+	var numeroAlAzar : int = rng.randf_range(0,130)
 	return numeroAlAzar
 
 func accionDeBowser(numeroDeAccion):
+	var bowser = get_tree().get_nodes_in_group("bowser")[0]
 	if numeroDeAccion==0:
-		pass
+		bowser.saltar()
 
 var fueNivel2=0;
 func _ready():
 	if ledioplay==true:
 		Spawn()
 
-
+func instancearFuego():
+	var fuego = load("res://scenes/enemigos/fuego_bowser.tscn").instantiate()
+	add_child(fuego)
+	fuego.global_position = get_tree().get_nodes_in_group("spawnDeFuego")[0].global_position
 
 func Spawn():
-	print("fue nivel 2 = ")
 	print(fueNivel2)
 	if ledioplay==true:
-		print("spawnea")
 		mario = load("res://scenes/Marios/mario_pequeno.tscn")
 		var mario_instance = mario.instantiate()
 		add_child(mario_instance)
 		if fueNivel2==0:
+			
 			mario_instance.global_position =get_tree().get_nodes_in_group("spawnmario")[0].global_position
 		
 		elif fueNivel2>0:
@@ -102,49 +113,49 @@ func desactivarRaycasts(cosa):
 	var raycastIzquierda = cosa.get_node("izquierda") 
 	var raycastAbajo1 = cosa.get_node("abajo")
 	var raycastAbajo2 = cosa.get_node("abajo2")
-	
-	if raycastArriba1:
-		if raycastArriba1.is_visible_in_tree():
-			raycastArriba1.enabled = false  # Disable the raycast derecha
-	if raycastArriba2:
-		if raycastArriba2.is_visible_in_tree():
-			raycastArriba2.enabled = false  # Disable the raycast derecha
-	
-	if raycastDerecha:
-		if raycastDerecha.is_visible_in_tree():
-			raycastDerecha.enabled = false  # Disable the raycast derecha
-	
-	if raycastIzquierda:
-		if raycastIzquierda.is_visible_in_tree():
-			raycastIzquierda.enabled = false  # Disable the raycast izquierda
-	
-	if raycastAbajo1 and raycastAbajo1.is_visible_in_tree():
-		for goomba in goombas:
-			if goomba.is_visible_in_tree():
-				raycastAbajo1.add_exception(goomba)
-		for slime in slimes:
-			if slime.is_visible_in_tree():
-				raycastAbajo1.add_exception(slime)
-				
-	if raycastArriba1 and raycastArriba2.is_visible_in_tree():
-		for goomba in goombas:
-			if goomba.is_visible_in_tree():
-				raycastArriba1.add_exception(goomba)
-		for slime in slimes:
-			if slime.is_visible_in_tree():
-				raycastArriba2.add_exception(slime)
+	if mePegoFuego == false:
+		if raycastArriba1:
+			if raycastArriba1.is_visible_in_tree():
+				raycastArriba1.enabled = false  # Disable the raycast derecha
+		if raycastArriba2:
+			if raycastArriba2.is_visible_in_tree():
+				raycastArriba2.enabled = false  # Disable the raycast derecha
+		
+		if raycastDerecha:
+			if raycastDerecha.is_visible_in_tree():
+				raycastDerecha.enabled = false  # Disable the raycast derecha
+		
+		if raycastIzquierda:
+			if raycastIzquierda.is_visible_in_tree():
+				raycastIzquierda.enabled = false  # Disable the raycast izquierda
+		
+		if raycastAbajo1 and raycastAbajo1.is_visible_in_tree():
+			for goomba in goombas:
+				if goomba.is_visible_in_tree():
+					raycastAbajo1.add_exception(goomba)
+			for slime in slimes:
+				if slime.is_visible_in_tree():
+					raycastAbajo1.add_exception(slime)
+					
+		if raycastArriba1 and raycastArriba2.is_visible_in_tree():
+			for goomba in goombas:
+				if goomba.is_visible_in_tree():
+					raycastArriba1.add_exception(goomba)
+			for slime in slimes:
+				if slime.is_visible_in_tree():
+					raycastArriba2.add_exception(slime)
 
-	
-	if raycastAbajo2 and raycastAbajo2.is_visible_in_tree():
-		for goomba in goombas:
-			if goomba.is_visible_in_tree():
-				raycastAbajo2.add_exception(goomba)
-		for slime in slimes:
-			if slime.is_visible_in_tree():
-				raycastAbajo2.add_exception(slime)
+		
+		if raycastAbajo2 and raycastAbajo2.is_visible_in_tree():
+			for goomba in goombas:
+				if goomba.is_visible_in_tree():
+					raycastAbajo2.add_exception(goomba)
+			for slime in slimes:
+				if slime.is_visible_in_tree():
+					raycastAbajo2.add_exception(slime)
 
 func activarRaycasts(cosa):
-	if cosa != null:
+	if cosa != null and mePegoFuego == false:
 		if not cosa.is_queued_for_deletion():
 			var raycastDerecha = cosa.get_node("derecha") # Replace with the actual path of the raycast derecha node
 			var raycastIzquierda = cosa.get_node("izquierda") # Replace with the actual path of the raycast izquierda node

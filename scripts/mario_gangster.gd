@@ -36,6 +36,10 @@ func _physics_process(delta):
 			$sonidomoneda.play()
 			Singleton.monedas += 1
 			area.get_parent().queue_free() #Eliminar moneda
+		if (area.get_parent().is_in_group("fuegoBowser") and Singleton.mePegaron == false):
+			Singleton.timerDePegar()
+			InstanceMarioPeque()
+			print("me pegaron")
 	
 	velocity.y += gravity * delta
 	

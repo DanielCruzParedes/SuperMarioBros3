@@ -675,6 +675,10 @@ shape = SubResource("RectangleShape2D_idra0")
 position = Vector2(5791, 145)
 shape = SubResource("RectangleShape2D_idra0")
 
+[node name="barrera de salida2" type="CollisionShape2D" parent="level-1/suelo2"]
+position = Vector2(5708, 145)
+shape = SubResource("RectangleShape2D_idra0")
+
 [node name="techo completo" type="CollisionShape2D" parent="level-1/suelo2"]
 position = Vector2(4723.81, 41)
 shape = SubResource("RectangleShape2D_gc22v")
@@ -996,7 +1000,7 @@ position = Vector2(3080, 185)
 position = Vector2(5333, 107)
 
 [node name="Bowser" parent="." instance=ExtResource("25_mpeaq")]
-position = Vector2(245, 201)
+position = Vector2(5671, 137)
 
 [node name="pistola2" parent="." instance=ExtResource("20_qogry")]
 position = Vector2(87, 159)

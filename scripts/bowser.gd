@@ -6,6 +6,9 @@ var pegoDerecha=false
 var pegoIzquierda=false
 var puedoMoverme = true
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var numAlAzar = 0
+var puede_saltar = false
+var fuego = load("res://scenes/enemigos/fuego_bowser.tscn").instantiate()
 
 func _ready():
 	set_physics_process(false)
@@ -13,32 +16,68 @@ func _ready():
 	
 func _physics_process(delta):
 	detectar()
+	numAlAzar = Singleton.generarNumeroAlAzar()
+	
+	if numAlAzar == 0 and puede_saltar: # salta
+		velocity.y -= 300
+		move_and_slide()
+	elif numAlAzar == 1: #se mueve para la izquierda
+		velocity.x -= 35
+		velocity.x -= 35
+		move_and_slide()
+	elif numAlAzar == 2: # se mueve para la derecha
+		velocity.x += 35
+		velocity.x += 35
+		move_and_slide()
+	elif numAlAzar == 3: # se mueve para la derecha
+		velocity.x += 35
+		velocity.x += 35
+		move_and_slide()
+	elif numAlAzar == 4: # se mueve para la derecha
+		velocity.x += 35
+		velocity.x += 35
+		move_and_slide()
+	elif numAlAzar == 5:
+		disparar()
+		print("dispara se supone")
+	
+		
+	if is_on_floor():
+		puede_saltar = true
 	
 	if not is_on_floor():
+		puede_saltar = false
 		velocity.y += gravity * delta
 		move_and_slide()
-	if pegoDerecha==false and pegoIzquierda==false:
-		velocity.x = -SPEED
-		move_and_slide()
-	elif pegoDerecha==true:
-		$Sprite2D.flip_h = true
-		velocity.x = -SPEED
-		move_and_slide()
-	elif pegoIzquierda==true:
-		$Sprite2D.flip_h = false
-		velocity.x = SPEED
-		move_and_slide()
+#	if pegoDerecha==false and pegoIzquierda==false:
+#		velocity.x = -SPEED
+#		move_and_slide()
+#	elif pegoDerecha==true:
+#		$Sprite2D.flip_h = true
+#		velocity.x = -SPEED
+#		move_and_slide()
+#	elif pegoIzquierda==true:
+#		$Sprite2D.flip_h = false
+#		velocity.x = SPEED
+#		move_and_slide()
 	$AnimationPlayer.play("idle")
 	
+func disparar():
+	Singleton.instancearFuego()
 	
+	print("se dispara fuego se supone")
 	
+
+func saltar():
+	velocity.y += 1000
+	move_and_slide()
+	print("salta se supone")
+
 func detectar():
 	# que se baje la vida al disparar
 	var areas = $Area2D.get_overlapping_areas()
 	for a in areas:
 		var area: Area2D = a
-		print("area que le entra al bowser: ")
-		print(area.get_parent().name)
 		if (area.get_parent().is_in_group("bala")):
 			vida -= 1
 			print(vida)
