@@ -98,10 +98,14 @@ func Spawn():
 			
 
 func MostrarMensajeMuerte():
+	puedesonartheme=false
+	puedesonarthemcastillo=false
 	var mensajeMuerteInstance = mensajeMuerteScene.instantiate()
 	get_tree().root.add_child(mensajeMuerteInstance)
 
 func MostraeMensajeWin():
+	puedesonartheme=false
+	puedesonarthemcastillo=false
 	var mensajeWinInstance=mensajeWin.instantiate()
 	get_tree().root.add_child(mensajeWinInstance)
 	
@@ -118,6 +122,8 @@ func Respawn():
 			sePuedenEliminarVidas=true
 		else:
 			sePuedenEliminarVidas=false
+			puedesonartheme=false
+			puedesonarthemcastillo=false
 			MostrarMensajeMuerte()
 			sePuedenEliminarVidas=false
 			

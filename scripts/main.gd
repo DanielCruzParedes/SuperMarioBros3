@@ -18,9 +18,10 @@ func _ready():
 		Singleton.puedesonarthemcastillo = true
 		
 	if Singleton.vidas==0:
-		$"GUI/texto vidas".visible=false
 		$GUI/num_monedas.visible=false
 		$GUI/vidas.visible=false
+		$GUI/spriteMoneda.visible=false
+		$GUI/cabezaMario.visible=false
 		
 
 
