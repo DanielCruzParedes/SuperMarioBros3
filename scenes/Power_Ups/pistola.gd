@@ -40,7 +40,7 @@ func desaparece():
 	
 	
 func colision_con_mario(colision_mario):
-	if not colision_mario.is_queued_for_deletion() and colision_mario.is_in_group("mario"):
+	if not colision_mario.is_queued_for_deletion() and colision_mario.is_in_group("mario") and not colision_mario.is_in_group("mariogangster"):
 		colision_mario.InstanceGangster()
 		colision_mario.MarioGangsterInstanciado = true
 		queue_free()

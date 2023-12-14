@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds1ppepe2ipdx"]
+[gd_scene load_steps=6 format=3 uid="uid://ds1ppepe2ipdx"]
 
 [ext_resource type="Script" path="res://Bala.gd" id="1_b2ico"]
 
@@ -11,7 +11,10 @@ gradient = SubResource("Gradient_pu870")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofxqm"]
 size = Vector2(4, 2)
 
-[node name="Bala" type="RigidBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48qdc"]
+size = Vector2(6, 4)
+
+[node name="Bala" type="RigidBody2D" groups=["bala"]]
 script = ExtResource("1_b2ico")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -40,3 +43,8 @@ target_position = Vector2(0, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ofxqm")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_48qdc")

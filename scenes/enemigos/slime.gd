@@ -49,7 +49,7 @@ func desaparecer():
 	$AnimationPlayer.play("dead")
 	#$aplastamiento.play()
 	set_physics_process(false)
-	
+	$aplastamiento.play()
 	await(get_tree().create_timer(0.4).timeout)
 	queue_free()
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://dbxun3dhgvk8n"]
+[gd_scene load_steps=90 format=3 uid="uid://dbxun3dhgvk8n"]
 
 [ext_resource type="Texture2D" uid="uid://njbm3nj8wbn1" path="res://sprites/level_1.png" id="1_6ik2n"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_jfq7o"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://djnnkdyttdv4d" path="res://scenes/bloques/bloque_oculto.tscn" id="18_vqy20"]
 [ext_resource type="PackedScene" uid="uid://c0n4xd3pn8bxq" path="res://scenes/bloques/bloquePistola.tscn" id="20_qogry"]
 [ext_resource type="Script" path="res://scripts/camaraNivel2.gd" id="21_75ano"]
+[ext_resource type="PackedScene" uid="uid://dm670yycqgyhf" path="res://scenes/enemigos/bowser.tscn" id="25_mpeaq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wofq8"]
 size = Vector2(1103, 30)
@@ -993,3 +994,9 @@ position = Vector2(3080, 185)
 
 [node name="pistola" parent="." instance=ExtResource("20_qogry")]
 position = Vector2(5333, 107)
+
+[node name="Bowser" parent="." instance=ExtResource("25_mpeaq")]
+position = Vector2(245, 201)
+
+[node name="pistola2" parent="." instance=ExtResource("20_qogry")]
+position = Vector2(87, 159)

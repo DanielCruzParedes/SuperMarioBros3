@@ -8,7 +8,6 @@ var objective: Vector2 = Vector2(-1000, -1000)
 
 func set_objective(_obj: Vector2):
 	objective = _obj
-	print("Nuevo obj:" + str(objective))
 	
 func _ready():
 	SPEED = 800

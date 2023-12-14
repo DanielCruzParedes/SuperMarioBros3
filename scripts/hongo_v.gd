@@ -35,15 +35,15 @@ func _physics_process(delta):
 		elif pegoIzquierda==true:
 			velocity.x = SPEED
 			move_and_slide()
-		if $izquierda.is_colliding() and $izquierda.get_collider().is_in_group("mario"):
-			colision_con_mario($izquierda.get_collider())
-		if $derecha.is_colliding() and $derecha.get_collider().is_in_group("mario"):
-			colision_con_mario($derecha.get_collider())
-		if $arriba.is_colliding() and $arriba.get_collider().is_in_group("mario"):
-			colision_con_mario($arriba.get_collider())
-		if $abajo.is_colliding() and $abajo.get_collider().is_in_group("mario"):
-			colision_con_mario($abajo.get_collider())
-		elif $abajo.is_colliding() and $abajo.get_collider().is_in_group("bloqueM"):
+#		if $izquierda.is_colliding() and $izquierda.get_collider().is_in_group("mario"):
+#			colision_con_mario($izquierda.get_collider())
+#		if $derecha.is_colliding() and $derecha.get_collider().is_in_group("mario"):
+#			colision_con_mario($derecha.get_collider())
+#		if $arriba.is_colliding() and $arriba.get_collider().is_in_group("mario"):
+#			colision_con_mario($arriba.get_collider())
+#		if $abajo.is_colliding() and $abajo.get_collider().is_in_group("mario"):
+#			colision_con_mario($abajo.get_collider())
+		if $abajo.is_colliding() and $abajo.get_collider().is_in_group("bloqueM"):
 			$colisionHongo.disabled=true
 			
 		
@@ -73,7 +73,6 @@ func desaparece():
 	
 func colision_con_mario(colision_mario):
 	if not colision_mario.is_queued_for_deletion() and colision_mario.is_in_group("mario"):
-		Singleton.vidas+=1
 		Singleton.sonar1up()
 		queue_free()
 

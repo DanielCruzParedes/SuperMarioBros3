@@ -153,14 +153,15 @@ func detectar():
 			elif colision.is_in_group("vida"):
 				Singleton.vidas+=1
 				colision.queue_free()
+				Singleton.sonar1up()
 			elif colision.is_in_group("power_Up"):
 				$sonidomoneda.play()
 				Singleton.monedas += 1
 				colision.queue_free()
-#			elif colision.is_in_group("moneda"):
-#					colision.queue_free()
-#					Singleton.monedas+=1
-#					$sonidomoneda.play()
+			elif colision.is_in_group("pistolapowerup"):
+				$sonidomoneda.play()
+				Singleton.monedas += 1
+				colision.queue_free()
 			elif colision.is_in_group("bloqueM"):
 				InstanceMarioPeque()
 				
@@ -191,6 +192,14 @@ func detectar():
 				$sonidomoneda.play()
 				Singleton.monedas += 1
 				colision2.queue_free()
+			elif colision2.is_in_group("vida"):
+				Singleton.vidas+=1
+				colision2.queue_free()
+				Singleton.sonar1up()
+			elif colision2.is_in_group("pistolapowerup"):
+				$sonidomoneda.play()
+				Singleton.monedas += 1
+				colision2.queue_free()
 			elif colision2.is_in_group("bloques"):
 				colision2.Destruir()
 			elif colision2.is_in_group("aqum_coins"):
@@ -216,13 +225,19 @@ func detectar():
 #					colision3.queue_free()
 #					Singleton.monedas+=1
 #					$sonidomoneda.play()
+			elif colision3.is_in_group("pistolapowerup"):
+				$sonidomoneda.play()
+				Singleton.monedas += 1
+				colision3.queue_free()
 			elif colision3.is_in_group("power_Up"):
 				$sonidomoneda.play()
 				Singleton.monedas += 1
 				colision3.queue_free()
+			
 			elif colision3.is_in_group("vida"):
 				Singleton.vidas+=1
 				colision3.queue_free()
+				Singleton.sonar1up()
 			pass
 			
 			if colision3.is_in_group("tubossalibles"):
@@ -248,9 +263,14 @@ func detectar():
 				$sonidomoneda.play()
 				Singleton.monedas += 1
 				colision4.queue_free()
+			elif colision4.is_in_group("pistolapowerup"):
+				$sonidomoneda.play()
+				Singleton.monedas += 1
+				colision4.queue_free()
 			elif colision4.is_in_group("vida"):
 				Singleton.vidas+=1
 				colision4.queue_free()
+				Singleton.sonar1up()
 			pass
 			
 				

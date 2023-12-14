@@ -114,126 +114,132 @@ func _physics_process(delta):
 		
 	
 func detectar():
-		if $abajo.is_colliding() or $abajo2.is_colliding():
-			if $abajo.is_colliding():
-				colision=$abajo.get_collider()
-			elif $abajo2.is_colliding():
-				colision=$abajo2.get_collider()
+	if $abajo.is_colliding() or $abajo2.is_colliding():
+		if $abajo.is_colliding():
+			colision=$abajo.get_collider()
+		elif $abajo2.is_colliding():
+			colision=$abajo2.get_collider()
 			
-			if colision!=null:	
-				if colision.is_in_group("suelos"):
-					salto_valido=true
-				else:
-					salto_valido=false
+		if colision!=null:
+			if colision.is_in_group("suelos"):
+				salto_valido=true
+			else:
+				salto_valido=false
 				
-				if colision.is_in_group("enemigos"):
-					position.y -= 20
+			if colision.is_in_group("enemigos"):
+				position.y -= 20
 
-					colision.desaparecer()
-				elif colision.is_in_group("power_Up"):
-					if not MarioGrandeInstanciado:
-						InstanceGrande()
-						MarioGrandeInstanciado = true
-						colision.queue_free()
-				elif colision.is_in_group("pistolapowerup"):
-					print("esta sobre pistola")
-				elif colision.is_in_group("vida"):
-					Singleton.vidas+=1
+				colision.desaparecer()
+			elif colision.is_in_group("power_Up"):
+				if not MarioGrandeInstanciado:
+					InstanceGrande()
+					MarioGrandeInstanciado = true
 					colision.queue_free()
-				elif colision.is_in_group("bloqueM"):
-					Muerte()
+				
+			elif colision.is_in_group("vida"):
+				Singleton.vidas+=1
+				Singleton.sonar1up()
+				colision.queue_free()
+			elif colision.is_in_group("bloqueM"):
+				Muerte()
 #				elif colision.is_in_group("moneda"):
 #					Singleton.monedas+=1
 #					$sonidomoneda.play()
-				if colision.is_in_group("tubosentrables"):
-					estaSobreTuboEntrable=true
-					salto_valido=true
-				else:
-					estaSobreTuboEntrable=false
+			if colision.is_in_group("tubosentrables"):
+				estaSobreTuboEntrable=true
+				salto_valido=true
+			else:
+				estaSobreTuboEntrable=false
 					
 			
 				
-		if $arriba.is_colliding() or $arriba2.is_colliding():
-			var colision2
-			if $arriba.is_colliding():
-				colision2=$arriba.get_collider()
-			if $arriba2.is_colliding():
-				colision2=$arriba2.get_collider()
+	if $arriba.is_colliding() or $arriba2.is_colliding():
+		var colision2
+		if $arriba.is_colliding():
+			colision2=$arriba.get_collider()
+		if $arriba2.is_colliding():
+			colision2=$arriba2.get_collider()
 				
-			if colision2!=null:
-				if colision2.is_in_group("oculto"):
-					colision2.muevete()
-				if colision2.is_in_group("bloques"):
-					colision2.muevete()
-				if colision2.is_in_group("aqum_coins"):
-					colision2.muevete()
-				elif colision2.is_in_group("moneda"):
+		if colision2!=null:
+			if colision2.is_in_group("oculto"):
+				colision2.muevete()
+			if colision2.is_in_group("bloques"):
+				colision2.muevete()
+			if colision2.is_in_group("aqum_coins"):
+				colision2.muevete()
+			elif colision2.is_in_group("moneda"):
+				colision2.queue_free()
+				Singleton.monedas+=1
+				$sonidomoneda.play()
+			elif colision2.is_in_group("vida"):
+				Singleton.vidas+=1
+				colision2.queue_free()
+				Singleton.sonar1up()
+			elif colision2.is_in_group("power_Up"):
+				if not MarioGrandeInstanciado:
+					InstanceGrande()
+					MarioGrandeInstanciado = true
 					colision2.queue_free()
-					Singleton.monedas+=1
-					$sonidomoneda.play()
-				elif colision2.is_in_group("power_Up"):
-					if not MarioGrandeInstanciado:
-						InstanceGrande()
-						MarioGrandeInstanciado = true
-						colision2.queue_free()
-				elif colision2.is_in_group("enemigos"):
-					Muerte()
-				else:
-					pass
+			elif colision2.is_in_group("enemigos"):
+				Muerte()
+			else:
+				pass
 		
-		if $derecha.is_colliding():
-			var colision3=$derecha.get_collider()
-			if colision3!=null:
-				if colision3.is_in_group("enemigos"):
-					Muerte()
-				elif colision3.is_in_group("power_Up"):
-					if not MarioGrandeInstanciado:
-						InstanceGrande()
-						MarioGrandeInstanciado = true
-						colision3.queue_free()
-				elif colision3.is_in_group("vida"):
-					Singleton.vidas+=1
+	if $derecha.is_colliding():
+		var colision3=$derecha.get_collider()
+		if colision3!=null:
+			if colision3.is_in_group("enemigos"):
+				Muerte()
+			elif colision3.is_in_group("power_Up"):
+				if not MarioGrandeInstanciado:
+					InstanceGrande()
+					MarioGrandeInstanciado = true
 					colision3.queue_free()
-				elif colision3.is_in_group("bandera"):
-					$audioBandera.play()
-					colision3.muevete()
+			elif colision3.is_in_group("vida"):
+				Singleton.vidas+=1
+				colision3.queue_free()
+				Singleton.sonar1up()
+			elif colision3.is_in_group("bandera"):
+				$audioBandera.play()
+				colision3.muevete()
 					
-				elif colision3.is_in_group("moneda"):
-					colision3.queue_free()
-					Singleton.monedas+=1
-					$sonidomoneda.play()
-				else:
-					pass
+			elif colision3.is_in_group("moneda"):
+				colision3.queue_free()
+				Singleton.monedas+=1
+				$sonidomoneda.play()
+			else:
+				pass
 					
-				if colision3.is_in_group("tubossalibles"):
-					estaAladoDeTuboEntrable=true
-				else:
-					estaAladoDeTuboEntrable=false
+			if colision3.is_in_group("tubossalibles"):
+				estaAladoDeTuboEntrable=true
+			else:
+				estaAladoDeTuboEntrable=false
 					
-				if colision3.is_in_group("castillo"):
-					estaEntradaCastillo=true
-				else:
-					estaEntradaCastillo=false
+			if colision3.is_in_group("castillo"):
+				estaEntradaCastillo=true
+			else:
+				estaEntradaCastillo=false
 				
-		if $izquierda.is_colliding():
-			var colision4=$izquierda.get_collider()
-			if colision4!=null:
-				if colision4.is_in_group("enemigos"):
-					Muerte()
-				elif colision4.is_in_group("power_Up"):
-					if not MarioGrandeInstanciado:
-						InstanceGrande()
-						MarioGrandeInstanciado = true
-						colision4.queue_free()
-				elif colision4.is_in_group("vida"):
-					Singleton.vidas+=1
+	if $izquierda.is_colliding():
+		var colision4=$izquierda.get_collider()
+		if colision4!=null:
+			if colision4.is_in_group("enemigos"):
+				Muerte()
+			elif colision4.is_in_group("power_Up"):
+				if not MarioGrandeInstanciado:
+					InstanceGrande()
+					MarioGrandeInstanciado = true
 					colision4.queue_free()
-				elif colision4.is_in_group("moneda"):
-					colision4.queue_free()
-					Singleton.monedas+=1
-					$sonidomoneda.play()
-				else:
-					pass
+			elif colision4.is_in_group("vida"):
+				Singleton.vidas+=1
+				colision4.queue_free()
+				Singleton.sonar1up()
+			elif colision4.is_in_group("moneda"):
+				colision4.queue_free()
+				Singleton.monedas+=1
+				$sonidomoneda.play()
+			else:
+				pass
 					
 func teletransportarNivel2():
 	get_tree().get_nodes_in_group("mario_peque")[0].global_position = get_tree().get_nodes_in_group("nivel2")[0].global_position
@@ -282,7 +288,7 @@ func Muerte():
 	
 	#saltar_valido=ha tocado el piso
 func InstanceGrande():
-	if not MarioGrandeInstanciado: 
+	if not MarioGrandeInstanciado:
 		Singleton.estaEnInmunidad = false
 		var MarioGrande= load("res://scenes/Marios/mario_grande.tscn")
 		var Mario_instance= MarioGrande.instantiate()
@@ -292,7 +298,7 @@ func InstanceGrande():
 		queue_free()
 
 func InstanceGangster():
-	if not MarioGangsterInstanciado: 
+	if not MarioGangsterInstanciado:
 		Singleton.estaEnInmunidad = false
 		var MarioGangster = load("res://scenes/Marios/mario_gangster.tscn")
 		var Mario_instance= MarioGangster.instantiate()

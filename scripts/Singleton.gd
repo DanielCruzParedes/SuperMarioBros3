@@ -22,6 +22,17 @@ var esGrande = false
 var esGangster = false
 
 
+#COSAS DEL BOWSER
+var rng = RandomNumberGenerator.new()
+
+func generarNumeroAlAzar():
+	var numeroAlAzar = rng.randf_range(0,5)
+	return numeroAlAzar
+
+func accionDeBowser(numeroDeAccion):
+	if numeroDeAccion==0:
+		pass
+
 var fueNivel2=0;
 func _ready():
 	if ledioplay==true:
@@ -85,10 +96,20 @@ func _physics_process(_delta):
 
 func desactivarRaycasts(cosa):
 	print(cosa)
+	var raycastArriba1 = cosa.get_node("arriba")
+	var raycastArriba2 = cosa.get_node("arriba2")
 	var raycastDerecha = cosa.get_node("derecha")
 	var raycastIzquierda = cosa.get_node("izquierda") 
 	var raycastAbajo1 = cosa.get_node("abajo")
 	var raycastAbajo2 = cosa.get_node("abajo2")
+	
+	if raycastArriba1:
+		if raycastArriba1.is_visible_in_tree():
+			raycastArriba1.enabled = false  # Disable the raycast derecha
+	if raycastArriba2:
+		if raycastArriba2.is_visible_in_tree():
+			raycastArriba2.enabled = false  # Disable the raycast derecha
+	
 	if raycastDerecha:
 		if raycastDerecha.is_visible_in_tree():
 			raycastDerecha.enabled = false  # Disable the raycast derecha
@@ -104,6 +125,14 @@ func desactivarRaycasts(cosa):
 		for slime in slimes:
 			if slime.is_visible_in_tree():
 				raycastAbajo1.add_exception(slime)
+				
+	if raycastArriba1 and raycastArriba2.is_visible_in_tree():
+		for goomba in goombas:
+			if goomba.is_visible_in_tree():
+				raycastArriba1.add_exception(goomba)
+		for slime in slimes:
+			if slime.is_visible_in_tree():
+				raycastArriba2.add_exception(slime)
 
 	
 	if raycastAbajo2 and raycastAbajo2.is_visible_in_tree():
@@ -151,15 +180,12 @@ func Inmunidad():
 	print("se hizo inmune")
 	estaEnInmunidad = true
 	if esPeque:
-		print("es peque inmune")
 		mario = get_tree().get_nodes_in_group("mario_peque")[0]
 		spr = get_tree().get_nodes_in_group("spritePeque")[0]
 	elif esGrande:
-		print("es grande inmune")
 		mario = get_tree().get_nodes_in_group("marioGrande")[0]
 		spr = get_tree().get_nodes_in_group("spriteGrande")[0]
 	elif esGangster:
-		print("es gangster inmune")
 		mario = get_tree().get_nodes_in_group("mariogangster")[0]
 		spr = get_tree().get_nodes_in_group("spriteGangster")[0]
 		

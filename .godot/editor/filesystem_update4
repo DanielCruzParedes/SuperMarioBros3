@@ -11,3 +11,14 @@ res://Bala.tscn
 res://scenes/bloques/bloquePistola.tscn
 res://scenes/enemigos/goomba.tscn
 res://scenes/enemigos/slime.tscn
+res://scripts/Singleton.gd
+res://scenes/Mario.gd
+res://scripts/mario_gangster.gd
+res://scenes/Power_Ups/pistola.gd
+res://scenes/enemigos/slime.gd
+res://scenes/Power_Ups/hongo_v.tscn
+res://scripts/hongo_v.gd
+res://scenes/enemigos/bowser.tscn
+res://scripts/bowser.gd
+res://scenes/enemigos/fuego_bowser.tscn
+res://Bala.gd

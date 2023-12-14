@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwope3kkfvb02"]
+[gd_scene load_steps=9 format=3 uid="uid://bwope3kkfvb02"]
 
 [ext_resource type="Texture2D" uid="uid://b5s0rmo7xd3d0" path="res://sprites/slime.png" id="2_4yqex"]
 [ext_resource type="Script" path="res://scenes/enemigos/slime.gd" id="2_i1pn7"]
+[ext_resource type="AudioStream" uid="uid://chfjdrkqle83c" path="res://sound_effects/Slime Death.mp3" id="3_5657c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3lemt"]
 size = Vector2(16, 13.5)
@@ -239,5 +240,9 @@ libraries = {
 position = Vector2(0, 5)
 scale = Vector2(12, 2)
 target_position = Vector2(0, 2)
+
+[node name="aplastamiento" type="AudioStreamPlayer" parent="slime"]
+stream = ExtResource("3_5657c")
+volume_db = 10.0
 
 [connection signal="screen_entered" from="slime/VisibleOnScreenNotifier2D" to="slime" method="_on_visible_on_screen_notifier_2d_screen_entered"]
