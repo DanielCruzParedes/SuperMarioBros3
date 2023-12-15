@@ -666,7 +666,6 @@ size = Vector2(12, 29)
 script = ExtResource("1_ekgwj")
 
 [node name="SpriteMario" type="Sprite2D" parent="." groups=["mario", "spriteGangster"]]
-visible = false
 z_index = 1
 texture = ExtResource("2_c41tf")
 hframes = 4
